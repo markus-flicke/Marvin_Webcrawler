@@ -33,7 +33,7 @@ class Event:
         self.df = df
         return self
 
-    def sql_upload(self):
+    def sql_append(self):
         engine = create_engine(self.SQL_CONNECTION_STRING)
         # engine.execute("TRUNCATE TABLE EVENTS")
         if not self.df.empty:
@@ -63,7 +63,9 @@ class Event:
         """
         Returns a dictionary of the Grunddaten pane
         """
-        return dict(re.findall('>(.*?)\n</label><div id=".*?" class="answer">(.*?)\n', self.html))
+        raw = re.findall('>(.*?)\n</label><div id=".*?" class="answer">(.*?)\n', self.html)
+        cleaned = self._clean_values(raw)
+        return dict(cleaned)
 
     def get_Veranstaltungen(self):
         """
