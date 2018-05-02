@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import re
 class Tree:
     def __init__(self, url):
-        self.driver = webdriver.Chrome('./chromedriver_osx')
+        self.driver = webdriver.Chrome('./chromedriver_ubuntu')
         self.driver.get(url)
         self.event_ids = set()
 
