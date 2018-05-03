@@ -3,8 +3,12 @@ from selenium.webdriver.common.by import By
 import re
 class Tree:
     def __init__(self, url):
-        self.driver = webdriver.Chrome('./chromedriver_ubuntu')
-        self.driver.get(url)
+        try:
+            self.driver = webdriver.Chrome('./chromedriver_osx')
+            self.driver.get(url)
+        except:
+            self.driver = webdriver.Chrome('./chromedriver_ubuntu')
+            self.driver.get(url)
         self.event_ids = set()
 
     def expand_all(self, idx):
@@ -24,4 +28,8 @@ class Tree:
     def find_all_detail_view_ids(self):
         html = self.driver.page_source
         id_pattern = "(hierarchy:courseCatalogFieldset:courseCatalog:[0-9]*?:[0-9]*?:[0-9]*?:[0-9]*?:[0-9]*?:showEventDateDetailVie\w+?)\""
-        return set(re.findall(id_pattern, html))
+        self.event_ids = set(re.findall(id_pattern, html))
+
+    def click(self, id):
+        elem = self.driver.find_element(By.ID, id)
+        elem.click()
