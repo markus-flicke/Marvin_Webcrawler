@@ -2,20 +2,34 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Classes.Event import *
 import sys
+from time import sleep
+
 
 class Search:
     BASE_URL = 'https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourseData.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1'
     unhandled_urls = []
     SEARCH_RESULTS = 10
+    driver = None
 
     def __init__(self, url= BASE_URL):
         self.BASE_URL = url
         self.event_ids = set()
+        self.driver_start()
 
     def read_n_search_pages(self, n):
         self.empty_search()
         for i in range(n):
             self.read_search_page(i*10, self.SEARCH_RESULTS)
+            self.next_search_page()
+        self.unhandled_urls_to_file()
+
+    def read_search_page_range(self, min, max):
+        self.empty_search()
+        for i in range(min):
+            sleep(0.1)
+            self.next_search_page()
+        for i in range(max- min):
+            self.read_search_page((i+min) * 10, self.SEARCH_RESULTS)
             self.next_search_page()
         self.unhandled_urls_to_file()
 
@@ -38,6 +52,8 @@ class Search:
             print("WARNING: {} unhandled event pages. See unhandled_ids.csv".format(len(self.unhandled_urls)))
 
     def next_search_page(self):
+        self.driver.back()
+        self.driver.forward()
         element_id = 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2next'
         element = self.driver.find_element(By.ID, element_id)
         element.click()

@@ -16,9 +16,9 @@ password: something
 table: events
 
 
-Create Table Events (Titel varchar(150), bemerkung varchar(100), verantwortlicher varchar(100), raum varchar(200),  wochentag varchar(30), von varchar(30)
-					 , bis varchar(30), rhythmus varchar(30), startdatum varchar(30), enddatum varchar(30), organisationseinheit varchar(150)
-					 , permalink varchar(200));
+Create Table Events (Titel varchar(300), bemerkung varchar(200), verantwortlicher varchar(500), raum varchar(400),  wochentag varchar(60), von varchar(60)
+					 , bis varchar(60), rhythmus varchar(60), startdatum varchar(60), enddatum varchar(60), organisationseinheit varchar(300)
+					 , permalink varchar(400));
 
 select * from events;
 

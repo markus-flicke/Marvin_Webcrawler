@@ -4,6 +4,9 @@ from sqlalchemy import create_engine
 
 class Event:
     SQL_CONNECTION_STRING = 'postgresql://postgres:something@localhost:5432/Vorlesungsverzeichnis'
+    RELATIONSSHEMA = ['titel', 'bemerkung', 'verantwortlicher', 'raum', 'wochentag', 'von',
+       'bis', 'rhythmus', 'startdatum', 'enddatum', 'organisationseinheit',
+       'permalink']
 
     def __init__(self, html):
         self.html = html
@@ -19,7 +22,11 @@ class Event:
         except:
             raise Exception(permalink)
 
-        df = events_df[['Wochentag', 'Von', 'Bis', 'Rhythmus', 'Startdatum\n', 'Enddatum', 'Raum', 'Bemerkung']]
+        try:
+            df = events_df[['Wochentag', 'Von', 'Bis', 'Rhythmus', 'Startdatum\n', 'Enddatum', 'Raum', 'Bemerkung']]
+        except:
+            raise Exception('Unusual relation schema: {}'.format(permalink))
+
         df = df.rename(columns={'Startdatum\n': 'Startdatum'})
         df.columns = df.columns.map(lambda s: s.lower())
         # TODO: Choose appropriate column names here
@@ -32,6 +39,8 @@ class Event:
         return self
 
     def sql_append(self):
+        insert_df = self.df[self.RELATIONSSHEMA]
+
         engine = create_engine(self.SQL_CONNECTION_STRING)
         # engine.execute("TRUNCATE TABLE EVENTS")
         if not self.df.empty:
@@ -72,19 +81,21 @@ class Event:
         Returns a Pandas DataFrame of the Veranstaltungen pane
         TODO: Type conversions (Everything is String right now), could be datetime
         """
-        tables_on_page_arr = pd.read_html(self.html)
-        for i in range(len(tables_on_page_arr)):
-            df = tables_on_page_arr[i]
-            if 'Unnamed: 0' in df.columns:
-                tables_on_page_arr[i] = df.drop('Unnamed: 0', axis = 1)
-
-        def find_veranstalt_df(df_arr):
-            for df in df_arr:
-                if not df.isnull().values.any():
-                    return df
-            raise Exception('No Veranstaltungs DF found')
-
-        raw_df = find_veranstalt_df(tables_on_page_arr)
+        veranstaltungen_id = 'showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:plannedDatesTable_Table'
+        raw_df = pd.read_html(self.html, attrs = {'id':veranstaltungen_id})[0]
+        # for i in range(len(tables_on_page_arr)):
+        #     df = tables_on_page_arr[i]
+        #     if 'Unnamed: 0' in df.columns:
+        #         tables_on_page_arr[i] = df.drop('Unnamed: 0', axis = 1)
+        #
+        #
+        # def find_veranstalt_df(df_arr):
+        #     for df in df_arr:
+        #         if not df.isnull().values.any():
+        #             return df
+        #     raise Exception('No Veranstaltungs DF found')
+        #
+        # raw_df = find_veranstalt_df(tables_on_page_arr)
         df = raw_df.apply(lambda col: col.apply(lambda val: val[len(col.name):]))
         df = df.applymap(self._clean_values)
         return df
