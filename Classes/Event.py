@@ -10,16 +10,14 @@ class Event:
         self.df = pd.DataFrame()
 
     def summarise(self):
+        permalink = self.get_permalink()
         try:
             lecturer = self.get_lecturer()
             grunddaten_df = self.get_Grunddaten()
             events_df = self.get_Veranstaltungen()
             # TODO: Talk about how to incorporate Modules in SQL relations
-            # modules_df = self.get_Module()
         except:
-            raise Exception("html source unreadable")
-
-        permalink = self.get_permalink()
+            raise Exception(permalink)
 
         df = events_df[['Wochentag', 'Von', 'Bis', 'Rhythmus', 'Startdatum\n', 'Enddatum', 'Raum', 'Bemerkung']]
         df = df.rename(columns={'Startdatum\n': 'Startdatum'})
@@ -39,7 +37,8 @@ class Event:
         if not self.df.empty:
             self.df.to_sql('events', engine, if_exists='append', index=False)
         else:
-            raise Exception("Event dataframe not set (event.summarise required)")
+            self.summarise()
+            # raise Exception("Event dataframe not set (event.summarise required)")
 
     def get_permalink(self):
         """
@@ -47,7 +46,7 @@ class Event:
         """
         permalinks = re.findall('data-page-permalink="true">(.*)<', self.html)
         if permalinks == []:
-            raise Exception("Permalink not found")
+            return pd.np.nan
         return permalinks[0].replace('&amp;', '&')
 
     def get_lecturer(self):
@@ -64,15 +63,28 @@ class Event:
         Returns a dictionary of the Grunddaten pane
         """
         raw = re.findall('>(.*?)\n</label><div id=".*?" class="answer">(.*?)\n', self.html)
-        cleaned = self._clean_values(raw)
-        return dict(cleaned)
+        # TODO: Clean Data Properly here
+        # cleaned = map(self._clean_values, raw)
+        return dict(raw)
 
     def get_Veranstaltungen(self):
         """
         Returns a Pandas DataFrame of the Veranstaltungen pane
         TODO: Type conversions (Everything is String right now), could be datetime
         """
-        raw_df = pd.read_html(self.html)[2]
+        tables_on_page_arr = pd.read_html(self.html)
+        for i in range(len(tables_on_page_arr)):
+            df = tables_on_page_arr[i]
+            if 'Unnamed: 0' in df.columns:
+                tables_on_page_arr[i] = df.drop('Unnamed: 0', axis = 1)
+
+        def find_veranstalt_df(df_arr):
+            for df in df_arr:
+                if not df.isnull().values.any():
+                    return df
+            raise Exception('No Veranstaltungs DF found')
+
+        raw_df = find_veranstalt_df(tables_on_page_arr)
         df = raw_df.apply(lambda col: col.apply(lambda val: val[len(col.name):]))
         df = df.applymap(self._clean_values)
         return df

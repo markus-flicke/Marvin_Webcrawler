@@ -11,7 +11,7 @@ class Tree:
             self.driver.get(url)
         self.event_ids = set()
 
-    def expand_all(self, idx):
+    def expand(self, idx):
         """
         Expands all subsections by index
         TODO: Method: find all subsection indices
