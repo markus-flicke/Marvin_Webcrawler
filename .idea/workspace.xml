@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e3d0387-146b-4100-815c-d7d415061b4a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ReadOnePage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Start14Threads.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Search1.0-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Search2.0-checkpoint.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search1.0.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search2.0.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datenmodell.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_10.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_11.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_11.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_13.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_13.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_7.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_7.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_8.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_8.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Errors/error_page_9.log" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_page_9.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadOnePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReadOnePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Start14Threads.py" beforeDir="false" afterPath="$PROJECT_DIR$/Start14Threads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threaded Search.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Threaded Search.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,17 +35,20 @@
       <file leaf-file-name="Search.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/Search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="184">
+              <caret line="104" column="49" lean-forward="true" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadOnePage.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReadOnePage.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ReadOnePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="420">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -46,20 +56,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Start14Threads.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Start14Threads.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Start14Threads.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResearchPriorities.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Work/Doxa/Research-Priorities/ResearchPriorities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="490" selection-start-line="490" selection-end-line="497" />
+            <state relative-caret-position="75">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +71,8 @@
       <file leaf-file-name="Event.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/Event.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="11" />
+            <state relative-caret-position="1065">
+              <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -87,36 +91,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>veranstal</find>
-      <find>veranstaltung</find>
-      <find>Rechts</find>
-      <find>sql</find>
-      <find>RELATIONSSHEMA</find>
-      <find>column</find>
-      <find>get_permalink</find>
-      <find>read_html</find>
-      <find>pd.read_html</find>
-      <find>find_veranstalt_df</find>
-      <find>counter</find>
       <find>click</find>
       <find>sleep</find>
       <find>range</find>
-      <find>read_search_page</find>
       <find>arg</find>
       <find>process_kwargs</find>
       <find>main</find>
       <find>next_search_page</find>
-      <find>open_event</find>
       <find>Tr</find>
       <find>while</find>
       <find>10</find>
-      <find>click_wait</find>
       <find>back</find>
       <find>try</find>
       <find>navit</find>
       <find>error</find>
       <find>Exce</find>
       <find>exc</find>
+      <find>exce</find>
+      <find>read_search_page</find>
+      <find>unhandled_urls</find>
+      <find>SQL_CONNECTION_STRING</find>
+      <find>get_permalink</find>
+      <find>time</find>
+      <find>send_wait</find>
+      <find>click_wait</find>
+      <find>open_event</find>
+      <find>open</find>
+      <find>set_entries_count</find>
+      <find>curr</find>
+      <find>page_number</find>
+      <find>int</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,9 +135,9 @@
         <option value="$PROJECT_DIR$/utilities.py" />
         <option value="$PROJECT_DIR$/Classes/Tree.py" />
         <option value="$PROJECT_DIR$/Classes/Event.py" />
+        <option value="$PROJECT_DIR$/Start14Threads.py" />
         <option value="$PROJECT_DIR$/Classes/Search.py" />
         <option value="$PROJECT_DIR$/ReadOnePage.py" />
-        <option value="$PROJECT_DIR$/Start14Threads.py" />
       </list>
     </option>
   </component>
@@ -149,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,13 +260,13 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18055555" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18867925" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18867925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -274,21 +278,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -297,8 +301,41 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Classes/Search.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadOnePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Search.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -316,6 +353,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -340,6 +380,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -406,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Event.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="1065">
+          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -416,25 +459,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReadOnePage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        <state relative-caret-position="184">
+          <caret line="104" column="49" lean-forward="true" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Start14Threads.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadOnePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,37 +1,24 @@
 Traceback (most recent call last):
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 21, in driver_start
-    self.driver = webdriver.Chrome('./chromedriver_osx')
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 75, in __init__
-    desired_capabilities=desired_capabilities)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 154, in __init__
-    self.start_session(desired_capabilities, browser_profile)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 243, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 312, in execute
-    self.error_handler.check_response(response)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created exception
-from disconnected: unable to connect to renderer
-  (Session info: chrome=66.0.3359.139)
-  (Driver info: chromedriver=2.38.552518 (183d19265345f54ce39cbb94cf81ba5f15905011),platform=Mac OS X 10.11.6 x86_64)
-
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 37, in read_search_page
+    event.summarise()
+  File "/Users/m/Uni/FoPra/Classes/Event.py", line 16, in summarise
+    permalink = self.get_permalink()
+  File "/Users/m/Uni/FoPra/Classes/Event.py", line 53, in get_permalink
+    permalinks = re.findall('data-page-permalink="true">(.*)<', self.html)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "ReadOnePage.py", line 15, in <module>
-    search = Search()
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 17, in __init__
-    self.driver_start()
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 23, in driver_start
-    self.driver = webdriver.Chrome('./chromedriver_ubuntu')
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 68, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-OSError: [Errno 8] Exec format error: './chromedriver_ubuntu'
+  File "ReadOnePage.py", line 18, in <module>
+    search.read_search_page(page_n)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 40, in read_search_page
+    self.click_wait('showEvent:backButtonTop')
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 82, in click_wait
+    raise Exception("Element not found. Timeout \nAttempts:{} \nLast Attempt (secs before error): {} \nID: {}".format(counter, time.time() - attempt_time, element_id))
+Exception: Element not found. Timeout 
+Attempts:35326 
+Last Attempt (secs before error): 9.059906005859375e-06 
+ID: showEvent:backButtonTop

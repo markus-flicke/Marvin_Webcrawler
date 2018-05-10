@@ -1,13 +1,16 @@
 Traceback (most recent call last):
-  File "ReadOnePage.py", line 18, in <module>
+  File "ReadOnePage.py", line 33, in <module>
     search.read_search_page(page_n)
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 34, in read_search_page
-    self.open_event(i)
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 65, in open_event
-    self.click_wait(element_id)
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 82, in click_wait
-    raise Exception("Element not found. Timeout \nAttempts:{} \nLast Attempt (secs before error): {} \nID: {}".format(counter, time.time() - attempt_time, element_id))
-Exception: Element not found. Timeout 
-Attempts:35217 
-Last Attempt (secs before error): 3.0994415283203125e-06 
-ID: genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:339:tableRowAction
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 54, in read_search_page
+    event = Event(self.driver.page_source)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 670, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)['value']
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552518 (183d19265345f54ce39cbb94cf81ba5f15905011),platform=Mac OS X 10.11.6 x86_64)
+

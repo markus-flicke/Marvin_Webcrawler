@@ -1,47 +1,10 @@
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1170, in _execute_context
-    context)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 683, in do_executemany
-    cursor.executemany(statement, parameters)
-psycopg2.DataError: value too long for type character varying(500)
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
   File "ReadOnePage.py", line 18, in <module>
     search.read_search_page(page_n)
-  File "/Users/m/Uni/FoPra/Classes/Search.py", line 42, in read_search_page
-    event.sql_append()
-  File "/Users/m/Uni/FoPra/Classes/Event.py", line 45, in sql_append
-    self.df.to_sql('events', engine, if_exists='append', index=False)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/generic.py", line 1534, in to_sql
-    chunksize=chunksize, dtype=dtype)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/io/sql.py", line 473, in to_sql
-    chunksize=chunksize, dtype=dtype)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/io/sql.py", line 1156, in to_sql
-    table.insert(chunksize)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/io/sql.py", line 670, in insert
-    self._execute_insert(conn, keys, chunk_iter)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/io/sql.py", line 645, in _execute_insert
-    conn.execute(self.insert_statement(), data)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
-    context)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
-    raise value.with_traceback(tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1170, in _execute_context
-    context)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 683, in do_executemany
-    cursor.executemany(statement, parameters)
-sqlalchemy.exc.DataError: (psycopg2.DataError) value too long for type character varying(500)
- [SQL: 'INSERT INTO events (wochentag, von, bis, rhythmus, startdatum, enddatum, raum, bemerkung, verantwortlicher, permalink, titel, organisationseinheit) VALUES (%(wochentag)s, %(von)s, %(bis)s, %(rhythmus)s, %(startdatum)s, %(enddatum)s, %(raum)s, %(bemerkung)s, %(verantwortlicher)s, %(permalink)s, %(titel)s, %(organisationseinheit)s)'] [parameters: ({'wochentag': 'Dienstag', 'von': '14:15', 'bis': '15:00', 'rhythmus': 'wöchentlich', 'startdatum': '29.05.2018', 'enddatum': '10.07.2018', 'raum': '1001 (GR HS 0001) (Karl-von-Frisch-Strasse 8, Hörsaalgebäude (KvF 8 H))', 'bemerkung': '', 'verantwortlicher': 'Prof. Dr. Voll, Lars Matthias; Prof. Dr. Rensing, Stefan Andreas; Prof. Dr. Voll, Lars Matthias; Prof. Dr. Batschauer, Alfred; Dr. Grolig, Franz; Pro ... (483 characters truncated) ... schauer, Alfred; Dr. Grolig, Franz; Prof. Dr. Rensing, Stefan Andreas; Prof. Dr. Voll, Lars Matthias; Prof. Dr. Batschauer, Alfred; Dr. Grolig, Franz', 'permalink': 'https://marvin.uni-marburg.de:443/qisserver/pages/startFlow.xhtml?_flowId=showEvent-flow&unitId=30911&termYear=2018&termTypeValueId=30&navigationPosition=studiesOffered,searchCourses', 'titel': 'Botanisches Anfängerpraktikum', 'organisationseinheit': 'Fb17 Biologie (Verantwortlicher)'}, {'wochentag': 'Dienstag', 'von': '15:15', 'bis': '18:00', 'rhythmus': 'wöchentlich', 'startdatum': '29.05.2018', 'enddatum': '10.07.2018', 'raum': 'BKR3 + BKR4 + BKR5 (Raumkomposition)', 'bemerkung': '', 'verantwortlicher': 'Prof. Dr. Voll, Lars Matthias; Prof. Dr. Rensing, Stefan Andreas; Prof. Dr. Voll, Lars Matthias; Prof. Dr. Batschauer, Alfred; Dr. Grolig, Franz; Pro ... (483 characters truncated) ... schauer, Alfred; Dr. Grolig, Franz; Prof. Dr. Rensing, Stefan Andreas; Prof. Dr. Voll, Lars Matthias; Prof. Dr. Batschauer, Alfred; Dr. Grolig, Franz', 'permalink': 'https://marvin.uni-marburg.de:443/qisserver/pages/startFlow.xhtml?_flowId=showEvent-flow&unitId=30911&termYear=2018&termTypeValueId=30&navigationPosition=studiesOffered,searchCourses', 'titel': 'Botanisches Anfängerpraktikum', 'organisationseinheit': 'Fb17 Biologie (Verantwortlicher)'})] (Background on this error at: http://sqlalche.me/e/9h9h)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 32, in read_search_page
+    self.next_search_page()
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 54, in next_search_page
+    self.click_wait(element_id)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 94, in click_wait
+    raise Exception("Element found, but click Timeout: {}".format(element_id))
+Exception: Element found, but click Timeout: genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2next
