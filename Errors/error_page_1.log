@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "ReadOnePage.py", line 18, in <module>
+    search.read_search_page(page_n)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 34, in read_search_page
+    self.open_event(i)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 65, in open_event
+    self.click_wait(element_id)
+  File "/Users/m/Uni/FoPra/Classes/Search.py", line 82, in click_wait
+    raise Exception("Element not found. Timeout \nAttempts:{} \nLast Attempt (secs before error): {} \nID: {}".format(counter, time.time() - attempt_time, element_id))
+Exception: Element not found. Timeout 
+Attempts:35217 
+Last Attempt (secs before error): 3.0994415283203125e-06 
+ID: genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:339:tableRowAction

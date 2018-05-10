@@ -40,14 +40,11 @@ class Event:
 
     def sql_append(self):
         insert_df = self.df[self.RELATIONSSHEMA]
-
         engine = create_engine(self.SQL_CONNECTION_STRING)
-        # engine.execute("TRUNCATE TABLE EVENTS")
         if not self.df.empty:
             self.df.to_sql('events', engine, if_exists='append', index=False)
         else:
             self.summarise()
-            # raise Exception("Event dataframe not set (event.summarise required)")
 
     def get_permalink(self):
         """
@@ -73,7 +70,6 @@ class Event:
         """
         raw = re.findall('>(.*?)\n</label><div id=".*?" class="answer">(.*?)\n', self.html)
         # TODO: Clean Data Properly here
-        # cleaned = map(self._clean_values, raw)
         return dict(raw)
 
     def get_Veranstaltungen(self):
@@ -83,19 +79,6 @@ class Event:
         """
         veranstaltungen_id = 'showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:plannedDatesTable_Table'
         raw_df = pd.read_html(self.html, attrs = {'id':veranstaltungen_id})[0]
-        # for i in range(len(tables_on_page_arr)):
-        #     df = tables_on_page_arr[i]
-        #     if 'Unnamed: 0' in df.columns:
-        #         tables_on_page_arr[i] = df.drop('Unnamed: 0', axis = 1)
-        #
-        #
-        # def find_veranstalt_df(df_arr):
-        #     for df in df_arr:
-        #         if not df.isnull().values.any():
-        #             return df
-        #     raise Exception('No Veranstaltungs DF found')
-        #
-        # raw_df = find_veranstalt_df(tables_on_page_arr)
         df = raw_df.apply(lambda col: col.apply(lambda val: val[len(col.name):]))
         df = df.applymap(self._clean_values)
         return df
