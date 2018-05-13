@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db45bca-dfd7-4849-b6af-6b028736bab8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FoPra.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Archive/Button_onlick_example" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/Button_onlick_example.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/FB12.ipynb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/FB12_Informatik.ipynb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/Selenium_Informatik.ipynb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/Vertical_Test.ipynb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/complete_expansion.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/leitlinie-fopra-projekt.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/marvin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Archive/utilities.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/.idea/Modules.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/Event.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/Search.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Classes/Tree.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/DokumentationsRichtlinien.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_0.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_1.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_10.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_11.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_12.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_13.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_2.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_3.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_4.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_5.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_6.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_7.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_8.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Errors/error_page_9.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MindMap.webloc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ReadOnePage.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Start14Threads.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Threaded Search.ipynb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Unhandled/NoTableExists.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Unhandled/UnhandledCasesGsheet.webloc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Unhandled/unhandled_cases.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Unhandled/unhandled_idsFirstTenPages" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/chromedriver_osx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/chromedriver_ubuntu" afterPath="" />
-    </list>
+    <list default="true" id="4db45bca-dfd7-4849-b6af-6b028736bab8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,11 +13,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1781" />
     <option name="y" value="128" />
     <option name="width" value="1545" />
     <option name="height" value="876" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Marvin_Webcrawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Marvin_Webcrawler" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,6 +154,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4db45bca-dfd7-4849-b6af-6b028736bab8" name="Default" comment="" />
@@ -191,7 +182,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -206,6 +197,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
