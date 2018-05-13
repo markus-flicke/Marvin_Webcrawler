@@ -117,7 +117,7 @@ class Search:
         element_id = 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:{}:tableRowAction'.format(idx)
         self.click_wait(element_id)
 
-    def click_wait(self, element_id, keys = None):
+    def click_wait(self, element_id, keys = False):
         """
         Click on an element id after waiting for previous process to finish.
         :param element_id:
@@ -139,6 +139,7 @@ class Search:
                 if not keys:
                     # Once the element has been found click
                     element.click()
+                    print('clicked')
                 else:
                     # Optionally send keys instead of clicking
                     # TODO: Think of a more fitting name than 'click_wait'
@@ -186,6 +187,18 @@ class Search:
         # Click "Suchen"
         suchen_id = 'genericSearchMask:search'
         self.click_wait(suchen_id)
+
+        element_id = 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2next'
+        start = time()
+        while time() - start < 60:
+            try:
+                self.driver.find_element(By.ID, element_id)
+                break
+            except:
+                sleep(0.01)
+
+        assert time() - start < 60, 'Search not executed. timeout'
+        sleep(1)
 
     def start(self):
         # Start out on the base url

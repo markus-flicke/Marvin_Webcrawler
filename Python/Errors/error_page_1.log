@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "ReadOnePage.py", line 33, in <module>
+    search.read_search_page(page_n)
+  File "/home/jakob/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/Classes/Search.py", line 47, in read_search_page
+    self.next_search_page()
+  File "/home/jakob/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/Classes/Search.py", line 95, in next_search_page
+    assert self.page_number()[0] != pn, "Next page not loaded. Timeout"
+AssertionError: Next page not loaded. Timeout
