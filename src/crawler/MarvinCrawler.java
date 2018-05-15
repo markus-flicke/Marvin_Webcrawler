@@ -2,6 +2,7 @@ package crawler;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 /**
  * @author Jakob Eckstein
@@ -27,5 +28,8 @@ public class MarvinCrawler {
         System.out.println(reader.getCurrentPage());
         reader.readEvents();
         reader.printEvents();
+
+        HtmlUnitDriver test = new HtmlUnitDriver();
+        test.
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import util.Table;
 
 import java.util.Iterator;
 import java.util.List;
@@ -103,5 +104,36 @@ public class PageReader extends HtmlUnitDriver{
         String spanPageTextClass = "dataScrollerPageText";
 
         return this.findElement(By.className(spanPageTextClass)).getText();
+    }
+
+    private Table getGrundDaten() {
+        String lableHeaderClass = "labelWithBG";
+        String divValueClass = "answer";
+
+        //TODO: implement Methode to avoid redundancy in Get Headers and Get Values
+        //Get Headers:
+        List<WebElement> headersList = this.findElements(By.className(lableHeaderClass));
+        String[] headers = new String[headersList.size()];
+        // TODO: Check runntime: List Iteration vs List.get(index)
+        Iterator<WebElement> it = headersList.iterator();
+        for(int i = 0; i < headers.length; i++) {
+            headers[i] = it.next().getText();
+        }
+
+        //Initialise Table
+        Table grundDaten = new Table(headers);
+
+        //Get Values
+        List<WebElement> valuesList= this.findElements(By.className(divValueClass));
+        String[] values = new String[valuesList.size()];
+        it = valuesList.iterator();
+        for(int i = 0; i < values.length; i++) {
+            values[i] =it.next().getText();
+        }
+
+        //Add Values to Table
+        grundDaten.add(values);
+
+        return grundDaten;
     }
 }
