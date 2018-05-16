@@ -3,8 +3,7 @@ package crawler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import util.Table;
+import marvin.Table;
 
 import java.util.Iterator;
 import java.util.List;
