@@ -6,12 +6,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/EventReader.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageReader.class" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageReader.class" />
-      <change beforePath="$PROJECT_DIR$/src/crawler/EventReader.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
       <change beforePath="$PROJECT_DIR$/src/crawler/PageReader.java" afterPath="$PROJECT_DIR$/src/crawler/PageReader.java" />
-      <change beforePath="$PROJECT_DIR$/src/marvin/EventPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/marvin/SearchPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/marvin/Table.java" afterPath="$PROJECT_DIR$/src/util/Table.java" />
+      <change beforePath="$PROJECT_DIR$/src/util/Table.java" afterPath="$PROJECT_DIR$/src/util/Table.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
