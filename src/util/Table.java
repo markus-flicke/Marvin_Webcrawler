@@ -15,6 +15,7 @@ public class Table {
         for(int i = 0; i < this.headers.length; i++) {
             this.headers[i] = headers[i];
         }
+        rows = new ArrayList<>();
     }
 
     public void setHeaders(String[] headers) {
@@ -31,13 +32,10 @@ public class Table {
 
     public void print() {
         for(int i = 0; i < headers.length; i++) {
-            System.out.print(headers[i] + "\t");
-        }
-        System.out.println();
-        for(int i = 0; i < rows.size(); i++) {
-            String[] row = rows.get(i);
-            for(int j = 0; j < row.length; j++) {
-                System.out.print(row[j] + "\t");
+            System.out.print(headers[i] + ": ");
+            for(int j = 0; j < rows.size(); j++) {
+                String[] row = rows.get(j);
+                System.out.println(row[i]);
             }
             System.out.println();
         }

@@ -21,6 +21,8 @@ public class PageReader extends HtmlUnitDriver{
     private final String eventClassName = "linkTable";
     private List<WebElement> events;
     private int pageNumber;
+    private static int shortWait = 100;
+    private static int longWait = 500; //TODO: Check where to use long wait and where to use short wait
 
     public PageReader(int pageNumber) {
         super(true);
@@ -28,8 +30,9 @@ public class PageReader extends HtmlUnitDriver{
         this.get(MAIN_MARVIN_URL);
     }
 
-    public void readEvents() {
+    public List<WebElement> readEvents() {
         events = this.findElements(By.className(eventClassName));
+        return events;
     }
 
     public void printEvents() {
@@ -62,11 +65,11 @@ public class PageReader extends HtmlUnitDriver{
             try {
                 this.findElement(By.id(aPageLinkID)).click();
                 while(this.getCurrentPage() != pageNumber){
-                    this.pause(100);
+                    this.pause(shortWait);
                 }
                 clicked = true;
             } catch(ElementClickInterceptedException e) {
-                this.pause(500);
+                this.pause(longWait);
             } catch(NoSuchElementException e) {
                 e.printStackTrace();    //TODO: implement fastForeward/fastBackward
             }
@@ -104,36 +107,5 @@ public class PageReader extends HtmlUnitDriver{
         String spanPageTextClass = "dataScrollerPageText";
 
         return this.findElement(By.className(spanPageTextClass)).getText();
-    }
-
-    private Table getGrundDaten() {
-        String lableHeaderClass = "labelWithBG";
-        String divValueClass = "answer";
-
-        //TODO: implement Methode to avoid redundancy in Get Headers and Get Values
-        //Get Headers:
-        List<WebElement> headersList = this.findElements(By.className(lableHeaderClass));
-        String[] headers = new String[headersList.size()];
-        // TODO: Check runntime: List Iteration vs List.get(index)
-        Iterator<WebElement> it = headersList.iterator();
-        for(int i = 0; i < headers.length; i++) {
-            headers[i] = it.next().getText();
-        }
-
-        //Initialise Table
-        Table grundDaten = new Table(headers);
-
-        //Get Values
-        List<WebElement> valuesList= this.findElements(By.className(divValueClass));
-        String[] values = new String[valuesList.size()];
-        it = valuesList.iterator();
-        for(int i = 0; i < values.length; i++) {
-            values[i] =it.next().getText();
-        }
-
-        //Add Values to Table
-        grundDaten.add(values);
-
-        return grundDaten;
     }
 }
