@@ -1,4 +1,4 @@
-package marvin;
+package util;
 
 import java.util.ArrayList;
 
