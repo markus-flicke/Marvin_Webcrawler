@@ -6,7 +6,7 @@ public class MarvinCrawler {
      * @see <a href="https://github.com/mozilla/geckodriver">https://github.com/mozilla/geckodriver</a>
      */
     private static final String GECKODRIVER_PATH = "./lib/firefoxdriver/geckodriver";    //For Firefox driver
-    private static final int ENTRIES_PER_PAGE = 30;
+    private static final int ENTRIES_PER_PAGE = 5;
     private static int NUMBER_OF_PAGES = 1; //TODO: If possible use PageReader.getMaxPages() to set NUMBER_OF_PAGES to the correct value.
 
     public static void main(String[] args) {

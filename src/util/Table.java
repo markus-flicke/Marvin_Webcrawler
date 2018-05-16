@@ -41,4 +41,22 @@ public class Table {
         }
     }
 
+    public String getSqlInsertString(String sqlTable) {
+        String s =  "INSERT INTO " + sqlTable + " (";
+        for(int i = 0; i < headers.length - 1; i++) {
+            s += headers[i] + ", ";
+        }
+        s += headers[headers.length - 1] + ")\n";
+        s += "VALUES ";
+        for(int i = 0; i < rows.size(); i++) {
+            s += "(";
+            String [] row = rows.get(i);
+            for(int j = 0; j < row.length - 1; j++) {
+                s += row[j] + ", ";
+            }
+            s += row[row.length - 1] + ")\n";
+        }
+        return s + ";";
+    }   //Das Ergebnis ist noch nicht getestet und sicher nicht korrekt.
+
 }
