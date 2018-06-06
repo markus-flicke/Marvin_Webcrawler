@@ -19,3 +19,4 @@ Create Table Events (Titel varchar(300), bemerkung varchar(200), verantwortliche
 
 
 Programmstart w. CMD: Jupiter notebook
+
