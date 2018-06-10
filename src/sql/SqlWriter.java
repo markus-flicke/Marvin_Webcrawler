@@ -1,7 +1,5 @@
 package sql;
 
-import util.Table;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -61,9 +59,6 @@ public class SqlWriter {
         System.out.println("Table 'EVENTS' created successfully");
     }
 
-    private static void insertEvent(Table t) {
-
-    }
 
     //TODO implement... maybe in other Classes to parallelize this porcess if possible.
     private void insertModul() {

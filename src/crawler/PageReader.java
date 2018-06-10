@@ -6,7 +6,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import util.Table;
+//import util.Table;
 
 import java.util.Iterator;
 import java.util.List;
@@ -33,7 +33,7 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
         this.setEntriesPerPage(entries);
         this.goToPage();
         List<WebElement> events = this.readEvents();
-        for(int i = 0; i < events.size(); i++) {
+        /*for(int i = 0; i < events.size(); i++) {
             this.openEvent(events.get(i));
             this.getGrundDaten().print();
             Table eventTable = this.getEvents();
@@ -47,7 +47,7 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
             }
             this.goBackToEventsPage();
             events = this.readEvents(); //To avoid StaleElementReferenceException...TODO: Find a better way maybe
-        }
+        }*/
     }
 
     private List<WebElement> readEvents() {
@@ -129,6 +129,7 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
         return this.findElement(By.className(spanPageTextClass)).getText();
     }
 
+    /*
     private Table getGrundDaten() {
         String lableHeaderClass = "labelWithBG";
         String divValueClass = "answer";
@@ -149,7 +150,7 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
 
         return grundDaten;
     }
-
+    */
     private String[] getDataArrayById(String id) {
         List<WebElement> elements = this.findElements(By.className(id));
         String[] dataArray = new String[elements.size()];
@@ -197,7 +198,7 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
         }
     }
 
-    private Table getEvents() {
+   /* private Table getEvents() {
         String tableEventsId = "showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:" +
                 "plannedDatesTable_Table";
         String thHeadersClass = "tableHeader";
@@ -255,6 +256,6 @@ public class PageReader extends HtmlUnitDriver implements Runnable{
         } catch(NoSuchElementException e) {
             return null;
         }
-    }
+    }*/
 
 }

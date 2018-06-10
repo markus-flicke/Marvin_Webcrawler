@@ -10,8 +10,7 @@ public class MarvinCrawler {
     private static int NUMBER_OF_PAGES = 1; //TODO: If possible use PageReader.getMaxPages() to set NUMBER_OF_PAGES to the correct value.
 
     public static void main(String[] args) {
-        for(int i = 0; i < NUMBER_OF_PAGES; i++) {
-            new Thread(new PageReader(i + 1, ENTRIES_PER_PAGE)).start();
-        }
+        PageNavigator navigator = new PageNavigator();
+        navigator.test(200, 10);
     }
 }
