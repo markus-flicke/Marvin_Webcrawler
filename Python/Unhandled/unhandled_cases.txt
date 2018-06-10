@@ -1,4 +1,0 @@
-collect permalinks
-	otherwise collect page_id
-think about reason for being unhandled
-	identify classes (e.g. Input error, code error …)

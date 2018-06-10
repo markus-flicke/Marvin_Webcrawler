@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"util","l":"EventData"}]

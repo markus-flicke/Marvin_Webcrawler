@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"util","c":"EventData","l":"basicData"},{"p":"util","c":"EventData","l":"EventData(HashMap<String, String>, String[][], String[][])","url":"EventData-java.util.HashMap-java.lang.String:A:A-java.lang.String:A:A-"},{"p":"util","c":"EventData","l":"eventTable"},{"p":"util","c":"EventData","l":"moduleTable"}]
