@@ -16,8 +16,7 @@ import java.util.List;
  */
 public class PageNavigator extends HtmlUnitDriver {
 
-    public PageNavigator() {
-        super(true); //to enable JavaScript support of the HtmlUnitDriver
+    public PageNavigator() { super(true); //to enable JavaScript support of the HtmlUnitDriver
     }
 
     public void test(int pagenumber, int entriesPerPage) {
@@ -39,7 +38,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * Opens the main Marvin search page in this instance.
      * @link "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourseData.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1"
      */
-    private void openMarvinSearch() {
+    public void openMarvinSearch() {
         //TODO: test
         String MAIN_MARVIN_URL = "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourse" +
                 "Data.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1";
@@ -50,7 +49,7 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Starts a empty search in this instance to find all Marvin entries.
      */
-    private void startEmptySearch() {
+    public void startEmptySearch() {
         //TODO: test
         String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
                 "basic_data:fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
@@ -68,7 +67,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param entriesPerPage Number of entries per Page. TODO: Maybe find a better description???
      * Sets the entries per Page to the specified value.
      */
-    private void setEntriesPerPage(int entriesPerPage) {//keinen parameter
+    public void setEntriesPerPage(int entriesPerPage) {//keinen parameter
         //TODO: test
         String inputEntriesPerPageID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2NumRowsInput";
 
@@ -84,7 +83,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
-    private void goToPage(int pageNumber) {
+    public void goToPage(int pageNumber) {
         //TODO: test
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
@@ -121,14 +120,14 @@ public class PageNavigator extends HtmlUnitDriver {
      *
      * @return List of all event links on the curently opend page.
      */
-    private List<WebElement> getEvents() {
+    public List<WebElement> getEvents() {
         //TODO: test.
         String buttonEventLinkClass = "linkTable";
 
         return this.findElements(By.className(buttonEventLinkClass));
     }
 
-    private WebElement getEvent(int index) {
+    public WebElement getEvent(int index) {
         List<WebElement> list = this.getEvents();
         return list.get(index);
     }
@@ -137,7 +136,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param eventLink Link to the event.
      * Opens an event int this instance.
      */
-    private void openEvent(WebElement eventLink) {
+    public void openEvent(WebElement eventLink) {
         //TODO: test
         String buttonBackButtonID = "showEvent:backButtonTop";
 
@@ -149,7 +148,7 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Navigates back to the searchpage.
      */
-    private void goBackToPage() {//TODO: Think about a better name for this method
+    public void goBackToPage() {//TODO: Think about a better name for this method
         //TODO: test
         String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
         String buttonBackButtonID = "showEvent:backButtonTop";
@@ -167,7 +166,7 @@ public class PageNavigator extends HtmlUnitDriver {
         while(System.nanoTime() - start < 10e10) {
             try {
                 this.findElement(By.id(id));
-                break;
+                return;
             } catch (org.openqa.selenium.NoSuchElementException e) {
                 this.pause(100);
             }

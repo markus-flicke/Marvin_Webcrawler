@@ -1,7 +1,5 @@
 package util;
 
-import java.util.HashMap;
-
 /**
  * @author Jakob Eckstein
  *

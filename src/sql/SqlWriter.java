@@ -6,7 +6,7 @@ import java.sql.*;
 
 //TODO: TEST and Refactoring
 public class SqlWriter {
-    private final static String user = "postgres", password = "somthing", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
+    private final static String user = "postgres", password = "something", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
@@ -172,5 +172,9 @@ public class SqlWriter {
             throw new RuntimeException("Upload nicht möglich. Insertstatment:\n" + sqlQuerry +
                     "\nkonnte nicht ausgeführt werden.");
         }
+    }
+
+    public static void main(String[] args){
+        SqlWriter con = new SqlWriter(null);
     }
 }
