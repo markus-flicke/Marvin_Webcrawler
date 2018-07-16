@@ -1,13 +1,11 @@
 package crawler;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,7 +14,8 @@ import java.util.List;
  */
 public class PageNavigator extends HtmlUnitDriver {
 
-    public PageNavigator() { super(true); //to enable JavaScript support of the HtmlUnitDriver
+    public PageNavigator() {
+        super(true); //to enable JavaScript support of the HtmlUnitDriver
     }
 
     public void test(int pagenumber, int entriesPerPage) {
@@ -28,8 +27,10 @@ public class PageNavigator extends HtmlUnitDriver {
         System.out.println(this.getMaxPage());
         this.goToPage(pagenumber);
         for(int i = 0; i < entriesPerPage; i++) {
+
             this.openEvent(this.getEvent(i));
             System.out.println(this.getTitle());
+
             this.goBackToPage();
         }
     }
@@ -38,7 +39,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * Opens the main Marvin search page in this instance.
      * @link "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourseData.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1"
      */
-    public void openMarvinSearch() {
+    private void openMarvinSearch() {
         //TODO: test
         String MAIN_MARVIN_URL = "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourse" +
                 "Data.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1";
@@ -49,7 +50,7 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Starts a empty search in this instance to find all Marvin entries.
      */
-    public void startEmptySearch() {
+    private void startEmptySearch() {
         //TODO: test
         String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
                 "basic_data:fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
@@ -67,7 +68,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param entriesPerPage Number of entries per Page. TODO: Maybe find a better description???
      * Sets the entries per Page to the specified value.
      */
-    public void setEntriesPerPage(int entriesPerPage) {//keinen parameter
+    private void setEntriesPerPage(int entriesPerPage) {//keinen parameter
         //TODO: test
         String inputEntriesPerPageID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2NumRowsInput";
 
@@ -83,7 +84,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
-    public void goToPage(int pageNumber) {
+    private void goToPage(int pageNumber) {
         //TODO: test
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
@@ -120,14 +121,14 @@ public class PageNavigator extends HtmlUnitDriver {
      *
      * @return List of all event links on the curently opend page.
      */
-    public List<WebElement> getEvents() {
+    private List<WebElement> getEvents() {
         //TODO: test.
         String buttonEventLinkClass = "linkTable";
 
         return this.findElements(By.className(buttonEventLinkClass));
     }
 
-    public WebElement getEvent(int index) {
+    private WebElement getEvent(int index) {
         List<WebElement> list = this.getEvents();
         return list.get(index);
     }
@@ -136,7 +137,7 @@ public class PageNavigator extends HtmlUnitDriver {
      * @param eventLink Link to the event.
      * Opens an event int this instance.
      */
-    public void openEvent(WebElement eventLink) {
+    private void openEvent(WebElement eventLink) {
         //TODO: test
         String buttonBackButtonID = "showEvent:backButtonTop";
 
@@ -148,7 +149,7 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Navigates back to the searchpage.
      */
-    public void goBackToPage() {//TODO: Think about a better name for this method
+    private void goBackToPage() {//TODO: Think about a better name for this method
         //TODO: test
         String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
         String buttonBackButtonID = "showEvent:backButtonTop";
@@ -163,7 +164,7 @@ public class PageNavigator extends HtmlUnitDriver {
     //TODO: documentation
     private void waitForElement(String id){
         long start = System.nanoTime();
-        while(System.nanoTime() - start < 10e10) {
+        while((System.nanoTime() - start) < 10_000_000_000L) {
             try {
                 this.findElement(By.id(id));
                 return;
@@ -171,6 +172,7 @@ public class PageNavigator extends HtmlUnitDriver {
                 this.pause(100);
             }
         }
+        System.out.println(this.getPageSource());
         throw new RuntimeException("Timeout. Element: " + id + " not found");
     }
 

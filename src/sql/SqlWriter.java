@@ -6,82 +6,34 @@ import java.sql.*;
 
 //TODO: TEST and Refactoring
 public class SqlWriter {
-    private final static String user = "postgres", password = "something", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
+    private final static String user = "postgres", password = "somthing", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
 
-    public SqlWriter(EventData data) {
+    public SqlWriter(EventData data, Connection connection) {
         this.data = data;
-        this.connection = this.connect(user, password, "localhost", "postgres");
-    }
-
-    private Connection connect(String username, String password, String host, String database){
-        Connection c = null;
-        try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://"+ host + "/"+ database,username, password);
-            c.setAutoCommit(false);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.exit(0);
-        }
-        System.out.println("Opened database successfully");
-        return c;
+        this.connection = connection;
     }
 
     private int getVeranstaltungsnummer() {
-        //get modul numbers from data:
-        long[] modulNumbers = new long[data.getModuleTable().length - 1];
-        for (int i = 0; i < modulNumbers.length; i++) {
-            modulNumbers[i] = Long.parseLong(data.getModuleTable()[i + 1][0]);
-        }
-        //build Querry String:
-        String sqlQuerry = "SELECT veranstaltungsnummer" +
-                "FROM Modulzuteilung NATURAL JOIN Module" +
-                "WHERE Modulnummer IN (";
-        for(int i = 0; i < modulNumbers.length; i++) {
-            sqlQuerry += modulNumbers[i] + ((i == modulNumbers.length - 1)?"":", ");
-        }
-        sqlQuerry += ");";
-        //check if they allready exist in Modulzuteilung:
-        try {
-            Statement stmt = connection.createStatement();
-            ResultSet results = stmt.executeQuery(sqlQuerry);
-            results.last();
-            int count = results.getRow();
-            results.beforeFirst();
-            if(count == 1) {
-                results.next();
-                return results.getInt("veranstaltungsnummer");
-            } else if(count == 0) {
-                return 0;
-            } else{
-                throw new RuntimeException("There was a severe Error in Table: Modulzuweisung\n Count was: "+ count);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return 0;
     }
 
     private void uploadVeranstaltung() {
         String[][] basicData = this.data.getBasicData();
-        int veranstaltungsnummer = this.getVeranstaltungsnummer();
+
         int verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
         int organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
         int titelIndex = this.getIndex("Titel", basicData);
 
-        if(veranstaltungsnummer == 0) {
-            String sqlQuerry = "INSERT INTO Veranstaltungen" +
-                    "(verantwortlicher, organisationseinheit, titel)" +
-                    "VALUES ('";
-            sqlQuerry += this.data.getBasicData()[1][verantwortlicherIndex] + "', '"
-                    + this.data.getBasicData()[1][organisationseinheitIndex] + "', '"
-                    + this.data.getBasicData()[1][titelIndex] + "');";
-            this.upload(sqlQuerry);
-        }
+        String sqlQuerry = "INSERT INTO Veranstaltungen" +
+                "(verantwortlicher, organisationseinheit, titel)" +
+                "VALUES ('";
+        sqlQuerry += this.data.getBasicData()[1][verantwortlicherIndex] + "', '"
+                + this.data.getBasicData()[1][organisationseinheitIndex] + "', '"
+                + this.data.getBasicData()[1][titelIndex] + "');";
+        this.upload(sqlQuerry);
     }
 
     private int getIndex(String columnName, String[][] table) {
@@ -98,26 +50,25 @@ public class SqlWriter {
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
         int modulkuerzelIndex = getIndex("Modulkürzel", modulTable);
         int bezeichnungIndex = getIndex("Bezeichnung", modulTable);
-        String sqlQuerry = "INSERT INTO Module "+
-                "(modulnummer, modulkuerzel, bezeichnung) "+
+        String sqlQuery = "INSERT INTO Module "+
+                "(modulID, modulkuerzel, bezeichnung) "+
                 "VALUES ";
 
         for(int i = 1; i < modulTable.length; i++) {
-            sqlQuerry += "("+ modulTable[i][modulnummerIndex] + ", '" +
+            sqlQuery += "("+ modulTable[i][modulnummerIndex] + ", '" +
                     modulTable[i][modulkuerzelIndex] + "', '" +
                     modulTable[i][bezeichnungIndex]+ "')";
             if(i != modulTable.length - 1) {
-                sqlQuerry += ", ";
+                sqlQuery += ", ";
             }
-
+            sqlQuery+=";";
         }
-        this.upload(sqlQuerry);
+        this.upload(sqlQuery);
     }
 
-    //!Es müssen erst die Module, die Veranstaltung, dann die Modulzuteilung und dann die events hochgeladen werden
     private void uploadEvents() {
         String[][] eventTable = this.data.getEventTable();
-        int veranstaltungsnummer = this.getVeranstaltungsnummer();
+        int veranstaltungsID = this.getVeranstaltungsnummer();//TODO: Implement
         int vonIndex = getIndex("Von", eventTable);
         int bisIndex = getIndex("Bis", eventTable);
         int wochentagIndex = getIndex("Wochentag", eventTable);
@@ -130,12 +81,12 @@ public class SqlWriter {
         int durchführenderIndex = getIndex("Durchführende/-r", eventTable);
         int ausfallterminIndex = getIndex("Ausfalltermin", eventTable);
         int bemerkungIndex = getIndex("Bemerkung", eventTable);
-        String sqlQuerry = "INSERT INTO Events (veranstaltungsnummer, wochentag, von, bis, akademischezeit," +
+        String sqlQuery = "INSERT INTO Events (veranstaltungsID, wochentag, von, bis, akademischezeit," +
                 "rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , " +
                 "bemerkung ) VALUES";
 
         for(int i = 0; i < eventTable.length; i++) {
-            sqlQuerry += "("+ veranstaltungsnummer + ", '" + eventTable[i][wochentagIndex] + "', '" +
+            sqlQuery += "("+ veranstaltungsID + ", '" + eventTable[i][wochentagIndex] + "', '" +
                   eventTable[i][vonIndex] + "', '" + eventTable[i][bisIndex] + "', '" +
                     eventTable[i][akademischezeitIndex] + "', '" + eventTable[i][rhythmusIndex] + "', '" +
                     eventTable[i][startDatumIndex] + "', '" + eventTable[i][endDatumIndex] + "', '" +
@@ -143,20 +94,24 @@ public class SqlWriter {
                     eventTable[i][durchführenderIndex] + "', '" + eventTable[i][ausfallterminIndex] + "', '" +
                     eventTable[i][bemerkungIndex]+"')";
             if(i != eventTable.length - 1) {
-                sqlQuerry += ", ";
+                sqlQuery += ", ";
             }
+            sqlQuery+=";";
         }
-        this.upload(sqlQuerry);
+        this.upload(sqlQuery);
     }
 
     private void uploadModulzuteilung() {
-        int veranstaltungsnummer = this.getVeranstaltungsnummer();
         String[][] modulTable = this.data.getModuleTable();
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
-        String sqlQuerry = "INSERT INTO Modulzuteilung (modulnummer, veranstaltungsnummer) VALUES ";
+        int eventId = 0;
+        //VeranstaltungsID ist schon bekannt.
+        //TODO: SQL anfrage stellen um die event_Ids zu ermitteln
 
+        String sqlQuerry = "INSERT INTO Modulzuteilung (modulnummer, veranstaltungsnummer) VALUES ";
+        //TODO: Für jedes Modul aus der Modul Tabelle und jedes Event aus der Event Tabelle ein Tupel einfügen.
         for(int i = 1; i < modulTable.length; i++) {
-            sqlQuerry += "(" + modulTable[i][modulnummerIndex] + ", " + veranstaltungsnummer + ")";
+            sqlQuerry += "(" + modulTable[i][modulnummerIndex] + ", " + eventId + ")";
             if(i != modulTable.length - 1) {
                 sqlQuerry += ", ";
             }
@@ -164,17 +119,13 @@ public class SqlWriter {
         this.upload(sqlQuerry);
     }
 
-    private void upload(String sqlQuerry) {
+    private void upload(String sqlQuery) {
         try {
             Statement stmt = connection.createStatement();
-            stmt.executeUpdate(sqlQuerry);
+            stmt.executeUpdate(sqlQuery);
         } catch (SQLException e) {
-            throw new RuntimeException("Upload nicht möglich. Insertstatment:\n" + sqlQuerry +
+            throw new RuntimeException("Upload nicht möglich. Insertstatment:\n" + sqlQuery +
                     "\nkonnte nicht ausgeführt werden.");
         }
-    }
-
-    public static void main(String[] args){
-        SqlWriter con = new SqlWriter(null);
     }
 }
