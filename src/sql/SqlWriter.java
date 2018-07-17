@@ -4,7 +4,6 @@ import util.EventData;
 
 import java.sql.*;
 
-//TODO: TEST and Refactoring
 public class SqlWriter {
     private EventData data;
     private Connection connection;
@@ -13,6 +12,10 @@ public class SqlWriter {
     public SqlWriter(EventData data, Connection connection) {
         this.data = data;
         this.connection = connection;
+    }
+
+    public void commit(){
+        uploadModule();
     }
 
     private int getVeranstaltungsnummer() {
@@ -43,25 +46,19 @@ public class SqlWriter {
         throw new RuntimeException("Das gesuchte Attribut("+columnName+") konnte nicht gefunden werden.");
     }
 
-    private void uploadModule() {
+    public void uploadModule() {
         String[][] modulTable = this.data.getModuleTable();
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
         int modulkuerzelIndex = getIndex("Modulkürzel", modulTable);
         int bezeichnungIndex = getIndex("Bezeichnung", modulTable);
-        String sqlQuery = "INSERT INTO Module "+
-                "(modulID, modulkuerzel, bezeichnung) "+
-                "VALUES ";
 
         for(int i = 1; i < modulTable.length; i++) {
-            sqlQuery += "("+ modulTable[i][modulnummerIndex] + ", '" +
-                    modulTable[i][modulkuerzelIndex] + "', '" +
-                    modulTable[i][bezeichnungIndex]+ "')";
-            if(i != modulTable.length - 1) {
-                sqlQuery += ", ";
-            }
-            sqlQuery+=";";
+            String sqlQuery = String.format("INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select %s,'%s','%s' "
+                    ,modulTable[i][modulnummerIndex], modulTable[i][modulkuerzelIndex],modulTable[i][bezeichnungIndex]);
+            sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(%s as BIGINT));",modulTable[i][modulnummerIndex]);
+            this.upload(sqlQuery);
         }
-        this.upload(sqlQuery);
+
     }
 
     private void uploadEvents() {
@@ -123,8 +120,10 @@ public class SqlWriter {
             int res = stmt.executeUpdate(sqlQuery);
             connection.commit();
         } catch (SQLException e) {
-            throw new RuntimeException("Upload nicht möglich. Insertstatment:\n" + sqlQuery +
-                    "\nkonnte nicht ausgeführt werden.");
+            System.out.println("Upload nicht möglich. InsertStatement:");
+            System.out.println(sqlQuery);
+
+            throw new RuntimeException(e);
         }
     }
 }

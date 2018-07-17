@@ -136,12 +136,4 @@ public class EventReader {
             return null;
         }
     }
-
-    /*public static void main(String[] args){
-        HtmlUnitDriver driver = new HtmlUnitDriver(true);
-        driver.get("https://marvin.uni-marburg.de:443/qisserver/pages/startFlow.xhtml?_flowId=showEvent-flow&unitId=16751&termYear=2018&termTypeValueId=30&navigationPosition=studiesOffered,searchCourses");
-        EventReader eventReader = new EventReader(driver);
-        EventData res = eventReader.getEventData();
-        System.out.print(res);
-    }*/
 }
