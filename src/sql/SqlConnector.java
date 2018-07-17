@@ -5,14 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SqlConnector {
-    private final static String user = "postgres", password = "somthing", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
+    private final static String user = "postgres", password = "something", connectionString = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
+    private Connection c;
 
-
-    public Connection connect(String username, String password, String host, String database){
-        Connection c = null;
+    public Connection connect(){
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://"+ host + "/"+ database,username, password);
+            c = DriverManager.getConnection(connectionString, user, password);
             c.setAutoCommit(false);
         } catch (Exception e) {
             e.printStackTrace();
@@ -23,12 +22,11 @@ public class SqlConnector {
         return c;
     }
 
-    private void close(Connection connection) {
+    public void close() {
         try {
-            connection.close();
+            c.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }

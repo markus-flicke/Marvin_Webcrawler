@@ -6,7 +6,6 @@ import java.sql.*;
 
 //TODO: TEST and Refactoring
 public class SqlWriter {
-    private final static String user = "postgres", password = "somthing", url = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
@@ -20,25 +19,24 @@ public class SqlWriter {
         return 0;
     }
 
-    private void uploadVeranstaltung() {
+    public void uploadVeranstaltung() {
         String[][] basicData = this.data.getBasicData();
-
-        int verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
         int organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
+        int verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
         int titelIndex = this.getIndex("Titel", basicData);
 
-        String sqlQuerry = "INSERT INTO Veranstaltungen" +
+        String sqlQuery = "INSERT INTO Veranstaltungen" +
                 "(verantwortlicher, organisationseinheit, titel)" +
                 "VALUES ('";
-        sqlQuerry += this.data.getBasicData()[1][verantwortlicherIndex] + "', '"
+        sqlQuery += this.data.getBasicData()[1][verantwortlicherIndex] + "', '"
                 + this.data.getBasicData()[1][organisationseinheitIndex] + "', '"
                 + this.data.getBasicData()[1][titelIndex] + "');";
-        this.upload(sqlQuerry);
+        this.upload(sqlQuery);
     }
 
     private int getIndex(String columnName, String[][] table) {
         for(int i = 0; i < table[0].length;i++) {
-            if(columnName == table[0][i]) {
+            if(columnName.equals(table[0][i])) {
                 return i;
             }
         }
@@ -106,23 +104,24 @@ public class SqlWriter {
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
         int eventId = 0;
         //VeranstaltungsID ist schon bekannt.
-        //TODO: SQL anfrage stellen um die event_Ids zu ermitteln
+        //TODO: SQL Anfrage stellen um die event_Ids zu ermitteln
 
-        String sqlQuerry = "INSERT INTO Modulzuteilung (modulnummer, veranstaltungsnummer) VALUES ";
+        String sqlQuery = "INSERT INTO Modulzuteilung (modulnummer, veranstaltungsnummer) VALUES ";
         //TODO: Für jedes Modul aus der Modul Tabelle und jedes Event aus der Event Tabelle ein Tupel einfügen.
         for(int i = 1; i < modulTable.length; i++) {
-            sqlQuerry += "(" + modulTable[i][modulnummerIndex] + ", " + eventId + ")";
+            sqlQuery += "(" + modulTable[i][modulnummerIndex] + ", " + eventId + ")";
             if(i != modulTable.length - 1) {
-                sqlQuerry += ", ";
+                sqlQuery += ", ";
             }
         }
-        this.upload(sqlQuerry);
+        this.upload(sqlQuery);
     }
 
-    private void upload(String sqlQuery) {
+    public void upload(String sqlQuery) {
         try {
             Statement stmt = connection.createStatement();
-            stmt.executeUpdate(sqlQuery);
+            int res = stmt.executeUpdate(sqlQuery);
+            connection.commit();
         } catch (SQLException e) {
             throw new RuntimeException("Upload nicht möglich. Insertstatment:\n" + sqlQuery +
                     "\nkonnte nicht ausgeführt werden.");
