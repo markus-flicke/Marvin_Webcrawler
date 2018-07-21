@@ -2,6 +2,7 @@ drop table EMzuteilung;
 drop table Events;
 drop table Veranstaltungen;
 drop table Module;
+drop table Unhandled;
 
 CREATE TABLE Module (modulID bigint primary key, 
 					 modulkuerzel varchar(60), 
@@ -17,3 +18,4 @@ CREATE TABLE Events (EventID Serial primary key,
 					 durchführender varchar(1000), ausfalltermin varchar(200), bemerkung varchar(1000));
 CREATE TABLE EMzuteilung (modulID int REFERENCES Module(modulID) ON DELETE CASCADE ON UPDATE CASCADE, 
 							 EventID int REFERENCES Events(EventID) ON DELETE CASCADE ON UPDATE CASCADE);
+create table Unhandled (url varchar(1000));

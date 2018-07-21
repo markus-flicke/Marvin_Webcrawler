@@ -8,6 +8,9 @@ import org.openqa.selenium.NoSuchElementException;
 import util.EventData;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Jakob Eckstein
@@ -86,7 +89,6 @@ public class EventReader {
     private String[][] getModuleTable() {
         String tableModulInfoId = "showEvent:unitModulsFieldset:unitModules:unitModulesTable";
         String tbodyTableBodyId = "showEvent:unitModulsFieldset:unitModules:unitModulesTable:tbody_element";
-
         try {
             WebElement modulTable = driver.findElement(By.id(tableModulInfoId));
 
@@ -135,5 +137,18 @@ public class EventReader {
         } catch(Exception e) {
             return null;
         }
+    }
+
+    public String getPermalink(){
+        String source = driver.getPageSource();
+        Pattern pattern = Pattern.compile("data-page-permalink=\"true\">(.*)<\\/textarea");
+        Matcher matcher = pattern.matcher(source);
+        matcher.find();
+        String res = matcher.group(1);
+        res = res.replace("&amp;", "&");
+        return res;
+    }
+
+    public static void main(String[] args){
     }
 }

@@ -16,11 +16,13 @@ public class SqlWriter {
     public SqlWriter(EventData data, Connection connection) {
         this.data = data;
         this.connection = connection;
-
         setIndeces();
     }
 
     private void setIndeces(){
+        if(data == null){
+            return;
+        }
         String[][] basicData = this.data.getBasicData();
         organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
         verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
@@ -166,7 +168,7 @@ public class SqlWriter {
         this.upload(sqlQuery);
     }
 
-    private void upload(String sqlQuery) {
+    public void upload(String sqlQuery) {
         try {
             Statement stmt = connection.createStatement();
             int res = stmt.executeUpdate(sqlQuery);
