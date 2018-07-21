@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a8aa2d-a0c0-49f2-bea1-d51733a4710e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Debugging/Unhandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/EventReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/EventReader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageNavigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageNavigator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/sql/SqlConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/sql/SqlConnector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/sql/SqlWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/sql/SqlWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/test/Tester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/test/Tester.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/crawler/EventReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crawler/EventReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/crawler/PageNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crawler/PageNavigator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sql/SqlWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/SqlWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Tester.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="Tester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="31" column="113" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="31" selection-end-column="113" />
+            <state relative-caret-position="386">
+              <caret line="40" column="46" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="40" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +39,8 @@
       <file leaf-file-name="SqlWriter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sql/SqlWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            <state relative-caret-position="183">
+              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -60,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/sql/SqlConnector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +72,8 @@
       <file leaf-file-name="PageNavigator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-587">
-              <caret line="123" column="36" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+            <state relative-caret-position="157">
+              <caret line="164" column="45" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -80,8 +81,8 @@
       <file leaf-file-name="MarvinCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+            <state relative-caret-position="630">
+              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,20 +90,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventReader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Unhandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Debugging/Unhandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#667#668#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/EventReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="148" column="19" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
+            <state relative-caret-position="553">
+              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
               <folding>
                 <element signature="method#getBasicData#0;class#EventReader#0" />
+                <element signature="e#1939#1949#0" expanded="true" />
+                <element signature="e#3827#3837#0" expanded="true" />
+                <element signature="e#4845#4846#0" expanded="true" />
+                <element signature="e#4932#4933#0" expanded="true" />
                 <element signature="method#getDataArrayById#0;class#EventReader#0" />
+                <element signature="method#getPermalink#0;class#EventReader#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -120,6 +147,10 @@
       <find>getE</find>
       <find>showEvent:backButtonTop</find>
       <find>getEvent</find>
+      <find>verantwortlicherIndex</find>
+      <find>titelIndex</find>
+      <find>organisationseinheitIndex</find>
+      <find>null</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -132,12 +163,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/util/EventData.java" />
-        <option value="$PROJECT_DIR$/src/test/Tester.java" />
         <option value="$PROJECT_DIR$/src/sql/SqlConnector.java" />
-        <option value="$PROJECT_DIR$/src/crawler/PageNavigator.java" />
-        <option value="$PROJECT_DIR$/src/sql/SqlWriter.java" />
-        <option value="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
+        <option value="$PROJECT_DIR$/src/test/Tester.java" />
         <option value="$PROJECT_DIR$/src/crawler/EventReader.java" />
+        <option value="$PROJECT_DIR$/src/sql/SqlWriter.java" />
+        <option value="$PROJECT_DIR$/src/crawler/PageNavigator.java" />
+        <option value="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
+        <option value="$PROJECT_DIR$/src/Debugging/Unhandler.java" />
       </list>
     </option>
   </component>
@@ -151,6 +183,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,32 +200,13 @@
               <item name="Marvin_Webcrawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="Marvin_Webcrawler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Marvin_Webcrawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Marvin_Webcrawler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Marvin_Webcrawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Marvin_Webcrawler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Marvin_Webcrawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Marvin_Webcrawler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Debugging" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,10 +371,80 @@
           <properties />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="113" selection-start-line="29" selection-start-column="8" selection-end-line="31" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sql/SqlWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/EventData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="method#toString#0;class#EventData#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sql/SqlConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="123" column="36" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/EventReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="148" column="19" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
+          <folding>
+            <element signature="method#getBasicData#0;class#EventReader#0" />
+            <element signature="e#1939#1949#0" expanded="true" />
+            <element signature="e#3827#3837#0" expanded="true" />
+            <element signature="e#4845#4846#0" expanded="true" />
+            <element signature="e#4932#4933#0" expanded="true" />
+            <element signature="method#getDataArrayById#0;class#EventReader#0" />
+            <element signature="method#getPermalink#0;class#EventReader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -424,7 +508,12 @@
           <caret line="120" column="7" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="7" />
           <folding>
             <element signature="method#getBasicData#0;class#EventReader#0" />
+            <element signature="e#1939#1949#0" expanded="true" />
+            <element signature="e#3827#3837#0" expanded="true" />
+            <element signature="e#4845#4846#0" expanded="true" />
+            <element signature="e#4932#4933#0" expanded="true" />
             <element signature="method#getDataArrayById#0;class#EventReader#0" />
+            <element signature="method#getPermalink#0;class#EventReader#0" />
           </folding>
         </state>
       </provider>
@@ -551,27 +640,26 @@
     <entry file="file://$PROJECT_DIR$/src/sql/SqlConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
+    <entry file="file://$PROJECT_DIR$/src/crawler/EventReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="31" column="113" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="31" selection-end-column="113" />
+        <state relative-caret-position="553">
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#getBasicData#0;class#EventReader#0" />
+            <element signature="e#1939#1949#0" expanded="true" />
+            <element signature="e#3827#3837#0" expanded="true" />
+            <element signature="e#4845#4846#0" expanded="true" />
+            <element signature="e#4932#4933#0" expanded="true" />
+            <element signature="method#getDataArrayById#0;class#EventReader#0" />
+            <element signature="method#getPermalink#0;class#EventReader#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-587">
-          <caret line="123" column="36" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -587,28 +675,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sql/SqlWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state relative-caret-position="183">
+          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+        <state relative-caret-position="386">
+          <caret line="40" column="46" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="40" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/EventReader.java">
+    <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="148" column="19" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
+        <state relative-caret-position="157">
+          <caret line="164" column="45" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
-            <element signature="method#getBasicData#0;class#EventReader#0" />
-            <element signature="method#getDataArrayById#0;class#EventReader#0" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Debugging/Unhandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
           </folding>
         </state>
       </provider>

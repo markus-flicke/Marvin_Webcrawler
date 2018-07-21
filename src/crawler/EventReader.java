@@ -43,44 +43,45 @@ public class EventReader {
         String thHeadersClass = "tableHeader";
 //        String tbodyTableBodyId = "showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:" +
 //                "plannedDatesTable_Table:tbody_element";
-
+        WebElement eventsTable;
         try {
-            WebElement eventsTable = driver.findElement(By.id(tableEventsId));
-            List<WebElement> headersList = eventsTable.findElements(By.className(thHeadersClass));
-            String[] headers = new String[headersList.size()];
-            for (int i = 0; i < headersList.size(); i++) {
-                headers[i] = headersList.get(i).getText();
-            }
-
-            LinkedList<String[]> values = new LinkedList<String[]>();
-
-            List<WebElement> tables = driver.findElements(By.className("tableWithBorder"));
-            for (WebElement table : tables) {
-                try {
-                    table.findElement(By.className("column3"));//Nicht in der Module-Tabelle vorhanden
-                } catch(NoSuchElementException e) {
-                    continue;
-                }
-                WebElement tableBody = table.findElement(By.tagName("tbody"));
-                List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-                for (WebElement row : rows) {
-                    List<WebElement> entries = row.findElements(By.tagName("td"));
-                    String[] valueTupel = new String[entries.size()];
-                    for (int j = 0; j < valueTupel.length; j++) {
-                        valueTupel[j] = entries.get(j).getText();
-                    }
-                    values.add(valueTupel);
-                }
-            }
-            String[][] res = new String[values.size() + 1][headers.length];
-            res[0] = headers;
-            for (int i = 0; i < values.size(); i++) {
-                res[i + 1] = values.get(i);
-            }
-            return res;
-        } catch(ElementNotFoundException e) {
+            eventsTable = driver.findElement(By.id(tableEventsId));
+        }
+        catch(Exception e) {
             return null;
         }
+        List<WebElement> headersList = eventsTable.findElements(By.className(thHeadersClass));
+        String[] headers = new String[headersList.size()];
+        for (int i = 0; i < headersList.size(); i++) {
+            headers[i] = headersList.get(i).getText();
+        }
+
+        LinkedList<String[]> values = new LinkedList<String[]>();
+
+        List<WebElement> tables = driver.findElements(By.className("tableWithBorder"));
+        for (WebElement table : tables) {
+            try {
+                table.findElement(By.className("column3"));//Nicht in der Module-Tabelle vorhanden
+            } catch(NoSuchElementException e) {
+                continue;
+            }
+            WebElement tableBody = table.findElement(By.tagName("tbody"));
+            List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
+            for (WebElement row : rows) {
+                List<WebElement> entries = row.findElements(By.tagName("td"));
+                String[] valueTupel = new String[entries.size()];
+                for (int j = 0; j < valueTupel.length; j++) {
+                    valueTupel[j] = entries.get(j).getText();
+                }
+                values.add(valueTupel);
+            }
+        }
+        String[][] res = new String[values.size() + 1][headers.length];
+        res[0] = headers;
+        for (int i = 0; i < values.size(); i++) {
+            res[i + 1] = values.get(i);
+        }
+        return res;
     }
 
     /**
@@ -89,9 +90,12 @@ public class EventReader {
     private String[][] getModuleTable() {
         String tableModulInfoId = "showEvent:unitModulsFieldset:unitModules:unitModulesTable";
         String tbodyTableBodyId = "showEvent:unitModulsFieldset:unitModules:unitModulesTable:tbody_element";
+        WebElement modulTable;
         try {
-            WebElement modulTable = driver.findElement(By.id(tableModulInfoId));
-
+            modulTable = driver.findElement(By.id(tableModulInfoId));
+        } catch (Exception e) {
+            return null;
+        }
             String[] headers = new String[]{"Modulnummer", "Modulkürzel", "Bezeichnung"};
 
             LinkedList<String[]> values = new LinkedList<String[]>();
@@ -112,11 +116,7 @@ public class EventReader {
                 res[i + 1] = values.get(i);
             }
             return res;
-        } catch (ElementNotFoundException e) {
-            return null;
-        }
     }
-
 
     /**
      * @return EventData object ready to get uploaded to database.

@@ -7,11 +7,7 @@ import java.sql.Connection;
 import java.util.logging.Level;
 
 public class MarvinCrawler {
-    /**
-     * The relative Path to the Geckodriver for Firefox automation
-     * @see <a href="https://github.com/mozilla/geckodriver">https://github.com/mozilla/geckodriver</a>
-     */
-    private static final String GECKODRIVER_PATH = "./lib/firefoxdriver/geckodriver";    //For Firefox driver
+    private static final String GECKODRIVER_PATH = "./lib/firefoxdriver/geckodriver";
     private static final int ENTRIES_PER_PAGE = 5;
     private static int NUMBER_OF_PAGES = 1; //TODO: If possible use PageReader.getMaxPages() to set NUMBER_OF_PAGES to the correct value.
 
@@ -22,10 +18,11 @@ public class MarvinCrawler {
         navigator.openMarvinSearch();
         System.out.println("Search Opened.");
         navigator.startEmptySearch();
-        int entries = 10;
+        int entries = 50;
+        int pageNr = 3;
         navigator.setEntriesPerPage(entries);
         System.out.println("Entries per page set.");
-        navigator.goToPage(2);
+        navigator.goToPage(pageNr);
         System.out.println("Went to Search page Nr. x");
         SqlConnector connector = new SqlConnector();
         Connection connection = connector.connect();

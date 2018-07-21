@@ -9,31 +9,27 @@ public class SqlWriter {
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
-    int organisationseinheitIndex, verantwortlicherIndex, titelIndex;
+    int titelIndex;
     int veranstaltungsID;
     LinkedList<Integer> eventIDs = new LinkedList<>();
 
     public SqlWriter(EventData data, Connection connection) {
         this.data = data;
         this.connection = connection;
-        setIndeces();
-    }
-
-    private void setIndeces(){
-        if(data == null){
-            return;
-        }
-        String[][] basicData = this.data.getBasicData();
-        organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
-        verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
-        titelIndex = this.getIndex("Titel", basicData);
+        titelIndex = this.getIndex("Titel", data.getBasicData());
     }
 
     public void uploadAll(){
-        uploadModule();
+        if(data.getModuleTable() != null){
+            uploadModule();
+        }
         uploadVeranstaltung();
-        uploadEvents();
-        uploadEMzuteilung();
+        if(data.getEventTable() != null){
+            uploadEvents();
+        }
+        if(data.getModuleTable() != null && data.getEventTable() != null){
+            uploadEMzuteilung();
+        }
     }
 
     private void getVeranstaltungsnummer() {
@@ -62,10 +58,18 @@ public class SqlWriter {
     }
 
     public void uploadVeranstaltung() {
+        Integer organisationseinheitIndex = null;
+        Integer verantwortlicherIndex = null;
+        try{
+            organisationseinheitIndex = this.getIndex("Organisationseinheit", data.getBasicData());
+        }catch(Exception e){}
+        try{
+            verantwortlicherIndex = this.getIndex("Verantwortliche/-r", data.getBasicData());
+        }catch(Exception e){}
         String sqlQuery = String.format("INSERT INTO Veranstaltungen (verantwortlicher, organisationseinheit, titel) " +
-                        "Select '%s', '%s', '%s'",
-                this.data.getBasicData()[1][verantwortlicherIndex],
-                this.data.getBasicData()[1][organisationseinheitIndex],
+                        "Select %s, %s, '%s'",
+                (verantwortlicherIndex == null) ? "NULL" : "'" + data.getBasicData()[1][verantwortlicherIndex] + "'",
+                (organisationseinheitIndex == null) ? "NULL" : "'" + data.getBasicData()[1][organisationseinheitIndex] + "'",
                 this.data.getBasicData()[1][titelIndex]);
         sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",
                 this.data.getBasicData()[1][titelIndex]);
@@ -93,7 +97,6 @@ public class SqlWriter {
             sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(%s as BIGINT));",modulTable[i][modulnummerIndex]);
             this.upload(sqlQuery);
         }
-
     }
 
     private LinkedList<Integer> uploadEvents() {

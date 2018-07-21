@@ -162,7 +162,7 @@ public class PageNavigator extends HtmlUnitDriver {
 
     private void waitForElement(String id){
         long start = System.nanoTime();
-        while((System.nanoTime() - start) < 10_000_000_000L) {
+        while((System.nanoTime() - start) < 20_000_000_000L) {
             try {
                 this.findElement(By.id(id));
                 return;
