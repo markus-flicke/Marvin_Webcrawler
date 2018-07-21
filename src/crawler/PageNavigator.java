@@ -31,7 +31,7 @@ public class PageNavigator extends HtmlUnitDriver {
             this.openEvent(this.getEvent(i));
             System.out.println(this.getTitle());
 
-            this.goBackToPage();
+            this.eventBack();
         }
     }
 
@@ -149,8 +149,7 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Navigates back to the searchpage.
      */
-    private void goBackToPage() {//TODO: Think about a better name for this method
-        //TODO: test
+    public void eventBack() {
         String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
         String buttonBackButtonID = "showEvent:backButtonTop";
 
@@ -184,20 +183,6 @@ public class PageNavigator extends HtmlUnitDriver {
         return this.getPageSource();
     }
 
-    /**
-     * @return This WebDriver instance.
-     * Returns this WebDriver instance.
-     */
-    public PageNavigator getDriver() {//TODO: Does "return this" work?
-        //TODO: test
-        return this;
-    }
-
-    /**
-     * @version 2.0
-     * @return
-     */
-    //TODO: DOCUMENTATION
     public int getMaxPage() {
         return Integer.parseInt(this.getPageInfo().split(" ")[3]);
     }

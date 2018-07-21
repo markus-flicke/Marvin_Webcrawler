@@ -3,37 +3,70 @@ package sql;
 import util.EventData;
 
 import java.sql.*;
+import java.util.LinkedList;
 
 public class SqlWriter {
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
+    int organisationseinheitIndex, verantwortlicherIndex, titelIndex;
+    int veranstaltungsID;
+    LinkedList<Integer> eventIDs = new LinkedList<>();
 
     public SqlWriter(EventData data, Connection connection) {
         this.data = data;
         this.connection = connection;
+
+        setIndeces();
     }
 
-    public void commit(){
+    private void setIndeces(){
+        String[][] basicData = this.data.getBasicData();
+        organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
+        verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
+        titelIndex = this.getIndex("Titel", basicData);
+    }
+
+    public void uploadAll(){
         uploadModule();
+        uploadVeranstaltung();
+        uploadEvents();
+        uploadEMzuteilung();
     }
 
-    private int getVeranstaltungsnummer() {
-        return 0;
+    private void getVeranstaltungsnummer() {
+        ResultSet res = query(String.format("Select veranstaltungsid from veranstaltungen where titel = '%s'",
+                this.data.getBasicData()[1][titelIndex]));
+        try{
+            res.next();
+            veranstaltungsID = res.getInt("veranstaltungsid");
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private int getmaxEventID(){
+        ResultSet res = query(String.format("Select max(eventid) as maxID from events",
+                this.data.getBasicData()[1][titelIndex]));
+        try{
+            res.next();
+            int maxEID = res.getInt("maxID");
+            return maxEID;
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
     }
 
     public void uploadVeranstaltung() {
-        String[][] basicData = this.data.getBasicData();
-        int organisationseinheitIndex = this.getIndex("Organisationseinheit", basicData);
-        int verantwortlicherIndex = this.getIndex("Verantwortliche/-r", basicData);
-        int titelIndex = this.getIndex("Titel", basicData);
-
-        String sqlQuery = "INSERT INTO Veranstaltungen" +
-                "(verantwortlicher, organisationseinheit, titel)" +
-                "VALUES ('";
-        sqlQuery += this.data.getBasicData()[1][verantwortlicherIndex] + "', '"
-                + this.data.getBasicData()[1][organisationseinheitIndex] + "', '"
-                + this.data.getBasicData()[1][titelIndex] + "');";
+        String sqlQuery = String.format("INSERT INTO Veranstaltungen (verantwortlicher, organisationseinheit, titel) " +
+                        "Select '%s', '%s', '%s'",
+                this.data.getBasicData()[1][verantwortlicherIndex],
+                this.data.getBasicData()[1][organisationseinheitIndex],
+                this.data.getBasicData()[1][titelIndex]);
+        sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",
+                this.data.getBasicData()[1][titelIndex]);
         this.upload(sqlQuery);
     }
 
@@ -61,9 +94,10 @@ public class SqlWriter {
 
     }
 
-    private void uploadEvents() {
+    private LinkedList<Integer> uploadEvents() {
+//        Returns array of event ids that have been uploaded
         String[][] eventTable = this.data.getEventTable();
-        int veranstaltungsID = this.getVeranstaltungsnummer();//TODO: Implement
+        int maxEventID = getmaxEventID();
         int vonIndex = getIndex("Von", eventTable);
         int bisIndex = getIndex("Bis", eventTable);
         int wochentagIndex = getIndex("Wochentag", eventTable);
@@ -76,45 +110,63 @@ public class SqlWriter {
         int durchführenderIndex = getIndex("Durchführende/-r", eventTable);
         int ausfallterminIndex = getIndex("Ausfalltermin", eventTable);
         int bemerkungIndex = getIndex("Bemerkung", eventTable);
-        String sqlQuery = "INSERT INTO Events (veranstaltungsID, wochentag, von, bis, akademischezeit," +
+        String sqlQuery = "INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit," +
                 "rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , " +
                 "bemerkung ) VALUES";
-
-        for(int i = 0; i < eventTable.length; i++) {
-            sqlQuery += "("+ veranstaltungsID + ", '" + eventTable[i][wochentagIndex] + "', '" +
-                  eventTable[i][vonIndex] + "', '" + eventTable[i][bisIndex] + "', '" +
-                    eventTable[i][akademischezeitIndex] + "', '" + eventTable[i][rhythmusIndex] + "', '" +
-                    eventTable[i][startDatumIndex] + "', '" + eventTable[i][endDatumIndex] + "', '" +
-                    eventTable[i][teilnemherzahlIndex] + "', '" + eventTable[i][raumIndex]  + "', '" +
-                    eventTable[i][durchführenderIndex] + "', '" + eventTable[i][ausfallterminIndex] + "', '" +
-                    eventTable[i][bemerkungIndex]+"')";
+        getVeranstaltungsnummer();
+        for(int i = 1; i < eventTable.length; i++) {
+            maxEventID++;
+            eventIDs.add(maxEventID);
+            sqlQuery += String.format("(%d, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
+                    maxEventID,
+                    veranstaltungsID,
+                    eventTable[i][wochentagIndex],
+                    eventTable[i][vonIndex],
+                    eventTable[i][bisIndex],
+                    eventTable[i][akademischezeitIndex],
+                    eventTable[i][rhythmusIndex],
+                    eventTable[i][startDatumIndex],
+                    eventTable[i][endDatumIndex],
+                    eventTable[i][teilnemherzahlIndex],
+                    eventTable[i][raumIndex],
+                    eventTable[i][durchführenderIndex],
+                    eventTable[i][ausfallterminIndex],
+                    eventTable[i][bemerkungIndex]
+                    );
             if(i != eventTable.length - 1) {
                 sqlQuery += ", ";
             }
-            sqlQuery+=";";
         }
+        sqlQuery+=";";
         this.upload(sqlQuery);
+        return eventIDs;
     }
 
-    private void uploadModulzuteilung() {
+    private void uploadEMzuteilung() {
         String[][] modulTable = this.data.getModuleTable();
+        String[][] eventTable = this.data.getEventTable();
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
-        int eventId = 0;
-        //VeranstaltungsID ist schon bekannt.
-        //TODO: SQL Anfrage stellen um die event_Ids zu ermitteln
-
-        String sqlQuery = "INSERT INTO Modulzuteilung (modulnummer, veranstaltungsnummer) VALUES ";
-        //TODO: Für jedes Modul aus der Modul Tabelle und jedes Event aus der Event Tabelle ein Tupel einfügen.
-        for(int i = 1; i < modulTable.length; i++) {
-            sqlQuery += "(" + modulTable[i][modulnummerIndex] + ", " + eventId + ")";
-            if(i != modulTable.length - 1) {
+        String sqlQuery = "INSERT INTO EMzuteilung (ModulID, EventID) VALUES ";
+        int eventCounter = 0;
+        for(int eventId : eventIDs){
+            for(int i = 1; i < modulTable.length; i++) {
+                sqlQuery += String.format("('%s', %d)",
+                        modulTable[i][modulnummerIndex],
+                        eventId
+                        );
+                if(i != modulTable.length - 1) {
+                    sqlQuery += ", ";
+                }
+            }
+            eventCounter++;
+            if(eventCounter != eventTable.length - 1) {
                 sqlQuery += ", ";
             }
         }
         this.upload(sqlQuery);
     }
 
-    public void upload(String sqlQuery) {
+    private void upload(String sqlQuery) {
         try {
             Statement stmt = connection.createStatement();
             int res = stmt.executeUpdate(sqlQuery);
@@ -123,6 +175,19 @@ public class SqlWriter {
             System.out.println("Upload nicht möglich. InsertStatement:");
             System.out.println(sqlQuery);
 
+            throw new RuntimeException(e);
+        }
+    }
+
+    private ResultSet query(String sqlQuery){
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet res = stmt.executeQuery(sqlQuery);
+            connection.commit();
+            return res;
+        } catch (SQLException e) {
+            System.out.println("Query not possible. Query:");
+            System.out.println(sqlQuery);
             throw new RuntimeException(e);
         }
     }
