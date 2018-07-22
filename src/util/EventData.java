@@ -8,11 +8,13 @@ public class EventData {
     private String[][] eventTable;
     private String[][] moduleTable;
     private String[][] basicData;
+    private String permaLink;
 
-    public EventData(String[][] basicData, String[][] eventTable, String[][] moduleTable) {
+    public EventData(String[][] basicData, String[][] eventTable, String[][] moduleTable, String permaLink) {
         this.basicData = basicData;
         this.eventTable = eventTable;
         this.moduleTable = moduleTable;
+        this.permaLink = permaLink;
     }
 
     public String[][] getBasicData() {
@@ -37,6 +39,10 @@ public class EventData {
 
     public void setModuleTable(String[][] moduleTable) {
         this.moduleTable = moduleTable;
+    }
+
+    public String getPermaLink() {
+        return permaLink;
     }
 
     public String toString(){
@@ -68,6 +74,4 @@ public class EventData {
         res += "\n\n\n";
         return res;
     }
-
-
 }

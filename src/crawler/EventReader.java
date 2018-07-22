@@ -71,7 +71,7 @@ public class EventReader {
                 List<WebElement> entries = row.findElements(By.tagName("td"));
                 String[] valueTupel = new String[entries.size()];
                 for (int j = 0; j < valueTupel.length; j++) {
-                    valueTupel[j] = entries.get(j).getText();
+                    valueTupel[j] = cleanDisallowedSymbols(entries.get(j).getText());
                 }
                 values.add(valueTupel);
             }
@@ -106,7 +106,7 @@ public class EventReader {
                 List<WebElement> entries = row.findElements(By.tagName("td"));
                 String[] valueTupel = new String[entries.size()];
                 for (int j = 0; j < valueTupel.length; j++) {
-                    valueTupel[j] = entries.get(j).getText();
+                    valueTupel[j] = cleanDisallowedSymbols(entries.get(j).getText());
                 }
                 values.add(valueTupel);
             }
@@ -122,7 +122,7 @@ public class EventReader {
      * @return EventData object ready to get uploaded to database.
      */
     public EventData getEventData() {
-        return new EventData(getBasicData(), getEventTable(), getModuleTable());
+        return new EventData(getBasicData(), getEventTable(), getModuleTable(), getPermalink());
     }
 
     private String[] getDataArrayById(String id) {
@@ -131,7 +131,7 @@ public class EventReader {
             String[] dataArray = new String[elements.size()];
             Iterator<WebElement> it = elements.iterator();
             for (int i = 0; i < dataArray.length; i++) {
-                dataArray[i] = it.next().getText();
+                dataArray[i] = cleanDisallowedSymbols(it.next().getText());
             }
             return dataArray;
         } catch(Exception e) {
@@ -147,6 +147,10 @@ public class EventReader {
         String res = matcher.group(1);
         res = res.replace("&amp;", "&");
         return res;
+    }
+
+    private String cleanDisallowedSymbols(String in){
+        return in.replace("'","");
     }
 
     public static void main(String[] args){

@@ -162,16 +162,26 @@ public class PageNavigator extends HtmlUnitDriver {
 
     private void waitForElement(String id){
         long start = System.nanoTime();
-        while((System.nanoTime() - start) < 20_000_000_000L) {
+        boolean warnOnce = false;
+        boolean printSourceOnce = false;
+        while((System.nanoTime() - start) < 600_000_000_000L) {
             try {
                 this.findElement(By.id(id));
                 return;
             } catch (org.openqa.selenium.NoSuchElementException e) {
-                this.pause(100);
+                if((System.nanoTime() - start) > 30_000_000_000L &! warnOnce){
+                    warnOnce = true;
+                    System.out.printf("Wait For Element Warning (30sec): %s\n", id);
+                }
+                if((System.nanoTime() - start) > 120_000_000_000L &! printSourceOnce){
+                    printSourceOnce = true;
+                    System.out.printf("Wait For Element Warning (2min): %s\n", id);
+                    System.out.println(this.getPageSource());
+                }
+                this.pause(101);
             }
         }
-        System.out.println(this.getPageSource());
-        throw new RuntimeException("Timeout. Element: " + id + " not found");
+        throw new RuntimeException("Wait For Element Timeout (10min). Element: " + id + " not found");
     }
 
     /**

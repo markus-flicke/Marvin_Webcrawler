@@ -9,17 +9,15 @@ public class SqlWriter {
     private EventData data;
     private Connection connection;
     public static int Veranstaltungsnummer = 1;
-    int titelIndex;
     int veranstaltungsID;
     LinkedList<Integer> eventIDs = new LinkedList<>();
 
     public SqlWriter(EventData data, Connection connection) {
         this.data = data;
         this.connection = connection;
-        titelIndex = this.getIndex("Titel", data.getBasicData());
     }
 
-    public void uploadAll(){
+    public void uploadAll() throws SQLException{
         if(data.getModuleTable() != null){
             uploadModule();
         }
@@ -33,6 +31,7 @@ public class SqlWriter {
     }
 
     private void getVeranstaltungsnummer() {
+        int titelIndex = getIndex("Titel", data.getBasicData());
         ResultSet res = query(String.format("Select veranstaltungsid from veranstaltungen where titel = '%s'",
                 this.data.getBasicData()[1][titelIndex]));
         try{
@@ -45,6 +44,7 @@ public class SqlWriter {
     }
 
     private int getmaxEventID(){
+        int titelIndex = getIndex("Titel", data.getBasicData());
         ResultSet res = query(String.format("Select max(eventid) as maxID from events",
                 this.data.getBasicData()[1][titelIndex]));
         try{
@@ -57,7 +57,8 @@ public class SqlWriter {
         }
     }
 
-    public void uploadVeranstaltung() {
+    public void uploadVeranstaltung() throws SQLException{
+        int titelIndex = getIndex("Titel", data.getBasicData());
         Integer organisationseinheitIndex = null;
         Integer verantwortlicherIndex = null;
         try{
@@ -85,7 +86,7 @@ public class SqlWriter {
         throw new RuntimeException("Das gesuchte Attribut("+columnName+") konnte nicht gefunden werden.");
     }
 
-    public void uploadModule() {
+    public void uploadModule() throws SQLException{
         String[][] modulTable = this.data.getModuleTable();
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
         int modulkuerzelIndex = getIndex("Modulkürzel", modulTable);
@@ -99,7 +100,7 @@ public class SqlWriter {
         }
     }
 
-    private LinkedList<Integer> uploadEvents() {
+    private LinkedList<Integer> uploadEvents() throws SQLException{
 //        Returns array of event ids that have been uploaded
         String[][] eventTable = this.data.getEventTable();
         int maxEventID = getmaxEventID();
@@ -147,7 +148,7 @@ public class SqlWriter {
         return eventIDs;
     }
 
-    private void uploadEMzuteilung() {
+    private void uploadEMzuteilung() throws SQLException{
         String[][] modulTable = this.data.getModuleTable();
         String[][] eventTable = this.data.getEventTable();
         int modulnummerIndex = getIndex("Modulnummer", modulTable);
@@ -168,10 +169,10 @@ public class SqlWriter {
                 sqlQuery += ", ";
             }
         }
-        this.upload(sqlQuery);
+        this.upload(sqlQuery + ";");
     }
 
-    public void upload(String sqlQuery) {
+    public void upload(String sqlQuery) throws SQLException{
         try {
             Statement stmt = connection.createStatement();
             int res = stmt.executeUpdate(sqlQuery);
@@ -179,8 +180,7 @@ public class SqlWriter {
         } catch (SQLException e) {
             System.out.println("Upload nicht möglich. InsertStatement:");
             System.out.println(sqlQuery);
-
-            throw new RuntimeException(e);
+            throw e;
         }
     }
 

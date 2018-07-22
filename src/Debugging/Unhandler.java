@@ -6,6 +6,8 @@ import sql.SqlConnector;
 import sql.SqlWriter;
 import util.EventData;
 
+import java.sql.SQLException;
+
 public class Unhandler{
     public static void showError(String url){
         PageNavigator pn = new PageNavigator();
@@ -14,7 +16,12 @@ public class Unhandler{
         EventData eventData = er.getEventData();
         SqlConnector connector = new SqlConnector();
         SqlWriter sqlWriter = new SqlWriter(eventData, connector.connect());
-        sqlWriter.uploadAll();
+        try{
+            sqlWriter.uploadAll();
+        }catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+
         System.out.println("test successful");
     }
 
