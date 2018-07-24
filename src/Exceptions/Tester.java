@@ -1,4 +1,4 @@
-package Debugging;
+package Exceptions;
 
 import crawler.EventReader;
 import crawler.PageNavigator;
@@ -8,8 +8,8 @@ import util.EventData;
 
 import java.sql.SQLException;
 
-public class Unhandler{
-    public static void showError(String url){
+public class Tester {
+    public static void showError(String url) throws UnreadableException{
         PageNavigator pn = new PageNavigator();
         pn.get(url);
         EventReader er = new EventReader(pn);
@@ -24,8 +24,12 @@ public class Unhandler{
 
         System.out.println("test successful");
     }
-
     public static void main(String[] args){
-        showError("some url");
+        try{
+            showError("some url");
+        }
+        catch(Exception e){
+            throw new RuntimeException(e);
+        }
     }
 }

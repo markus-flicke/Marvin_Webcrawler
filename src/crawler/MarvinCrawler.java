@@ -1,5 +1,6 @@
 package crawler;
 
+import Exceptions.UnreadableException;
 import sql.SqlConnector;
 import sql.SqlWriter;
 import util.EventData;
@@ -28,14 +29,20 @@ public class MarvinCrawler {
                     SqlWriter sqlWriter = new SqlWriter(eventData, connection);
                     sqlWriter.uploadAll();
                 }
+                catch(SQLException e){
+                    connection = connector.connect();
+                    SqlWriter sqlWriter = new SqlWriter(null, connection);
+                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "SQLException");
+                }
+                catch(UnreadableException e){
+                    connection = connector.connect();
+                    SqlWriter sqlWriter = new SqlWriter(null, connection);
+                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "Event unreadable");
+                }
                 catch(Exception e){
                     connection = connector.connect();
                     SqlWriter sqlWriter = new SqlWriter(null, connection);
-                    try{
-                        sqlWriter.upload(String.format("INSERT INTO unhandled values ('%s');",eventReader.getPermalink()));
-                    }catch(SQLException f){
-                        throw new RuntimeException(f);
-                    }
+                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "Unexpected Exception");
                 }
                 finally{
                     navigator.eventBack();
@@ -47,4 +54,5 @@ public class MarvinCrawler {
         }
         connector.close();
     }
+
 }

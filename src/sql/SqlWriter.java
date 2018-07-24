@@ -1,5 +1,6 @@
 package sql;
 
+import org.apache.commons.net.telnet.EchoOptionHandler;
 import util.EventData;
 
 import java.sql.*;
@@ -17,6 +18,14 @@ public class SqlWriter {
         this.connection = connection;
     }
 
+    public void uploadUnhandled(String url, String ExceptionCause){
+        try{
+            upload(String.format("INSERT INTO unhandled values ('%s', '%s');", url, ExceptionCause));
+        }catch(SQLException f){
+            throw new RuntimeException(f);
+        }
+    }
+
     public void uploadAll() throws SQLException{
         if(data.getModuleTable() != null){
             uploadModule();
@@ -32,7 +41,7 @@ public class SqlWriter {
 
     private void getVeranstaltungsnummer() {
         int titelIndex = getIndex("Titel", data.getBasicData());
-        ResultSet res = query(String.format("Select veranstaltungsid from veranstaltungen where titel = '%s'",
+        ResultSet res = query(String.format("Select veranstaltungsID from veranstaltungen where titel = '%s'",
                 this.data.getBasicData()[1][titelIndex]));
         try{
             res.next();

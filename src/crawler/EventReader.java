@@ -1,5 +1,6 @@
 package crawler;
 
+import Exceptions.UnreadableException;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -121,8 +122,13 @@ public class EventReader {
     /**
      * @return EventData object ready to get uploaded to database.
      */
-    public EventData getEventData() {
-        return new EventData(getBasicData(), getEventTable(), getModuleTable(), getPermalink());
+    public EventData getEventData() throws UnreadableException{
+        try {
+            return new EventData(getBasicData(), getEventTable(), getModuleTable(), getPermalink());
+        }
+        catch(Exception e){
+            throw new UnreadableException("Event unreadable");
+        }
     }
 
     private String[] getDataArrayById(String id) {
