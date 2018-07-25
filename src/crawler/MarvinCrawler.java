@@ -9,7 +9,24 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 public class MarvinCrawler {
-    public static void main(String[] args) {
+    int currentPage, currentEvent;
+
+    public void loopCrawl(){
+        currentPage = 64;
+        currentEvent = 1;
+        while(currentPage < 200){
+            try{
+                crawl(currentPage, currentEvent,200);
+            }catch(Exception e){
+                System.out.println("Some sort of exception terminated the crawler. restarting...");
+                System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
+                System.out.println(e);
+            }
+        }
+
+    }
+
+    private void crawl(int startPage, int startEvent, int endPage){
         java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF);
         PageNavigator navigator = new PageNavigator();
 
@@ -18,10 +35,17 @@ public class MarvinCrawler {
         navigator.startEmptySearch();
         SqlConnector connector = new SqlConnector();
         Connection connection = connector.connect();
-        for(int pageNr = 4; pageNr < 50; pageNr++){
+
+        int eventOffset = startEvent;
+        for(int pageNr = startPage; pageNr <= endPage; pageNr++){
+
+            currentPage = pageNr;
             navigator.goToPage(pageNr);
             System.out.println("Went to Search page Nr. " + pageNr);
             for(int i = 0; i < 10; i++) {
+                currentEvent = i;
+                i += eventOffset;
+                eventOffset = 0;
                 navigator.openEvent(navigator.getEvent(i));
                 EventReader eventReader = new EventReader(navigator);
                 try{
@@ -51,8 +75,13 @@ public class MarvinCrawler {
                     System.out.printf("    Finished event Nr %d\n", i);
                 }
             }
+
         }
         connector.close();
     }
 
+    public static void main(String[] args) {
+        MarvinCrawler marvinCrawler = new MarvinCrawler();
+        marvinCrawler.loopCrawl();
+    }
 }

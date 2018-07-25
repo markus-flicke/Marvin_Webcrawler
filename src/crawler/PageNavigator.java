@@ -51,7 +51,6 @@ public class PageNavigator extends HtmlUnitDriver {
      * Starts a empty search in this instance to find all Marvin entries.
      */
     public void startEmptySearch() {
-        //TODO: test
         String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
                 "basic_data:fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
         String buttonSearchID = "genericSearchMask:search";
@@ -164,7 +163,7 @@ public class PageNavigator extends HtmlUnitDriver {
         long start = System.nanoTime();
         boolean warnOnce = false;
         boolean printSourceOnce = false;
-        while((System.nanoTime() - start) < 600_000_000_000L) {
+        while((System.nanoTime() - start) < 90_000_000_000L) {
             try {
                 this.findElement(By.id(id));
                 return;
@@ -173,15 +172,15 @@ public class PageNavigator extends HtmlUnitDriver {
                     warnOnce = true;
                     System.out.printf("Wait For Element Warning (30sec): %s\n", id);
                 }
-                if((System.nanoTime() - start) > 120_000_000_000L &! printSourceOnce){
+                if((System.nanoTime() - start) > 60_000_000_000L &! printSourceOnce){
                     printSourceOnce = true;
-                    System.out.printf("Wait For Element Warning (2min): %s\n", id);
+                    System.out.printf("Wait For Element Warning (1min): %s\n", id);
                     System.out.println(this.getPageSource());
                 }
                 this.pause(101);
             }
         }
-        throw new RuntimeException("Wait For Element Timeout (10min). Element: " + id + " not found");
+        throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
     }
 
     /**
@@ -204,5 +203,10 @@ public class PageNavigator extends HtmlUnitDriver {
         String spanPageTextClass = "dataScrollerPageText";
 
         return this.findElement(By.className(spanPageTextClass)).getText();
+    }
+    public static void main(String[] args){
+        PageNavigator pageNavigator = new PageNavigator();
+        pageNavigator.openMarvinSearch();
+        pageNavigator.startEmptySearch();
     }
 }
