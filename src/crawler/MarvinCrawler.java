@@ -14,9 +14,9 @@ public class MarvinCrawler {
     public void loopCrawl(){
         currentPage = 201;
         currentEvent = 0;
-        while(currentPage < 431){  //TODO: method for max page
+        while(currentPage <= 202){  //TODO: method for max page
             try{
-                crawl(currentPage, currentEvent,431);
+                crawl(currentPage, currentEvent,202);
             }catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
                 System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
