@@ -34,20 +34,15 @@ public class PageNavigator extends HtmlUnitDriver {
      * Starts a empty search in this instance to find all Marvin entries.
      */
     public void startEmptySearch() {
-        /*String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
+        String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
                 "basic_data:fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
         String buttonSearchID = "genericSearchMask:search";
-*/
-        String inputSearchCss, buttonSearchCss;
-        inputSearchCss = "#genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_basic_data:" +
-                "fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
-        buttonSearchCss = "#genericSearchMask:search";
 
         //Clear search bar:
-        WebElement inputSearchBar = this.findElement(By.cssSelector(inputSearchCss));
+        WebElement inputSearchBar = this.findElement(By.id(inputSearchBarID));
         inputSearchBar.clear();
         //Click search button:
-        WebElement buttonSearch = this.findElement(By.cssSelector(buttonSearchCss));
+        WebElement buttonSearch = this.findElement(By.id(buttonSearchID));
         buttonSearch.click();
     }
 
@@ -71,18 +66,14 @@ public class PageNavigator extends HtmlUnitDriver {
      */
     public void goToPage(int pageNumber) {
         //TODO: test
-        /*String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
+        String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
-*/
-        String aPageLinkCss, aFastForwardButtonCss;//TODO
-        aPageLinkCss = "#genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
-        aFastForwardButtonCss = "#genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
 
         boolean done = false;
 
         while(!done) {
             try {
-                this.findElement(By.cssSelector(aPageLinkCss)).click();
+                this.findElement(By.id(aPageLinkID)).click();
                 while(this.getCurrentPage() != pageNumber){
                     this.pause(100);
                 }
@@ -90,7 +81,7 @@ public class PageNavigator extends HtmlUnitDriver {
             } catch(ElementClickInterceptedException e) {   //this exeption is thrown when the click() Methode fails.
                 this.pause(100);
             } catch(NoSuchElementException e) {
-                this.findElement(By.cssSelector(aFastForwardButtonCss)).click();//TODO: TEST!!!
+                this.findElement(By.id(aFastForwardButtonID)).click();//TODO: TEST!!!
             }
         }
     }
@@ -112,11 +103,9 @@ public class PageNavigator extends HtmlUnitDriver {
      */
     public List<WebElement> getEvents() {
         //TODO: test.
-        //String buttonEventLinkClass = "linkTable";
+        String buttonEventLinkClass = "linkTable";
 
-        String buttonEventLinkCss = ".linkTable";
-
-        return this.findElements(By.cssSelector(buttonEventLinkCss));
+        return this.findElements(By.className(buttonEventLinkClass));
     }
 
     public WebElement getEvent(int index) {
@@ -130,55 +119,48 @@ public class PageNavigator extends HtmlUnitDriver {
      */
     public void openEvent(WebElement eventLink) {
         //TODO: test
-        //String buttonBackButtonID = "showEvent:backButtonTop";
-
-        String buttonBackCss = "[name=showEvent:backButtonTop]";
-
+        String buttonBackButtonID = "showEvent:backButtonTop";
         //clicks the eventLink and waits until the Back-Button is found
         eventLink.click();
-        this.waitForElement(buttonBackCss);
+        this.waitForElement(buttonBackButtonID);
     }
 
     /**
      * Navigates back to the searchpage.
      */
     public void eventBack() {
-        //String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
-        //String buttonBackButtonID = "showEvent:backButtonTop";
-
-        String buttonNewSearchCss, buttonBackCss;
-        buttonNewSearchCss = "[name=genSearchRes:buttonsTop:newSearch]";
-        buttonBackCss = "[name=showEvent:backButtonTop]";
+        String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
+        String buttonBackButtonID = "showEvent:backButtonTop";
 
         //clicks the Back-Button
-        WebElement buttonBack = this.findElement(By.cssSelector(buttonBackCss));
+        WebElement buttonBack = this.findElement(By.id(buttonBackButtonID));
         buttonBack.click();
         //waits until the NewSearch button is found.
-        this.waitForElement(buttonNewSearchCss);
+        this.waitForElement(buttonNewSearchID);
     }
 
-    private void waitForElement(String css){
+    private void waitForElement(String id){
         long start = System.nanoTime();
         boolean warnOnce = false;
         boolean printSourceOnce = false;
         while((System.nanoTime() - start) < 90_000_000_000L) {
             try {
-                this.findElement(By.cssSelector(css));
+                this.findElement(By.id(id));
                 return;
             } catch (org.openqa.selenium.NoSuchElementException e) {
                 if((System.nanoTime() - start) > 30_000_000_000L &! warnOnce){
                     warnOnce = true;
-                    System.out.printf("Wait For Element Warning (30sec): %s\n", css);
+                    System.out.printf("Wait For Element Warning (30sec): %s\n", id);
                 }
                 if((System.nanoTime() - start) > 60_000_000_000L &! printSourceOnce){
                     printSourceOnce = true;
-                    System.out.printf("Wait For Element Warning (1min): %s\n", css);
+                    System.out.printf("Wait For Element Warning (1min): %s\n", id);
                     System.out.println(this.getPageSource());
                 }
                 this.pause(101);
             }
         }
-        throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + css + " not found");
+        throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
     }
 
     /**
@@ -198,11 +180,9 @@ public class PageNavigator extends HtmlUnitDriver {
     }
 
     private String getPageInfo() {
-        //String spanPageTextClass = "dataScrollerPageText";
+        String spanPageTextClass = "dataScrollerPageText";
 
-        String spanPageTextCss = ".dataScrollerPageText";
-
-        return this.findElement(By.cssSelector(spanPageTextCss)).getText();
+        return this.findElement(By.className(spanPageTextClass)).getText();
     }
     public static void main(String[] args){
         PageNavigator pageNavigator = new PageNavigator();
