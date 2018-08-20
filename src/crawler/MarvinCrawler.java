@@ -12,9 +12,9 @@ public class MarvinCrawler {
     int currentPage, currentEvent;
 
     public void loopCrawl(){
-        currentPage = 201;
+        currentPage = 20;
         currentEvent = 0;
-        while(currentPage <= 202){  //TODO: method for max page
+        while(currentPage <= 21){  //TODO: method for max page
             try{
                 crawl(currentPage, currentEvent,202);
             }catch(Exception e){

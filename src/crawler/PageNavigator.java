@@ -121,8 +121,20 @@ public class PageNavigator extends HtmlUnitDriver {
         //TODO: test
         String buttonBackButtonID = "showEvent:backButtonTop";
         //clicks the eventLink and waits until the Back-Button is found
+        String s = eventLink.getText();
         eventLink.click();
-        this.waitForElement(buttonBackButtonID);
+        System.out.println(s);
+        //
+        // this.waitForElement(buttonBackButtonID);
+
+        while(true) {
+            try {
+                this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
+                //this.pause(100);
+            } catch (org.openqa.selenium.NoSuchElementException e) {
+                break;
+            }
+        }
     }
 
     /**
@@ -161,14 +173,6 @@ public class PageNavigator extends HtmlUnitDriver {
             }
         }
         throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
-    }
-
-    /**
-     * @return String containing the HTML Source Code of the current page.
-     * Returns the HTML Source Code of the Page that is currently opened in this WebDriver instance.
-     */
-    public String getEventSource() {//TODO: Do we really need this?
-        return this.getPageSource();
     }
 
     public int getMaxPage() {
