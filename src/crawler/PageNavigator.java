@@ -5,14 +5,19 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.util.List;
+import java.time.Duration;
 
 /**
  * @author Jakob Eckstein
  *
  */
-public class PageNavigator extends HtmlUnitDriver {
+public class PageNavigator extends HtmlUnitDriver{
+
+    private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
@@ -21,19 +26,19 @@ public class PageNavigator extends HtmlUnitDriver {
     /**
      * Opens the main Marvin search page in this instance.
      * @link "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourseData.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1"
+     * Starts a empty search in this instance to find all Marvin entries.
      */
-    public void openMarvinSearch() {
-        //TODO: test
+    public void init() {
+        this.openMarvinSearch();    //Opens the main Marvin search page in this instance.
+        this.startEmptySearch();    //Starts a empty search in this instance to find all Marvin entries.
+    }
+    private void openMarvinSearch() {
         String MAIN_MARVIN_URL = "https://marvin.uni-marburg.de/qisserver/pages/cm/exa/coursemanagement/basicCourse" +
                 "Data.xhtml?_flowId=searchCourseNonStaff-flow&_flowExecutionKey=e1s1";
 
         this.get(MAIN_MARVIN_URL);
     }
-
-    /**
-     * Starts a empty search in this instance to find all Marvin entries.
-     */
-    public void startEmptySearch() {
+    private void startEmptySearch() {
         String inputSearchBarID = "genericSearchMask:search_e4ff321960e251186ac57567bec9f4ce:cm_exa_eventprocess_" +
                 "basic_data:fieldset:inputField_0_1ad08e26bde39c9e4f1833e56dcce9b5:id1ad08e26bde39c9e4f1833e56dcce9b5";
         String buttonSearchID = "genericSearchMask:search";
@@ -50,8 +55,6 @@ public class PageNavigator extends HtmlUnitDriver {
     public void setEntriesPerPage(int entriesPerPage) {//keinen parameter
         String inputEntriesPerPageID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2NumRowsInput";
 
-        String inputEntriesPerPageCss;//TODO
-
         //Clear entries field:
         WebElement inputEntriesPerPage = this.findElement(By.id(inputEntriesPerPageID));
         inputEntriesPerPage.clear();
@@ -65,28 +68,37 @@ public class PageNavigator extends HtmlUnitDriver {
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
     public void goToPage(int pageNumber) {
-        //TODO: test
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
-
+        Wait<PageNavigator> wait = new FluentWait<>(this)
+                .withTimeout(Duration.ofMinutes(1))
+                .pollingEvery(Duration.ofMillis(100))
+                .ignoring(NoSuchElementException.class);
         boolean done = false;
-
         while(!done) {
             try {
                 this.findElement(By.id(aPageLinkID)).click();
                 while(this.getCurrentPage() != pageNumber){
-                    this.pause(100);
+                    this.pause(WAIT_TIME);
                 }
-                done = true;    //
+                done = true;
             } catch(ElementClickInterceptedException e) {   //this exeption is thrown when the click() Methode fails.
-                this.pause(100);
+                this.pause(WAIT_TIME);
             } catch(NoSuchElementException e) {
-                this.findElement(By.id(aFastForwardButtonID)).click();//TODO: TEST!!!
+                this.findElement(By.id(aFastForwardButtonID)).click();
             }
         }
     }
+    private void fastForeward() {
+        String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
+        try {
+            WebElement ffButton = this.findElement(By.id(aFastForwardButtonID));
+            ffButton.click();
+        } catch (Exception e) {
 
-    //TODO: Add javadoc and test
+        }
+    }
+
     private void pause(long milliseconds) {
         synchronized (this) {
             try {
@@ -98,11 +110,9 @@ public class PageNavigator extends HtmlUnitDriver {
     }
 
     /**
-     *
      * @return List of all event links on the curently opend page.
      */
     public List<WebElement> getEvents() {
-        //TODO: test.
         String buttonEventLinkClass = "linkTable";
 
         return this.findElements(By.className(buttonEventLinkClass));
@@ -118,19 +128,19 @@ public class PageNavigator extends HtmlUnitDriver {
      * Opens an event int this instance.
      */
     public void openEvent(WebElement eventLink) {
-        //TODO: test
         String buttonBackButtonID = "showEvent:backButtonTop";
+        //TODO: Is this a better way than the old code (in comment)
         //clicks the eventLink and waits until the Back-Button is found
-        String s = eventLink.getText();
+        //String s = eventLink.getText();
         eventLink.click();
-        System.out.println(s);
+        //System.out.println(s);
         //
         // this.waitForElement(buttonBackButtonID);
 
         while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
-                //this.pause(100);
+                //this.pause(WAIT_TIME);
             } catch (org.openqa.selenium.NoSuchElementException e) {
                 break;
             }
@@ -138,7 +148,7 @@ public class PageNavigator extends HtmlUnitDriver {
     }
 
     /**
-     * Navigates back to the searchpage.
+     * Navigates from the event page to the searchpage.
      */
     public void eventBack() {
         String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
@@ -169,7 +179,7 @@ public class PageNavigator extends HtmlUnitDriver {
                     System.out.printf("Wait For Element Warning (1min): %s\n", id);
                     System.out.println(this.getPageSource());
                 }
-                this.pause(101);
+                this.pause(WAIT_TIME);
             }
         }
         throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
@@ -178,19 +188,11 @@ public class PageNavigator extends HtmlUnitDriver {
     public int getMaxPage() {
         return Integer.parseInt(this.getPageInfo().split(" ")[3]);
     }
-
     private int getCurrentPage() {
         return Integer.parseInt(this.getPageInfo().split(" ")[1]);
     }
-
     private String getPageInfo() {
         String spanPageTextClass = "dataScrollerPageText";
-
         return this.findElement(By.className(spanPageTextClass)).getText();
-    }
-    public static void main(String[] args){
-        PageNavigator pageNavigator = new PageNavigator();
-        pageNavigator.openMarvinSearch();
-        pageNavigator.startEmptySearch();
     }
 }

@@ -8,19 +8,35 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class MarvinCrawler {
-    int currentPage, currentEvent;
+public class MarvinCrawler implements Runnable{
+    int currentPage, currentEvent, end;
+    final int ENTRIES_PER_PAGE = 10;
+
+    public MarvinCrawler(int start, int end) {
+        this.currentPage = start;
+        this.end = end;
+    }
+
+    @Override
+    public void run() {
+        this.loopCrawl();
+    }
 
     public void loopCrawl(){
-        currentPage = 20;
+        //currentPage = 20;
         currentEvent = 0;
-        while(currentPage <= 21){  //TODO: method for max page
+        while(true){
             try{
-                crawl(currentPage, currentEvent,202);
-            }catch(Exception e){
+                crawl(currentPage, currentEvent,end);
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("There are only " + currentEvent + " entries on page " + currentPage + ".");
+                break;
+            } catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
                 System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
                 System.out.println(e);
+                e.printStackTrace();
             }
         }
     }
@@ -28,20 +44,18 @@ public class MarvinCrawler {
     private void crawl(int startPage, int startEvent, int endPage){
         java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF);
         PageNavigator navigator = new PageNavigator();
-
-        navigator.openMarvinSearch();
-        System.out.println("Search Opened.");
-        navigator.startEmptySearch();
+        navigator.init();
+        System.out.println(this.toString() + ": Search Opened.");
         SqlConnector connector = new SqlConnector();
         Connection connection = connector.connect();
 
         int eventOffset = startEvent;
-        for(int pageNr = startPage; pageNr <= endPage; pageNr++){
+        for(int pageNr = startPage; pageNr < endPage; pageNr++){ //Exlusive endpage!
 
             currentPage = pageNr;
             navigator.goToPage(pageNr);
-            System.out.println("Went to Search page Nr. " + pageNr);
-            for(int i = 0; i < 10; i++) {
+            System.out.println(this.toString() + ": Went to Search page Nr. " + pageNr);
+            for(int i = 0; i < ENTRIES_PER_PAGE; i++) {
                 currentEvent = i;
                 i += eventOffset;
                 eventOffset = 0;
@@ -70,17 +84,9 @@ public class MarvinCrawler {
                 finally{
                     navigator.eventBack();
                 }
-                if(i % 10 == 0){
-                    System.out.printf("    Finished event Nr %d\n", i);
-                }
             }
 
         }
         connector.close();
-    }
-
-    public static void main(String[] args) {
-        MarvinCrawler marvinCrawler = new MarvinCrawler();
-        marvinCrawler.loopCrawl();
     }
 }
