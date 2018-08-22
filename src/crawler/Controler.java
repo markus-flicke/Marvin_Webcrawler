@@ -4,10 +4,10 @@ import java.util.logging.Level;
 
 public class Controler {
 
-    static final int PARALELL_CRAWLERS = 3;
+    static final int PARALELL_CRAWLERS = 2;
 
     public static void main(String[] args) {
-        int pages = getPages(30);
+        int pages = getPages(100);
         int pagesPerThread = (int)(pages /PARALELL_CRAWLERS);
         if (pages % PARALELL_CRAWLERS != 0) {
             pagesPerThread += 1;
@@ -20,8 +20,10 @@ public class Controler {
             if (endPage > pages + 1) {
                 endPage = pages + 1;
             }
-            new Thread(new MarvinCrawler(startPage, endPage), "Crawler"+(i+1)).start();
-            System.out.println("Crawler " + (i+1) + " reads pages " + startPage + "-" + (endPage - 1));
+            Thread t = new Thread(new MarvinCrawler(startPage, endPage), "Crawler"+(i+1));
+            t.setPriority(t.MAX_PRIORITY);
+            t.start();
+            System.out.println("Crawler " + (i+1) + " reads pages " + startPage + "-" + (endPage - 1)+ ". Priority: " + t.getPriority());
             startPage = endPage;
         }
     }

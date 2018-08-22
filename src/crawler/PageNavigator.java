@@ -1,9 +1,6 @@
 package crawler;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -18,9 +15,14 @@ import java.time.Duration;
 public class PageNavigator extends HtmlUnitDriver{
 
     private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
+    FluentWait<? extends WebDriver> wait;
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
+        wait = new FluentWait<>(this)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofMillis(100))
+                .ignoring(NoSuchElementException.class);
     }
 
     /**
@@ -71,7 +73,7 @@ public class PageNavigator extends HtmlUnitDriver{
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
         Wait<PageNavigator> wait = new FluentWait<>(this)
-                .withTimeout(Duration.ofMinutes(1))
+                .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofMillis(100))
                 .ignoring(NoSuchElementException.class);
         boolean done = false;
@@ -85,18 +87,17 @@ public class PageNavigator extends HtmlUnitDriver{
             } catch(ElementClickInterceptedException e) {   //this exeption is thrown when the click() Methode fails.
                 this.pause(WAIT_TIME);
             } catch(NoSuchElementException e) {
+                System.out.println("Page: " + this.getCurrentPage());
                 this.findElement(By.id(aFastForwardButtonID)).click();
             }
         }
     }
     private void fastForeward() {
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
-        try {
-            WebElement ffButton = this.findElement(By.id(aFastForwardButtonID));
-            ffButton.click();
-        } catch (Exception e) {
 
-        }
+        WebElement ffButton = wait.until((WebDriver pn) -> pn.findElement(By.id(aFastForwardButtonID)));
+        ffButton.click();
+
     }
 
     private void pause(long milliseconds) {
@@ -131,9 +132,9 @@ public class PageNavigator extends HtmlUnitDriver{
         String buttonBackButtonID = "showEvent:backButtonTop";
         //TODO: Is this a better way than the old code (in comment)
         //clicks the eventLink and waits until the Back-Button is found
-        //String s = eventLink.getText();
+        String s = eventLink.getText();
         eventLink.click();
-        //System.out.println(s);
+        System.out.println(s);
         //
         // this.waitForElement(buttonBackButtonID);
 

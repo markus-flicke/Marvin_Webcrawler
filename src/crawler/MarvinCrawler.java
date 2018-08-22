@@ -35,8 +35,8 @@ public class MarvinCrawler implements Runnable{
             } catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
                 System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
-                System.out.println(e);
-                e.printStackTrace();
+                //System.out.println(e);
+                //e.printStackTrace();
             }
         }
     }
