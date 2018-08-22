@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2a8aa2d-a0c0-49f2-bea1-d51733a4710e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
       <change beforePath="$PROJECT_DIR$/src/crawler/PageNavigator.java" afterPath="$PROJECT_DIR$/src/crawler/PageNavigator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,16 +21,15 @@
       <file leaf-file-name="PageNavigator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="149" column="49" lean-forward="false" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
+            <state relative-caret-position="774">
+              <caret line="201" column="7" lean-forward="false" selection-start-line="179" selection-start-column="3" selection-end-line="201" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#openMarvinSearch#0;class#PageNavigator#0" expanded="false" />
-                <element signature="method#startEmptySearch#0;class#PageNavigator#0" expanded="false" />
-                <element signature="e#8492#8493#0" expanded="true" />
-                <element signature="e#8565#8566#0" expanded="true" />
-                <element signature="e#8600#8601#0" expanded="true" />
-                <element signature="e#8673#8674#0" expanded="true" />
+                <element signature="e#8578#8579#0" expanded="true" />
+                <element signature="e#8651#8652#0" expanded="true" />
+                <element signature="e#8686#8687#0" expanded="true" />
+                <element signature="e#8759#8760#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file leaf-file-name="MarvinCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="447">
+              <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,7 +50,7 @@
       <file leaf-file-name="Controler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/Controler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="-21">
               <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding />
             </state>
@@ -417,7 +417,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33242258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33242258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -494,11 +494,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#openMarvinSearch#0;class#PageNavigator#0" expanded="false" />
-            <element signature="method#startEmptySearch#0;class#PageNavigator#0" expanded="false" />
-            <element signature="e#8492#8493#0" expanded="true" />
-            <element signature="e#8565#8566#0" expanded="true" />
-            <element signature="e#8600#8601#0" expanded="true" />
-            <element signature="e#8673#8674#0" expanded="true" />
+            <element signature="e#8578#8579#0" expanded="true" />
+            <element signature="e#8651#8652#0" expanded="true" />
+            <element signature="e#8686#8687#0" expanded="true" />
+            <element signature="e#8759#8760#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        <state relative-caret-position="447">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -765,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/Controler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="-21">
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
@@ -773,16 +772,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="149" column="49" lean-forward="false" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
+        <state relative-caret-position="774">
+          <caret line="201" column="7" lean-forward="false" selection-start-line="179" selection-start-column="3" selection-end-line="201" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#openMarvinSearch#0;class#PageNavigator#0" expanded="false" />
-            <element signature="method#startEmptySearch#0;class#PageNavigator#0" expanded="false" />
-            <element signature="e#8492#8493#0" expanded="true" />
-            <element signature="e#8565#8566#0" expanded="true" />
-            <element signature="e#8600#8601#0" expanded="true" />
-            <element signature="e#8673#8674#0" expanded="true" />
+            <element signature="e#8578#8579#0" expanded="true" />
+            <element signature="e#8651#8652#0" expanded="true" />
+            <element signature="e#8686#8687#0" expanded="true" />
+            <element signature="e#8759#8760#0" expanded="true" />
           </folding>
         </state>
       </provider>

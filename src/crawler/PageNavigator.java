@@ -17,7 +17,7 @@ public class PageNavigator extends HtmlUnitDriver{
 
     private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
     FluentWait<PageNavigator> wait;
-    int currentPage;
+    //int currentPage;
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
@@ -85,7 +85,7 @@ public class PageNavigator extends HtmlUnitDriver{
                         "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
                         "\\'javax.faces.behavior.event\\':\\'action\\'})');");
         wait.until((PageNavigator pn) -> pn.getCurrentPage() == pageNumber);
-        currentPage = pageNumber;
+        //currentPage = pageNumber;
     }
     /*public void goToPage(int pageNumber) {
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
@@ -167,17 +167,17 @@ public class PageNavigator extends HtmlUnitDriver{
      * Navigates from the event page to the searchpage.
      */
     public void eventBack() {
-        String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
+        //String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
         String buttonBackButtonID = "showEvent:backButtonTop";
 
         //clicks the Back-Button
-        WebElement buttonBack = this.findElement(By.id(buttonBackButtonID));
+        WebElement buttonBack = wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonBackButtonID)));
         buttonBack.click();
         //waits until the NewSearch button is found.
-        this.waitForElement(buttonNewSearchID);
+        wait.until((PageNavigator pn) -> pn.getTitle().contains("Veranstaltungen suchen"));
     }
 
-    private void waitForElement(String id){
+   /* private void waitForElement(String id){
         long start = System.nanoTime();
         boolean warnOnce = false;
         boolean printSourceOnce = false;
@@ -199,7 +199,7 @@ public class PageNavigator extends HtmlUnitDriver{
             }
         }
         throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
-    }
+    }*/
 
     public int getMaxPage() {
         return Integer.parseInt(this.getPageInfo().split(" ")[3]);

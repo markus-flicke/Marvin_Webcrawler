@@ -56,6 +56,7 @@ public class MarvinCrawler implements Runnable{
             currentPage = pageNr;
             navigator.goToPage(pageNr);
             System.out.println(this.toString() + ": Went to Search page Nr. " + pageNr);
+            //System.out.println(navigator.getTitle());
             for(int i = 0; i < ENTRIES_PER_PAGE; i++) {
                 currentEvent = i;
                 i += eventOffset;
