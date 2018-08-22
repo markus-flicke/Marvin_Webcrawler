@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2a8aa2d-a0c0-49f2-bea1-d51733a4710e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/crawler/Controler.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/MarvinCrawler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageNavigator.class" afterPath="$PROJECT_DIR$/out/production/Marvin_Webcrawler/crawler/PageNavigator.class" />
-      <change beforePath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
-      <change beforePath="$PROJECT_DIR$/src/crawler/PageNavigator.java" afterPath="$PROJECT_DIR$/src/crawler/PageNavigator.java" />
+      <change beforePath="$PROJECT_DIR$/src/Exceptions/Tester.java" afterPath="$PROJECT_DIR$/src/Exceptions/Tester.java" />
+      <change beforePath="$PROJECT_DIR$/src/crawler/Controler.java" afterPath="$PROJECT_DIR$/src/crawler/Controler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,17 +21,9 @@
       <file leaf-file-name="PageNavigator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1221">
-              <caret line="101" column="4" lean-forward="false" selection-start-line="101" selection-start-column="4" selection-end-line="109" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#7224#7225#0" expanded="true" />
-                <element signature="e#7297#7298#0" expanded="true" />
-                <element signature="e#7332#7333#0" expanded="true" />
-                <element signature="e#7405#7406#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1044">
+              <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,12 +31,10 @@
       <file leaf-file-name="MarvinCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="56" column="52" lean-forward="false" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+            <state relative-caret-position="864">
+              <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,11 +44,18 @@
         <entry file="file://$PROJECT_DIR$/src/crawler/Controler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-              <folding>
-                <element signature="e#1177#1178#0" expanded="true" />
-                <element signature="e#1201#1202#0" expanded="true" />
-              </folding>
+              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tester.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/src/Exceptions/Tester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,7 +65,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1534935035381" expanded="true" signature="6827:6833" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/Exceptions/Tester.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -153,9 +148,10 @@
         <option value="$PROJECT_DIR$/src/crawler/EventReader.java" />
         <option value="$PROJECT_DIR$/src/sql/SqlConnector.java" />
         <option value="$PROJECT_DIR$/src/Exceptions/Tester.java" />
-        <option value="$PROJECT_DIR$/src/crawler/Controler.java" />
         <option value="$PROJECT_DIR$/src/crawler/MarvinCrawler.java" />
         <option value="$PROJECT_DIR$/src/crawler/PageNavigator.java" />
+        <option value="$PROJECT_DIR$/src/crawler/Controler.java" />
+        <option value="$USER_HOME$/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/src/Exceptions/Tester.java" />
       </list>
     </option>
   </component>
@@ -423,17 +419,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1236" y="-4" width="1922" height="1212" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33242258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33242258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -493,30 +488,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#7224#7225#0" expanded="true" />
-            <element signature="e#7297#7298#0" expanded="true" />
-            <element signature="e#7332#7333#0" expanded="true" />
-            <element signature="e#7405#7406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -525,15 +502,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
           <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#7224#7225#0" expanded="true" />
-            <element signature="e#7297#7298#0" expanded="true" />
-            <element signature="e#7332#7333#0" expanded="true" />
-            <element signature="e#7405#7406#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -566,8 +535,6 @@
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -616,8 +583,6 @@
           <caret line="41" column="82" lean-forward="true" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -658,8 +623,6 @@
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,54 +736,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1534935035381" expanded="true" signature="6827:6833" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exceptions/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/MarvinCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="56" column="52" lean-forward="false" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+        <state relative-caret-position="864">
+          <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/PageNavigator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="101" column="4" lean-forward="false" selection-start-line="101" selection-start-column="4" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#7224#7225#0" expanded="true" />
-            <element signature="e#7297#7298#0" expanded="true" />
-            <element signature="e#7332#7333#0" expanded="true" />
-            <element signature="e#7405#7406#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1044">
+          <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/src/Exceptions/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/Controler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-          </folding>
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

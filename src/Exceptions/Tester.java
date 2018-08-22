@@ -10,12 +10,7 @@ import java.sql.SQLException;
 
 public class Tester {
     public static void test(String url) throws UnreadableException{
-        PageNavigator pn = new PageNavigator();
-        pn.get(url);
-        pn.startEmptySearch();
-        pn.goToPage(25);
-        pn.openEvent(pn.getEvent(1));
-        System.out.println(pn.getTitle());
+
     }
     public static void main(String[] args){
         try{

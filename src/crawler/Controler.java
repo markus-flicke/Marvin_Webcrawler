@@ -7,7 +7,7 @@ public class Controler {
     static final int PARALELL_CRAWLERS = 3;
 
     public static void main(String[] args) {
-        int pages = getPages(314);
+        int pages = getPages(30);
         int pagesPerThread = (int)(pages /PARALELL_CRAWLERS);
         if (pages % PARALELL_CRAWLERS != 0) {
             pagesPerThread += 1;
