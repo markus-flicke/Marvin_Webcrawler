@@ -17,6 +17,7 @@ public class PageNavigator extends HtmlUnitDriver{
 
     private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
     FluentWait<PageNavigator> wait;
+    int currentPage;
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
@@ -70,6 +71,22 @@ public class PageNavigator extends HtmlUnitDriver{
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
+    public void goToPage(int pageNumber) {
+        JavascriptExecutor je = (JavascriptExecutor) this;
+        je.executeScript(
+                "var event = new Event('onclick');" +
+                        "jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1')," +
+                        " event," +
+                        "'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1\\'," +
+                        "event," +
+                        "{execute:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes \\'," +
+                        "render:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes genSearchRes:messages-infobox \\'," +
+                        "onerror:de.his.ajax.Refresher.onError,onevent:de.his.ajax.Refresher.onEvent," +
+                        "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
+                        "\\'javax.faces.behavior.event\\':\\'action\\'})');");
+        wait.until((PageNavigator pn) -> pn.getCurrentPage() == pageNumber);
+        currentPage = pageNumber;
+    }
     /*public void goToPage(int pageNumber) {
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
@@ -101,24 +118,6 @@ public class PageNavigator extends HtmlUnitDriver{
 
     }*/
 
-    public void goToPage(int pageNumber) {
-        String pageLink = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
-
-        JavascriptExecutor je = (JavascriptExecutor) this;
-        je.executeScript(
-                "var event = new Event('onclick');" +
-                "jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1')," +
-                        " event," +
-                        "'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1\\'," +
-                        "event," +
-                        "{execute:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes \\'," +
-                        "render:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes genSearchRes:messages-infobox \\'," +
-                        "onerror:de.his.ajax.Refresher.onError,onevent:de.his.ajax.Refresher.onEvent," +
-                        "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
-                        "\\'javax.faces.behavior.event\\':\\'action\\'})');");
-        wait.until((PageNavigator pn) -> {return pn.getCurrentPage() == pageNumber;});
-    }
-
     private void pause(long milliseconds) {
         synchronized (this) {
             try {
@@ -132,6 +131,7 @@ public class PageNavigator extends HtmlUnitDriver{
     /**
      * @return List of all event links on the curently opend page.
      */
+    //TODO: Refactoring (ID like: genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:191:actionsLeft:show)
     public List<WebElement> getEvents() {
         String buttonEventLinkClass = "linkTable";
 
@@ -148,23 +148,19 @@ public class PageNavigator extends HtmlUnitDriver{
      * Opens an event int this instance.
      */
     public void openEvent(WebElement eventLink) {
-        String buttonBackButtonID = "showEvent:backButtonTop";
-        //TODO: Is this a better way than the old code (in comment)
-        //clicks the eventLink and waits until the Back-Button is found
-        String s = eventLink.getText();
+        String linkText = eventLink.getText();
         eventLink.click();
-        System.out.println(s);
-        //
-        // this.waitForElement(buttonBackButtonID);
-
-        while(true) {
+        System.out.println(linkText);
+        wait.until((PageNavigator pn) -> pn.getTitle().contains(linkText));
+        /*while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
                 //this.pause(WAIT_TIME);
             } catch (org.openqa.selenium.NoSuchElementException e) {
+                System.out.println(this.getTitle());
                 break;
             }
-        }
+        }*/
     }
 
     /**
