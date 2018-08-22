@@ -13,6 +13,7 @@ public class MarvinCrawler implements Runnable{
     final int ENTRIES_PER_PAGE = 10;
 
     public MarvinCrawler(int start, int end) {
+        System.setProperty("webdriver.gecko.driver", "/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/firefoxdriver/geckodriver");
         this.currentPage = start;
         this.end = end;
     }
@@ -34,7 +35,7 @@ public class MarvinCrawler implements Runnable{
                 break;
             } catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
-                System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
+                System.out.printf("CurrentPage: %d\tCurrentEvent: %d\n", currentPage, currentEvent);
                 //System.out.println(e);
                 //e.printStackTrace();
             }

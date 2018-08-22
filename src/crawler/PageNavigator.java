@@ -1,6 +1,7 @@
 package crawler;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -15,7 +16,7 @@ import java.time.Duration;
 public class PageNavigator extends HtmlUnitDriver{
 
     private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
-    FluentWait<? extends WebDriver> wait;
+    FluentWait<PageNavigator> wait;
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
@@ -69,7 +70,7 @@ public class PageNavigator extends HtmlUnitDriver{
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
-    public void goToPage(int pageNumber) {
+    /*public void goToPage(int pageNumber) {
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
         Wait<PageNavigator> wait = new FluentWait<>(this)
@@ -88,16 +89,34 @@ public class PageNavigator extends HtmlUnitDriver{
                 this.pause(WAIT_TIME);
             } catch(NoSuchElementException e) {
                 System.out.println("Page: " + this.getCurrentPage());
-                this.findElement(By.id(aFastForwardButtonID)).click();
+                fastForward();
             }
         }
     }
-    private void fastForeward() {
+    private void fastForward() {
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
 
         WebElement ffButton = wait.until((WebDriver pn) -> pn.findElement(By.id(aFastForwardButtonID)));
         ffButton.click();
 
+    }*/
+
+    public void goToPage(int pageNumber) {
+        String pageLink = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
+
+        JavascriptExecutor je = (JavascriptExecutor) this;
+        je.executeScript(
+                "var event = new Event('onclick');" +
+                "jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1')," +
+                        " event," +
+                        "'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1\\'," +
+                        "event," +
+                        "{execute:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes \\'," +
+                        "render:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes genSearchRes:messages-infobox \\'," +
+                        "onerror:de.his.ajax.Refresher.onError,onevent:de.his.ajax.Refresher.onEvent," +
+                        "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
+                        "\\'javax.faces.behavior.event\\':\\'action\\'})');");
+        wait.until((PageNavigator pn) -> {return pn.getCurrentPage() == pageNumber;});
     }
 
     private void pause(long milliseconds) {
