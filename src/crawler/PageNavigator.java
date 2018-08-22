@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.util.List;
 import java.time.Duration;
@@ -15,9 +14,9 @@ import java.time.Duration;
  */
 public class PageNavigator extends HtmlUnitDriver{
 
-    private final int WAIT_TIME = 100;  //Milliseconds to wait for elements to load.
+    final int ENTRIES_PER_PAGE = 10;
     FluentWait<PageNavigator> wait;
-    //int currentPage;
+    int currentPage;
 
     public PageNavigator() {
         super(true); //to enable JavaScript support of the HtmlUnitDriver
@@ -85,7 +84,7 @@ public class PageNavigator extends HtmlUnitDriver{
                         "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
                         "\\'javax.faces.behavior.event\\':\\'action\\'})');");
         wait.until((PageNavigator pn) -> pn.getCurrentPage() == pageNumber);
-        //currentPage = pageNumber;
+        currentPage = pageNumber;
     }
     /*public void goToPage(int pageNumber) {
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
@@ -118,7 +117,7 @@ public class PageNavigator extends HtmlUnitDriver{
 
     }*/
 
-    private void pause(long milliseconds) {
+    /*private void pause(long milliseconds) {
         synchronized (this) {
             try {
                 this.wait(milliseconds); //wait has to be in synchronised block to work
@@ -126,32 +125,25 @@ public class PageNavigator extends HtmlUnitDriver{
                 ie.printStackTrace();
             }
         }
-    }
+    }*/
 
-    /**
-     * @return List of all event links on the curently opend page.
-     */
-    //TODO: Refactoring (ID like: genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:191:actionsLeft:show)
-    public List<WebElement> getEvents() {
+    /*private List<WebElement> getEvents() {
         String buttonEventLinkClass = "linkTable";
 
         return this.findElements(By.className(buttonEventLinkClass));
     }
 
-    public WebElement getEvent(int index) {
+    public WebElement getEvent(int index, int test) {
         List<WebElement> list = this.getEvents();
         return list.get(index);
-    }
+    }*/
 
-    /**
-     * @param eventLink Link to the event.
-     * Opens an event int this instance.
-     */
-    public void openEvent(WebElement eventLink) {
-        String linkText = eventLink.getText();
+
+    public void openEvent(int index) {
+        WebElement eventLink = getEvent(index);
         eventLink.click();
-        System.out.println(linkText);
-        wait.until((PageNavigator pn) -> pn.getTitle().contains(linkText));
+        System.out.println(this.getTitle());
+        wait.until((PageNavigator pn) -> pn.getTitle().contains("Veranstaltungsdaten"));
         /*while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
@@ -161,6 +153,12 @@ public class PageNavigator extends HtmlUnitDriver{
                 break;
             }
         }*/
+    }
+    private WebElement getEvent(int index) {
+        int eventNumber = (currentPage - 1)* ENTRIES_PER_PAGE + index;
+        String buttonEventLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:"+ eventNumber +":actionsLeft:show";
+
+        return wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonEventLinkID)));
     }
 
     /**
@@ -209,6 +207,7 @@ public class PageNavigator extends HtmlUnitDriver{
     }
     private String getPageInfo() {
         String spanPageTextClass = "dataScrollerPageText";
-        return this.findElement(By.className(spanPageTextClass)).getText();
+        String pageInfo = wait.until((PageNavigator pn) -> pn.findElement(By.className(spanPageTextClass)).getText());
+        return pageInfo;
     }
 }

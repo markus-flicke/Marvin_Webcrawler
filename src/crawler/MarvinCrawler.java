@@ -61,7 +61,7 @@ public class MarvinCrawler implements Runnable{
                 currentEvent = i;
                 i += eventOffset;
                 eventOffset = 0;
-                navigator.openEvent(navigator.getEvent(i));
+                navigator.openEvent(i);
                 EventReader eventReader = new EventReader(navigator);
                 try{
                     EventData eventData = eventReader.getEventData();
