@@ -4,7 +4,7 @@ import java.util.logging.Level;
 
 public class Controler {
 
-    static final int PARALELL_CRAWLERS = 2;
+    static final int PARALELL_CRAWLERS = 4;
 
     public static void main(String[] args) {
         int pages = getPages();
@@ -23,7 +23,6 @@ public class Controler {
             Thread t = new Thread(new MarvinCrawler(startPage, endPage), "Crawler"+(i+1));
             t.setPriority(t.MAX_PRIORITY);
             t.start();
-            System.out.println("Crawler " + (i+1) + " reads pages " + startPage + "-" + (endPage - 1)+ ". Priority: " + t.getPriority());
             startPage = endPage;
         }
     }

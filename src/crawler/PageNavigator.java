@@ -23,7 +23,7 @@ public class PageNavigator extends HtmlUnitDriver{
         wait = new FluentWait<>(this)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(100))
-                .ignoring(NoSuchElementException.class);
+                .ignoring(NoSuchElementException.class).ignoring(StaleElementReferenceException.class);
     }
 
     /**
@@ -70,22 +70,28 @@ public class PageNavigator extends HtmlUnitDriver{
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
      */
-    public void goToPage(int pageNumber) {
+    public void goToPage(int pageNumber) throws TimeoutException {
+        currentPage = getCurrentPage();
         JavascriptExecutor je = (JavascriptExecutor) this;
         je.executeScript(
                 "var event = new Event('onclick');" +
-                        "jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1')," +
+                        "jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx"+
+                        currentPage + "')," +
                         " event," +
-                        "'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx1\\'," +
+                        "'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx"+
+                        currentPage +"\\'," +
                         "event," +
                         "{execute:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes \\'," +
                         "render:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes genSearchRes:messages-infobox \\'," +
                         "onerror:de.his.ajax.Refresher.onError,onevent:de.his.ajax.Refresher.onEvent," +
                         "\\'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2\\':\\'idx"+ pageNumber + "\\'," +
                         "\\'javax.faces.behavior.event\\':\\'action\\'})');");
-        wait.until((PageNavigator pn) -> pn.getCurrentPage() == pageNumber);
-        currentPage = pageNumber;
+        //try {
+        wait.until((PageNavigator pn) -> pn.getCurrentPage() == pageNumber);//} catch(TimeoutException toe) {goToPage(pageNumber);};
+        currentPage = getCurrentPage();
     }
+
+
     /*public void goToPage(int pageNumber) {
         String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
         String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
@@ -142,8 +148,8 @@ public class PageNavigator extends HtmlUnitDriver{
     public void openEvent(int index) {
         WebElement eventLink = getEvent(index);
         eventLink.click();
-        System.out.println(this.getTitle());
-        wait.until((PageNavigator pn) -> pn.getTitle().contains("Veranstaltungsdaten"));
+        //System.out.println(this.getTitle());
+        wait.until((PageNavigator pn) -> { String title = pn.getTitle();return (title == null)?false:title.contains("Veranstaltungsdaten"); });
         /*while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
@@ -172,7 +178,7 @@ public class PageNavigator extends HtmlUnitDriver{
         WebElement buttonBack = wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonBackButtonID)));
         buttonBack.click();
         //waits until the NewSearch button is found.
-        wait.until((PageNavigator pn) -> pn.getTitle().contains("Veranstaltungen suchen"));
+        wait.until((PageNavigator pn) -> { String title = pn.getTitle();return (title == null)?false:title.contains("Veranstaltungen suchen"); });
     }
 
    /* private void waitForElement(String id){

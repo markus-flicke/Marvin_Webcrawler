@@ -81,8 +81,8 @@ public class SqlWriter {
                 (verantwortlicherIndex == null) ? "NULL" : "'" + data.getBasicData()[1][verantwortlicherIndex] + "'",
                 (organisationseinheitIndex == null) ? "NULL" : "'" + data.getBasicData()[1][organisationseinheitIndex] + "'",
                 this.data.getBasicData()[1][titelIndex]);
-        sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",
-                this.data.getBasicData()[1][titelIndex]);
+        //Zum testen auskommentiert:
+        //sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",this.data.getBasicData()[1][titelIndex]);
         this.upload(sqlQuery);
     }
 
