@@ -4,7 +4,7 @@ import java.util.logging.Level;
 
 public class Controler {
 
-    static final int PARALELL_CRAWLERS = 4;
+    static final int PARALELL_CRAWLERS = 1;
 
     public static void main(String[] args) {
         int pages = getPages();

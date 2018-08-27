@@ -23,7 +23,8 @@ public class PageNavigator extends HtmlUnitDriver{
         wait = new FluentWait<>(this)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(100))
-                .ignoring(NoSuchElementException.class).ignoring(StaleElementReferenceException.class);
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
     }
 
     /**
@@ -149,7 +150,10 @@ public class PageNavigator extends HtmlUnitDriver{
         WebElement eventLink = getEvent(index);
         eventLink.click();
         //System.out.println(this.getTitle());
-        wait.until((PageNavigator pn) -> { String title = pn.getTitle();return (title == null)?false:title.contains("Veranstaltungsdaten"); });
+        wait.until((PageNavigator pn) -> {
+            String title = pn.getTitle();
+            return (title == null)?false:title.contains("Veranstaltungsdaten");
+        });
         /*while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
@@ -178,7 +182,15 @@ public class PageNavigator extends HtmlUnitDriver{
         WebElement buttonBack = wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonBackButtonID)));
         buttonBack.click();
         //waits until the NewSearch button is found.
-        wait.until((PageNavigator pn) -> { String title = pn.getTitle();return (title == null)?false:title.contains("Veranstaltungen suchen"); });
+        try {
+            wait.until((PageNavigator pn) -> {
+                String title = pn.getTitle();
+                return (title == null) ? false : title.contains("Veranstaltungen suchen");
+            });
+        } catch (TimeoutException toe) {
+            System.out.println("Aktueller Title: " + getTitle());
+            throw toe;
+        }
     }
 
    /* private void waitForElement(String id){

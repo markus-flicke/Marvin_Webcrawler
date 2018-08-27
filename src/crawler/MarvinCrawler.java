@@ -4,6 +4,8 @@ import Exceptions.UnreadableException;
 import sql.SqlConnector;
 import sql.SqlWriter;
 import util.EventData;
+import util.Timer;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -14,6 +16,9 @@ import java.util.logging.Level;
 public class MarvinCrawler implements Runnable{
     int currentPage, currentEvent, end;
     final int ENTRIES_PER_PAGE = 10;
+    Timer objectCreation = new Timer();
+    Timer upload = new Timer();
+    Timer total = new Timer();
 
     public MarvinCrawler(int start, int end) {
         System.setProperty("webdriver.gecko.driver", "/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/firefoxdriver/geckodriver");
@@ -37,9 +42,14 @@ public class MarvinCrawler implements Runnable{
     public void loopCrawl(){
         //currentPage = 20;
         currentEvent = 0;
+        total.start();
         while(true){
             try {
-                crawl(currentPage, currentEvent, end);
+                crawl(currentPage, /*currentEvent,*/ end);
+                total.stop();
+                System.out.println("Objekte erzeugen: " + objectCreation.getSeconds());
+                System.out.println("Upload: " + upload.getSeconds());
+                System.out.println("Gesamt: " + total.getSeconds());
                 break;
             } catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
@@ -50,31 +60,55 @@ public class MarvinCrawler implements Runnable{
         }
     }
 
-    private void crawl(int startPage, int startEvent, int endPage){
+    private void crawl(int startPage, /*int startEvent,*/ int endPage){
         java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF);
+        objectCreation.start();
         PageNavigator navigator = new PageNavigator();
+        objectCreation.stop();
         navigator.init();
         System.out.println(this.toString() + ": Search Opened.");
+        objectCreation.start();
         SqlConnector connector = new SqlConnector();
+        objectCreation.stop();
         Connection connection = connector.connect();
 
-        int eventOffset = startEvent;
+        //int eventOffset = startEvent;
         for(int pageNr = startPage; pageNr < endPage; pageNr++){ //Exlusive endpage!
 
             currentPage = pageNr;
-            try {navigator.goToPage(pageNr);} catch (Exception e) {pageNr--; continue; }//retry
+            try {
+                navigator.goToPage(pageNr);
+            } catch (Exception e) {
+                pageNr--;
+                continue; //retry!
+            }
             System.out.println(this.toString() + ": Went to Search page Nr. " + pageNr);
             //System.out.println(navigator.getTitle());
             for(int i = 0; i < ENTRIES_PER_PAGE; i++) {
                 currentEvent = i;
-                i += eventOffset;
-                eventOffset = 0;
-                try {navigator.openEvent(i);} catch (Exception e) {System.out.println(this.getClass() + " ended on page " + currentPage + " event " + (currentEvent - 1));break;}
+                //i += eventOffset;
+                //eventOffset = 0;
+                try {
+                    navigator.openEvent(i);
+                } catch (Exception e) {
+                    System.err.println(e.getClass() + " on page " + currentPage + " event " + (currentEvent - 1));
+                    if(currentPage == endPage - 1) {
+                        break;
+                    } else {
+                        throw e;
+                    }
+                }
+                objectCreation.start();
                 EventReader eventReader = new EventReader(navigator);
+                objectCreation.stop();
                 try{
                     EventData eventData = eventReader.getEventData();
+                    objectCreation.start();
                     SqlWriter sqlWriter = new SqlWriter(eventData, connection);
+                    objectCreation.stop();
+                    upload.start();
                     sqlWriter.uploadAll();
+                    upload.stop();
                 }
                 catch(Exception e){
                     connection = connector.connect();

@@ -18,4 +18,4 @@ CREATE TABLE Events (EventID Serial primary key,
 					 durchführender varchar(1000), ausfalltermin varchar(200), bemerkung varchar(1000));
 CREATE TABLE EMzuteilung (modulID int REFERENCES Module(modulID) ON DELETE CASCADE ON UPDATE CASCADE,
 							 EventID int REFERENCES Events(EventID) ON DELETE CASCADE ON UPDATE CASCADE);
-create table Unhandled (url varchar(1000), exception varchar(100));
+create table Unhandled (url varchar(1000), exception varchar(1000));
