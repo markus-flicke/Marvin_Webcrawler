@@ -1,5 +1,6 @@
 package crawler;
 
+import okio.Timeout;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -150,10 +151,15 @@ public class PageNavigator extends HtmlUnitDriver{
         WebElement eventLink = getEvent(index);
         eventLink.click();
         //System.out.println(this.getTitle());
-        wait.until((PageNavigator pn) -> {
-            String title = pn.getTitle();
-            return (title == null)?false:title.contains("Veranstaltungsdaten");
-        });
+        try {
+            wait.until((PageNavigator pn) -> {
+                String title = pn.getTitle();
+                return (title == null) ? false : title.contains("Veranstaltungsdaten");
+            });
+        } catch (Exception toe) {
+            System.out.println("Aktueller Titel: " + getTitle());
+            throw toe;
+        }
         /*while(true) {
             try {
                 this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
@@ -182,6 +188,20 @@ public class PageNavigator extends HtmlUnitDriver{
         WebElement buttonBack = wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonBackButtonID)));
         buttonBack.click();
         //waits until the NewSearch button is found.
+        try {
+            wait.until((PageNavigator pn) -> {
+                String title = pn.getTitle();
+                return (title == null) ? false : title.contains("Veranstaltungen suchen");
+            });
+        } catch (Exception toe) {
+            System.out.println("Aktueller Title: " + getTitle());
+            throw toe;
+        }
+    }
+
+    public void eventBack(int currentTerm) {    //WS18/19:CurrentTerm = 76
+        JavascriptExecutor je = (JavascriptExecutor) this;
+        je.executeScript("myfaces.oam.submitForm('showEvent', 'showEvent:backButtonTop', null, [['backFromCourseDetail', 'true'],['currentTerm', '"+currentTerm+"']]);");
         try {
             wait.until((PageNavigator pn) -> {
                 String title = pn.getTitle();

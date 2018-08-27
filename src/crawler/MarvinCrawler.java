@@ -1,29 +1,28 @@
 package crawler;
 
-import Exceptions.UnreadableException;
 import sql.SqlConnector;
 import sql.SqlWriter;
 import util.EventData;
 import util.Timer;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 
 public class MarvinCrawler implements Runnable{
     int currentPage, currentEvent, end;
     final int ENTRIES_PER_PAGE = 10;
+    final int currentTerm;
     Timer objectCreation = new Timer();
     Timer upload = new Timer();
     Timer total = new Timer();
 
-    public MarvinCrawler(int start, int end) {
+    public MarvinCrawler(int start, int end, int currentTerm) {
         System.setProperty("webdriver.gecko.driver", "/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/firefoxdriver/geckodriver");
         this.currentPage = start;
         this.end = end;
+        this.currentTerm = currentTerm;
         System.out.println(this.toString() + " is going to read pages " + start + " - " + (end - 1) + ".");
     }
 
@@ -116,7 +115,7 @@ public class MarvinCrawler implements Runnable{
                     sqlWriter.uploadUnhandled(eventReader.getPermalink(), ""+e.getClass()+ " -> " + e.getMessage());
                 }
                 finally{
-                    navigator.eventBack();
+                    navigator.eventBack(currentTerm);
                 }
             }
 
