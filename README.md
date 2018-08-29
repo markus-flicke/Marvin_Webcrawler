@@ -10,7 +10,7 @@ CREATE TABLE Module (modulID bigint primary key,
 CREATE TABLE Veranstaltungen (veranstaltungsID SERIAL primary key, 
 							  verantwortlicher varchar(1000), 
 							  organisationseinheit varchar(1000), 
-							  titel varchar(1000) UNIQUE);
+							  titel varchar(1000));
 CREATE TABLE Events (EventID Serial primary key,
 					VeranstaltungsID int references Veranstaltungen(veranstaltungsID),
 					wochentag varchar(60), von varchar(60), bis varchar(60), akademischezeit varchar(60),
