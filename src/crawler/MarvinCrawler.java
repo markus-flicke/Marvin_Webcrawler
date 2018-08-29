@@ -1,86 +1,125 @@
 package crawler;
 
-import Exceptions.UnreadableException;
 import sql.SqlConnector;
 import sql.SqlWriter;
 import util.EventData;
+import util.Timer;
+
 import java.sql.Connection;
-import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 
-public class MarvinCrawler {
-    int currentPage, currentEvent;
+public class MarvinCrawler implements Runnable{
+    int currentPage, currentEvent, end;
+    final int ENTRIES_PER_PAGE = 10;
+    final int currentTerm;
+    Timer objectCreation = new Timer();
+    Timer upload = new Timer();
+    Timer total = new Timer();
+
+    public MarvinCrawler(int start, int end, int currentTerm) {
+        System.setProperty("webdriver.gecko.driver", "/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/firefoxdriver/geckodriver");
+        this.currentPage = start;
+        this.end = end;
+        this.currentTerm = currentTerm;
+        System.out.println(this.toString() + " is going to read pages " + start + " - " + (end - 1) + ".");
+    }
+
+    @Override
+    public void run() {
+        System.out.println(this.toString() + " started at: " + getDate());
+        this.loopCrawl();
+        System.out.println(this.toString() + " finished at: " + getDate());
+    }
+    private String getDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        return formatter.format(date);
+    }
 
     public void loopCrawl(){
-        currentPage = 201;
+        //currentPage = 20;
         currentEvent = 0;
-        while(currentPage < 431){  //TODO: method for max page
-            try{
-                crawl(currentPage, currentEvent,431);
-            }catch(Exception e){
+        total.start();
+        while(true){
+            try {
+                crawl(currentPage, /*currentEvent,*/ end);
+                total.stop();
+                System.out.println("Objekte erzeugen: " + objectCreation.getSeconds());
+                System.out.println("Upload: " + upload.getSeconds());
+                System.out.println("Gesamt: " + total.getSeconds());
+                break;
+            } catch(Exception e){
                 System.out.println("Some sort of exception terminated the crawler. restarting...");
-                System.out.printf("CurrentPage: %d\nCurrentEvent: %d\n", currentPage, currentEvent);
-                System.out.println(e);
+                System.out.printf("CurrentPage: %d\tCurrentEvent: %d\n", currentPage, currentEvent);
+                //System.out.println(e);
+                e.printStackTrace();
             }
         }
     }
 
-    private void crawl(int startPage, int startEvent, int endPage){
+    private void crawl(int startPage, /*int startEvent,*/ int endPage){
         java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF);
+        objectCreation.start();
         PageNavigator navigator = new PageNavigator();
-
-        navigator.openMarvinSearch();
-        System.out.println("Search Opened.");
-        navigator.startEmptySearch();
+        objectCreation.stop();
+        navigator.init();
+        System.out.println(this.toString() + ": Search Opened.");
+        objectCreation.start();
         SqlConnector connector = new SqlConnector();
+        objectCreation.stop();
         Connection connection = connector.connect();
 
-        int eventOffset = startEvent;
-        for(int pageNr = startPage; pageNr <= endPage; pageNr++){
+        //int eventOffset = startEvent;
+        for(int pageNr = startPage; pageNr < endPage; pageNr++){ //Exlusive endpage!
 
             currentPage = pageNr;
-            navigator.goToPage(pageNr);
-            System.out.println("Went to Search page Nr. " + pageNr);
-            for(int i = 0; i < 10; i++) {
+            try {
+                navigator.goToPage(pageNr);
+            } catch (Exception e) {
+                pageNr--;
+                continue; //retry!
+            }
+            System.out.println(this.toString() + ": Went to Search page Nr. " + pageNr);
+            //System.out.println(navigator.getTitle());
+            for(int i = 0; i < ENTRIES_PER_PAGE; i++) {
                 currentEvent = i;
-                i += eventOffset;
-                eventOffset = 0;
-                navigator.openEvent(navigator.getEvent(i));
+                //i += eventOffset;
+                //eventOffset = 0;
+                try {
+                    navigator.openEvent(i);
+                } catch (Exception e) {
+                    System.err.println(e.getClass() + " on page " + currentPage + " event " + (currentEvent - 1));
+                    if(currentPage == endPage - 1) {
+                        break;
+                    } else {
+                        throw e;
+                    }
+                }
+                objectCreation.start();
                 EventReader eventReader = new EventReader(navigator);
+                objectCreation.stop();
                 try{
                     EventData eventData = eventReader.getEventData();
+                    objectCreation.start();
                     SqlWriter sqlWriter = new SqlWriter(eventData, connection);
+                    objectCreation.stop();
+                    upload.start();
                     sqlWriter.uploadAll();
-                }
-                catch(SQLException e){
-                    connection = connector.connect();
-                    SqlWriter sqlWriter = new SqlWriter(null, connection);
-                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "SQLException");
-                }
-                catch(UnreadableException e){
-                    connection = connector.connect();
-                    SqlWriter sqlWriter = new SqlWriter(null, connection);
-                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "Event unreadable");
+                    upload.stop();
                 }
                 catch(Exception e){
                     connection = connector.connect();
                     SqlWriter sqlWriter = new SqlWriter(null, connection);
-                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), "Unexpected Exception");
+                    sqlWriter.uploadUnhandled(eventReader.getPermalink(), ""+e.getClass()+ " -> " + e.getMessage());
                 }
                 finally{
-                    navigator.eventBack();
-                }
-                if(i % 10 == 0){
-                    System.out.printf("    Finished event Nr %d\n", i);
+                    navigator.eventBack(currentTerm);
                 }
             }
 
         }
         connector.close();
-    }
-
-    public static void main(String[] args) {
-        MarvinCrawler marvinCrawler = new MarvinCrawler();
-        marvinCrawler.loopCrawl();
     }
 }

@@ -1,0 +1,949 @@
+/opt/jdk-9.0.1/bin/java -javaagent:/opt/idea-IC-173.4127.27/lib/idea_rt.jar=39161:/opt/idea-IC-173.4127.27/bin -Dfile.encoding=UTF-8 -classpath /home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/out/production/Marvin_Webcrawler:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/selenium-java-3.12.0/client-combined-3.12.0.jar:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/sql/postgresql-42.2.4.jar crawler.Controler
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sourceforge.htmlunit.corejs.javascript.NativeArray (file:/home/jakob/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar) to field java.util.Arrays$LegacyMergeSort.userRequested
+WARNING: Please consider reporting this to the maintainers of net.sourceforge.htmlunit.corejs.javascript.NativeArray
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+crawler.MarvinCrawler@62452cc9 is going to read pages 1 - 80.
+crawler.MarvinCrawler@4a891c97 is going to read pages 81 - 160.
+crawler.MarvinCrawler@a5bd950 is going to read pages 161 - 240.
+crawler.MarvinCrawler@4d18aa28 is going to read pages 241 - 319.
+crawler.MarvinCrawler@62452cc9 started at: 23/08/2018 17:38:23
+crawler.MarvinCrawler@4d18aa28 started at: 23/08/2018 17:38:23
+crawler.MarvinCrawler@a5bd950 started at: 23/08/2018 17:38:23
+crawler.MarvinCrawler@4a891c97 started at: 23/08/2018 17:38:23
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 1
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4a891c97: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 241
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 81
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 161
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 2
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 162
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 242
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 82
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 162	CurrentEvent: 1
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 242	CurrentEvent: 1
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 162
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 242
+Aug. 23, 2018 5:40:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:40:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 5:40:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:40:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880110-20172', 265), ('15880110', 265);
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880120-20172', 270), ('15880120', 270);
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 3
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 163
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 83
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 243
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 4
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 164
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 84
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 244
+Aug. 23, 2018 5:42:07 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:42:07 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 5
+Aug. 23, 2018 5:42:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:42:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 165
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 85
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 245
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 6
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 166
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 86
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 246
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(510, 173, 'Montag', '18:15', '20:00', '', '14-täglich', '29.10.2018', '26.11.2018', '', '2011 (2011/ZSP) (Karl-von-Frisch-Strasse 8, Institutsgebäude (KvF 8 I))', 'Prof. Dr. Farwig, Nina
+Heuck, Christian
+Dr. Schabo, Dana', '', ''), (511, 173, 'Montag', '15:00', '21:00', '', 'Einzeltermin', '11.02.2019', '11.02.2019', '', '', 'Prof. Dr. Farwig, Nina
+Heuck, Christian
+Dr. Schabo, Dana', '', '');
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(524, 179, 'Montag', '18:00', '20:00', '', 'wöchentlich', '15.10.2018', '11.02.2019', '', '209 (+2/0090) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (525, 179, 'Mittwoch', '18:00', '20:00', '', 'wöchentlich', '17.10.2018', '13.02.2019', '', '110 (+1/0100) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (526, 179, 'Donnerstag', '14:00', '18:00', '', 'Einzeltermin', '08.11.2018', '08.11.2018', '', '00011 (AP 2) (Am Plan 1 und 2, Seminargebäude (AP 1/2))', '', '', ''), (527, 179, 'Freitag', '09:00', '12:00', '', 'Einzeltermin', '09.11.2018', '09.11.2018', '', '011 (00/0110) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (528, 179, 'Donnerstag', '14:00', '18:00', '', 'Einzeltermin', '15.11.2018', '15.11.2018', '', '00011 (AP 2) (Am Plan 1 und 2, Seminargebäude (AP 1/2))', '', '', ''), (529, 179, 'Freitag', '09:00', '12:00', '', 'Einzeltermin', '16.11.2018', '16.11.2018', '', '011 (00/0110) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (530, 179, 'Donnerstag', '14:00', '18:00', '', 'Einzeltermin', '06.12.2018', '06.12.2018', '', '00011 (AP 2) (Am Plan 1 und 2, Seminargebäude (AP 1/2))', '', '', ''), (531, 179, 'Freitag', '09:00', '12:00', '', 'Einzeltermin', '07.12.2018', '07.12.2018', '', '011 (00/0110) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (532, 179, 'Donnerstag', '14:00', '18:00', '', 'Einzeltermin', '13.12.2018', '13.12.2018', '', '00011 (AP 2) (Am Plan 1 und 2, Seminargebäude (AP 1/2))', '', '', ''), (533, 179, 'Freitag', '09:00', '12:00', '', 'Einzeltermin', '14.12.2018', '14.12.2018', '', '011 (00/0110) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', ''), (534, 179, '', '09:00', '18:00', '', 'Blockveranstaltung', '10.01.2019', '11.01.2019', '', '011 (00/0110) (Universitätsstrasse 24, Altes Amtsgericht (U | 04))', '', '', '');
+Aug. 23, 2018 5:44:01 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:44:01 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 5:44:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:44:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 7
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 167
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 247
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 87
+Aug. 23, 2018 5:44:43 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:44:43 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 168
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 8
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 248
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 88
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 9
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 169
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 249
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 89
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 10
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 250
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 170
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 90
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 10	CurrentEvent: 9
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 251
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 91
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 171
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 10
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 11
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 252
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 92
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 172
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 12
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 253
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 93
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 173
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 13
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 254
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 14
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 94
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 174
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 255
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 15
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 95
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 175
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 256
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 16
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 96
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 176
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 257
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 17
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 97
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 177
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 258
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 98
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 18
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 178
+Aug. 23, 2018 5:52:43 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:52:43 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 259
+Aug. 23, 2018 5:52:48 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:52:48 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 99
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 19
+Aug. 23, 2018 5:53:12 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:53:12 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 179
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 260
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 100
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 20
+Aug. 23, 2018 5:53:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:53:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 180
+Aug. 23, 2018 5:53:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:53:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 261
+Aug. 23, 2018 5:54:12 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:54:12 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 101
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 21
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 181
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 262
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 102
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 22
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 182
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 263
+Aug. 23, 2018 5:55:31 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 5:55:31 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 103
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 183
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 23
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 264
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 104
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 184
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 24
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 265
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 105
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 185
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 25
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 266
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 186
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 106
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 26
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 267
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 187
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 107
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 27
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 268
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 108
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 188
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 28
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 269
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 189
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 109
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 29
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 270
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 190
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 110
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 30
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 190	CurrentEvent: 5
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 271
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 190
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 191
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 111
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 31
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 272
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 112
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 192
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 273
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 32
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 113
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 193
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 274
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$eventBack$4(PageNavigator.java:181)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:181)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:97)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 274	CurrentEvent: 0
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 33	CurrentEvent: 9
+org.openqa.selenium.StaleElementReferenceException: The element seems to be disconnected from the DOM.  This means that a user cannot interact with it.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.assertElementNotStale(HtmlUnitDriver.java:999)
+	at org.openqa.selenium.htmlunit.HtmlUnitWebElement.assertElementNotStale(HtmlUnitWebElement.java:717)
+	at org.openqa.selenium.htmlunit.HtmlUnitWebElement.getText(HtmlUnitWebElement.java:466)
+	at crawler.PageNavigator.lambda$getPageInfo$5(PageNavigator.java:216)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.getPageInfo(PageNavigator.java:216)
+	at crawler.PageNavigator.getCurrentPage(PageNavigator.java:212)
+	at crawler.PageNavigator.lambda$goToPage$0(PageNavigator.java:90)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.goToPage(PageNavigator.java:90)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:67)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 274
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 33
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 34
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 114
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 194
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 275
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 35
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 195
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 115
+Aug. 23, 2018 6:06:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:06:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 276
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880930-20172', 2733), ('15880930', 2733);
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(2736, 1139, 'Mittwoch', '08:15', '09:45', '', 'wöchentlich', '17.10.2018', '13.02.2019', '24', '', 'Hartmann, Meike', '', ''), (2737, 1139, 'Freitag', '12:00', '13:30', '', 'wöchentlich', '19.10.2018', '15.02.2019', '24', '', 'Wermann, Tobias', '', '');
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 36
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 116
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 196
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 277
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 37
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 117
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-08-107-20152-010,'WF0145','Wahlfach Bildgebende Diagnostik' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-08-107-20152-010 as BIGINT));
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 278
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 197
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 38
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 118
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 279
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 198
+Aug. 23, 2018 6:08:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:08:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 6:08:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:08:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 39
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 119
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 280
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 199
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(3211, 1282, 'Mittwoch', '16:15', '17:45', '', 'wöchentlich', '17.10.2018', '13.02.2019', '30', '001 (Vortragsraum 001) (Pilgrimstein 16, Forschungszentrum Deutscher Sprachatlas (B | 05))', 'Türk, Stefanie', '', '');
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 281
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 40
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 120
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 200
+Aug. 23, 2018 6:09:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:09:49 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 6:09:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:09:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 282
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 41
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 121
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 201
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880220-20172', 3383), ('15880220', 3383), ('15880220-20172', 3384), ('15880220', 3384);
+Aug. 23, 2018 6:10:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:10:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 283
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 42
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 122
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 202
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(3465, 1387, 'Dienstag', '10:00', '12:00', '', 'wöchentlich', '16.10.2018', '12.02.2019', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3466, 1387, 'Dienstag', '10:00', '12:00', '', 'wöchentlich', '16.10.2018', '12.02.2019', '', '00019 (D, Dekanatssaal) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3467, 1387, 'Dienstag', '10:00', '12:00', '', 'wöchentlich', '16.10.2018', '12.02.2019', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3468, 1387, 'Dienstag', '18:00', '20:00', '', 'wöchentlich', '16.10.2018', '12.02.2019', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3469, 1387, 'Mittwoch', '14:00', '16:00', '', 'Einzeltermin', '24.10.2018', '24.10.2018', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3470, 1387, 'Freitag', '12:00', '20:00', '', 'Einzeltermin', '30.11.2018', '30.11.2018', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3471, 1387, 'Samstag', '10:00', '16:00', '', 'Einzeltermin', '01.12.2018', '01.12.2018', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3472, 1387, 'Freitag', '12:00', '20:00', '', 'Einzeltermin', '14.12.2018', '14.12.2018', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3473, 1387, 'Samstag', '10:00', '16:00', '', 'Einzeltermin', '15.12.2018', '15.12.2018', '', '02057 (S1) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3474, 1387, 'Mittwoch', '14:00', '16:00', '', 'Einzeltermin', '24.10.2018', '24.10.2018', '', '00004 (S2) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3475, 1387, 'Freitag', '12:00', '20:00', '', 'Einzeltermin', '30.11.2018', '30.11.2018', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3476, 1387, 'Samstag', '10:00', '16:00', '', 'Einzeltermin', '01.12.2018', '01.12.2018', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3477, 1387, 'Freitag', '12:00', '20:00', '', 'Einzeltermin', '14.12.2018', '14.12.2018', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', ''), (3478, 1387, 'Samstag', '10:00', '16:00', '', 'Einzeltermin', '15.12.2018', '15.12.2018', '', '00003 (S3) (Gutenbergstrasse 18, Alte Jägerkaserne (GU))', '', '', '');
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 284
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 123
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 43
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 203
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 285
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 124
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 44
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 204
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$eventBack$4(PageNavigator.java:181)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:181)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:97)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 285	CurrentEvent: 7
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 285
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 125
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 45
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 205
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 286
+Aug. 23, 2018 6:13:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:13:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 126
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 46
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 206
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 287
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 127
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$eventBack$4(PageNavigator.java:181)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:181)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:97)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 206	CurrentEvent: 7
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 47
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 206
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 288
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 207
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 128
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 48
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 289
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 208
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 129
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 49
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 290
+Some sort of exception terminated the crawler. restarting...
+java.lang.NullPointerException
+CurrentPage: 290	CurrentEvent: 1
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 209
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 290
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 130
+Some sort of exception terminated the crawler. restarting...
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+CurrentPage: 130	CurrentEvent: 1
+crawler.MarvinCrawler@4a891c97: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 50
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 130
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 210
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 291
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 291	CurrentEvent: 2
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 51
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 291
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 131
+Some sort of exception terminated the crawler. restarting...
+java.lang.NullPointerException
+CurrentPage: 131	CurrentEvent: 2
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4a891c97: Search Opened.
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 131
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880360-20172', 4196), ('15880360', 4196), ('15880360-20172', 4197), ('15880360', 4197);
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880360-20172', 4203), ('15880360', 4203);
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 211
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 51	CurrentEvent: 7
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+java.lang.NullPointerException
+CurrentPage: 211	CurrentEvent: 1
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 292
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 51
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 211
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 132
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 52
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 293
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 212
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 133
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 53
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 213
+Aug. 23, 2018 6:20:35 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:20:35 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 294
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 134
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 54
+Aug. 23, 2018 6:21:10 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:21:10 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 214
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 295
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 135
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 55
+Aug. 23, 2018 6:21:55 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:21:55 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 215
+Aug. 23, 2018 6:22:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:22:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 296
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 136
+Aug. 23, 2018 6:22:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:22:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 56
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 216
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-08-107-20152-200,'WF0130','Wahlfach Sinnesorgane und Haut' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-08-107-20152-200 as BIGINT));
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 297
+Aug. 23, 2018 6:23:16 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:23:16 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 137
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 57
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880810-20172', 4698), ('15880810', 4698), ('161261150', 4698), ('15880810-20172', 4699), ('15880810', 4699), ('161261150', 4699);
+Aug. 23, 2018 6:23:26 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:23:26 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 217
+Aug. 23, 2018 6:23:44 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:23:44 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 298
+Aug. 23, 2018 6:23:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:23:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 138
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 58
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 218
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 299
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 139
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 59
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 219
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 300
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 140
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 60
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 301
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 220
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 141
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 61
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 302
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 142
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 221
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 62
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 221	CurrentEvent: 3
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 303
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 221
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 63
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 143
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 222
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 304
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 64
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 144
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 223
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 305
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 65
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 145
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 306
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 224
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 66
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 146
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 307
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 225
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 147
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 67
+Aug. 23, 2018 6:30:30 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:30:30 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 308
+Aug. 23, 2018 6:30:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:30:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 226
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 67	CurrentEvent: 7
+java.lang.NullPointerException
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 148
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 67
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 68
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 309
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 227
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 149
+Aug. 23, 2018 6:31:48 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:31:48 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 69
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 310
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 228
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 150
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 70
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 311
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 229
+java.lang.NullPointerException
+Some sort of exception terminated the crawler. restarting...
+	at crawler.PageNavigator.lambda$eventBack$4(PageNavigator.java:181)
+CurrentPage: 70	CurrentEvent: 4
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:181)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:97)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 151
+crawler.MarvinCrawler@62452cc9: Search Opened.
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 70
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 312
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 71
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 230
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 152
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 313
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 231
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 72
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 153
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 314
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 73
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 154
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 232
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 315
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 155
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 74
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 233
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 316
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-10,'LaL-Ex 1','Einführung in die lateinische Sprache I' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-10 as BIGINT));
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-10,'LaL-Ex 1','Einführung in die lateinische Sprache I' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-10 as BIGINT));
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-20,'LaL-Ex 2','Einführung in die lateinische Sprache II' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-20 as BIGINT));
+Aug. 23, 2018 6:36:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:36:20 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 75
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 317
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 234
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 156	CurrentEvent: 9
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$78/154619504@1d334c6e (tried for 30 second(s) with 100 milliseconds interval)
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.goToPage(PageNavigator.java:90)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:67)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4a891c97: Search Opened.
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 156
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 157
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 318
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 76
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 235
+java.lang.NullPointerException
+Some sort of exception terminated the crawler. restarting...
+	at crawler.PageNavigator.lambda$openEvent$1(PageNavigator.java:152)
+CurrentPage: 318	CurrentEvent: 8
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:152)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 318
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 77
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 236
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$78/154619504@4f0e9a07 (tried for 30 second(s) with 100 milliseconds interval)
+Some sort of exception terminated the crawler. restarting...
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+CurrentPage: 158	CurrentEvent: 9
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.goToPage(PageNavigator.java:90)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:67)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@4a891c97: Search Opened.
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 158
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 159
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 78
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@2c51247e (tried for 30 second(s) with 100 milliseconds interval)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 319	CurrentEvent: 2
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+Aug. 23, 2018 6:38:36 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:38:36 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 237
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+crawler.MarvinCrawler@4a891c97: Went to Search page Nr. 160
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(6863, 2634, 'Dienstag', '12:00', '14:00', '', 'wöchentlich', '16.10.2018', '12.02.2019', '', '+3/0210 (304,Schulungsraum Jura) (Universitätsstrasse 7, Landgrafenhaus (LH))', 'Dr. Breitenbach, Andrea', '', '');
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 79
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 319	CurrentEvent: 0
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@76f8f28f (tried for 30 second(s) with 100 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 238
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+crawler.MarvinCrawler@4a891c97 finished at: 23/08/2018 18:39:51
+crawler.MarvinCrawler@62452cc9: Went to Search page Nr. 80
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 239
+Some sort of exception terminated the crawler. restarting...
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@1026186e (tried for 30 second(s) with 100 milliseconds interval)
+CurrentPage: 319	CurrentEvent: 2
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+crawler.MarvinCrawler@62452cc9 finished at: 23/08/2018 18:40:40
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 240
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@23f5bb7a (tried for 30 second(s) with 100 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+Some sort of exception terminated the crawler. restarting...
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+CurrentPage: 319	CurrentEvent: 0
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+Aug. 23, 2018 6:41:04 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 6:41:04 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950 finished at: 23/08/2018 18:41:17
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 319	CurrentEvent: 2
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@526bb152 (tried for 30 second(s) with 100 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 319	CurrentEvent: 0
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$79/786816445@565e3116 (tried for 30 second(s) with 100 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.getEvent(PageNavigator.java:167)
+	at crawler.PageNavigator.openEvent(PageNavigator.java:149)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:74)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:41)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:27)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element with ID: 'genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Table:3182:actionsLeft:show'
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: HtmlUnitDriver
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElementById(HtmlUnitDriver.java:1236)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2005)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver$4.call(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.implicitlyWaitFor(HtmlUnitDriver.java:1627)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:2001)
+	at org.openqa.selenium.htmlunit.HtmlUnitDriver.findElement(HtmlUnitDriver.java:778)
+	at crawler.PageNavigator.lambda$getEvent$2(PageNavigator.java:167)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 6 more
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 319
+
+Process finished with exit code 130 (interrupted by signal 2: SIGINT)
+

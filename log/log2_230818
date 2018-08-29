@@ -1,0 +1,646 @@
+/opt/jdk-9.0.1/bin/java -javaagent:/opt/idea-IC-173.4127.27/lib/idea_rt.jar=41621:/opt/idea-IC-173.4127.27/bin -Dfile.encoding=UTF-8 -classpath /home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/out/production/Marvin_Webcrawler:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/selenium-java-3.12.0/client-combined-3.12.0.jar:/home/jakob/Schreibtisch/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/sql/postgresql-42.2.4.jar crawler.Controler
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sourceforge.htmlunit.corejs.javascript.NativeArray (file:/home/jakob/studium/03/Fortgeschrittenen_Praktikum/Marvin_Webcrawler/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar) to field java.util.Arrays$LegacyMergeSort.userRequested
+WARNING: Please consider reporting this to the maintainers of net.sourceforge.htmlunit.corejs.javascript.NativeArray
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+crawler.MarvinCrawler@6941827a is going to read pages 1 - 80.
+crawler.MarvinCrawler@a5bd950 is going to read pages 81 - 160.
+crawler.MarvinCrawler@4d18aa28 is going to read pages 161 - 240.
+crawler.MarvinCrawler@75390459 is going to read pages 241 - 319.
+crawler.MarvinCrawler@6941827a started at: 23/08/2018 20:04:10
+crawler.MarvinCrawler@a5bd950 started at: 23/08/2018 20:04:10
+crawler.MarvinCrawler@4d18aa28 started at: 23/08/2018 20:04:10
+crawler.MarvinCrawler@75390459 started at: 23/08/2018 20:04:10
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@6941827a: Search Opened.
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 1
+crawler.MarvinCrawler@4d18aa28: Search Opened.
+crawler.MarvinCrawler@75390459: Search Opened.
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 161
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 241
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 81
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 2
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 242
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 162
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 82
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880110-20172', 1871), ('15880110', 1871);
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880120-20172', 1881), ('15880120', 1881);
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 3
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 243
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 163
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 83
+Aug. 23, 2018 8:06:51 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:06:51 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 8:06:59 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:06:59 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 244
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 4
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 164
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 84
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(1986, 130, 'Donnerstag', '08:15', '09:45', '', 'wöchentlich', '18.10.2018', '14.02.2019', '25', '00/0100 (SR S) (Jahnstrasse 12, Sporthalle (SHS 12))', 'Dr. Priebe, Alexander', '', '');
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 245
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 165
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 85
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 5
+Aug. 23, 2018 8:08:19 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:08:19 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 246
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 166
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 6
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 86
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(2129, 215, 'Mittwoch', '14:00', '15:00', '', 'Einzeltermin', '24.10.2018', '24.10.2018', '', '', '', '', 'ACHTUNG!
+ Vorbesprechung in Büro von Prof. Ultsch, Raum 04A29A');
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 247
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 167
+Aug. 23, 2018 8:09:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:09:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 7
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 87
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 248
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 168
+Aug. 23, 2018 8:10:34 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:10:34 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 88
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 8
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 249
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 169
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 9
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 89
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 250
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 10
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 90
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 170
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(2449, 376, 'Montag', '18:00', '20:00', '', 'wöchentlich', '15.10.2018', '11.02.2019', '', '03020 (03020) (Lahntor 3, Alte Universität (AU))', 'Prof. Dr. Maier, Christl M.', '', '');
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 251
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 91
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 11
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 171
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 252
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 92
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 12
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 172
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 253
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 93
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 13
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 173
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 254
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 14
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 94
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 255
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 174
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 15
+Aug. 23, 2018 8:16:14 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:16:14 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 95
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 256
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 16
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 175
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 95	CurrentEvent: 3
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$90/644215693@3d3d69ce (tried for 30 second(s) with 100 milliseconds interval)
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:185)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:96)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:42)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:28)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 257
+crawler.MarvinCrawler@a5bd950: Search Opened.
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 95
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 17
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 176
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 258
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 96
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 18
+Aug. 23, 2018 8:18:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:18:09 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 177
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 259
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 97
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 19
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 178
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 260
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 98
+Aug. 23, 2018 8:19:14 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:19:14 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 20
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 179
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 261
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 99
+Aug. 23, 2018 8:20:01 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:20:01 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 21
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 180
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 262
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 100
+Aug. 23, 2018 8:20:35 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:20:35 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 181
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 263
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 101
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 21	CurrentEvent: 9
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$90/644215693@3d3d69ce (tried for 30 second(s) with 100 milliseconds interval)
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:185)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:96)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:42)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:28)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+crawler.MarvinCrawler@6941827a: Search Opened.
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 21
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 182
+Aug. 23, 2018 8:21:39 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:21:39 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 264
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 102
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 183
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 22
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 265
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 103
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 184
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 23
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 266
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 104
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 185
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 24
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 267
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 105
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 186
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 25
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 268
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 106
+Aug. 23, 2018 8:24:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:24:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 187
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 269
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 26
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 107
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 188
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 270
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 27
+Aug. 23, 2018 8:25:50 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:25:50 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 108
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 189
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 271
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 28
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 109
+Aug. 23, 2018 8:26:54 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:26:54 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 190
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 272
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 29
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 110
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 191
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 273
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 30
+Aug. 23, 2018 8:28:02 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:28:02 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 111
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 192
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 274
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 31
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 112
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 193
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 275
+Aug. 23, 2018 8:29:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:29:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 32
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 113
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 194
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 276
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880930-20172', 4236), ('15880930', 4236);
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 33
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 114
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 195
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 277
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 34
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 115
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 278
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 196
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 35
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 116
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 279
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 197
+Aug. 23, 2018 8:32:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:32:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 36
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 117
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 280
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 198
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 37
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 118
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 281
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 199
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-08-107-20152-010,'WF0145','Wahlfach Bildgebende Diagnostik' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-08-107-20152-010 as BIGINT));
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 38
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 119
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 200
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for crawler.PageNavigator$$Lambda$90/644215693@3d3d69ce (tried for 30 second(s) with 100 milliseconds interval)
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'jakob-ThinkPad-T420s', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-32-generic', java.version: '9.0.1'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at crawler.PageNavigator.eventBack(PageNavigator.java:185)
+	at crawler.MarvinCrawler.crawl(MarvinCrawler.java:96)
+	at crawler.MarvinCrawler.loopCrawl(MarvinCrawler.java:42)
+	at crawler.MarvinCrawler.run(MarvinCrawler.java:28)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Some sort of exception terminated the crawler. restarting...
+CurrentPage: 281	CurrentEvent: 8
+crawler.MarvinCrawler@75390459: Search Opened.
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 281
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 120
+Aug. 23, 2018 8:35:15 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:35:15 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 201
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 39
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880220-20172', 5023), ('15880220', 5023), ('15880220-20172', 5024), ('15880220', 5024);
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 282
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 121
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 202
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 40
+Aug. 23, 2018 8:36:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:36:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 283
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 122
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 203
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 41
+Aug. 23, 2018 8:37:17 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:37:17 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 284
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 123
+Aug. 23, 2018 8:37:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:37:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 204
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 42
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 285
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 124
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 205
+Aug. 23, 2018 8:38:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:38:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 43
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 286
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(5428, 2580, 'Mittwoch', '10:00', '12:00', '', 'wöchentlich', '17.10.2018', '13.02.2019', '', '01A25 (01A25) (Deutschhausstrasse 12 (DH 12))', 'Dr. Aydin, Yildiz', '', ''), (5429, 2580, 'Donnerstag', '10:00', '12:00', '', 'wöchentlich', '18.10.2018', '14.02.2019', '', '01A25 (01A25) (Deutschhausstrasse 12 (DH 12))', 'Dr. Aydin, Yildiz', '', ''), (5430, 2580, 'Freitag', '10:00', '12:00', '', 'wöchentlich', '19.10.2018', '15.02.2019', '', '01A25 (01A25) (Deutschhausstrasse 12 (DH 12))', 'Dr. Aydin, Yildiz', '', ''), (5431, 2580, 'Montag', '08:00', '10:00', '', 'wöchentlich', '15.10.2018', '11.02.2019', '', '00A02 (Seminarraum 00A02) (Deutschhausstrasse 12 (DH 12))', 'Dr. Rolffs, Songül', '', ''), (5432, 2580, 'Mittwoch', '08:00', '10:00', '', 'wöchentlich', '17.10.2018', '13.02.2019', '', '00A02 (Seminarraum 00A02) (Deutschhausstrasse 12 (DH 12))', 'Dr. Rolffs, Songül', '', ''), (5433, 2580, 'Donnerstag', '08:00', '10:00', '', 'wöchentlich', '18.10.2018', '14.02.2019', '', '00A02 (Seminarraum 00A02) (Deutschhausstrasse 12 (DH 12))', 'Dr. Rolffs, Songül', '', '');
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 125
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 206
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 44
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 287
+Aug. 23, 2018 8:39:37 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:39:37 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 8:39:41 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:39:41 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 207
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 126
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 45
+Aug. 23, 2018 8:40:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:40:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 288
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 127
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 208
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 46
+Aug. 23, 2018 8:40:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:40:52 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 289
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 128
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 209
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 47
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(5756, 2717, 'Freitag', '10:15', '12:00', '', 'wöchentlich', '19.10.2018', '15.02.2019', '', '+5/0010 (HS B) (Hans-Meerwein-Strasse 8, Hörsaalgebäude (HC 8))', '', '', 'UE'), (5757, 2717, 'Freitag', '10:15', '12:00', '', 'wöchentlich', '19.10.2018', '15.02.2019', '', 'E 072 (SR EG Nord, links) (Hans-Meerwein-Strasse 4, Neubau Chemie (H01))', '', '', 'UE'), (5758, 2717, 'Freitag', '10:15', '12:00', '', 'wöchentlich', '19.10.2018', '15.02.2019', '', 'E 172 (SR 1. OG Nord, links) (Hans-Meerwein-Strasse 4, Neubau Chemie (H01))', '', '', 'UE'), (5759, 2717, 'Freitag', '10:15', '12:00', '', 'wöchentlich', '19.10.2018', '15.02.2019', '', 'E 272 (SR 2. OG Nord, links) (Hans-Meerwein-Strasse 4, Neubau Chemie (H01))', '', '', 'UE');
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 290
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 129
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 210
+Aug. 23, 2018 8:42:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:42:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+Aug. 23, 2018 8:42:17 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:42:17 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 48
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 291
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880360-20172', 5838), ('15880360', 5838), ('15880360-20172', 5839), ('15880360', 5839);
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 130
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880360-20172', 5843), ('15880360', 5843);
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 211
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 49
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 292
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 131
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 212
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 50
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 293
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 132
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 213
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 51
+Aug. 23, 2018 8:44:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:44:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 294
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 133
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 214
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 52
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 295
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 134
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 215
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 53
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 296
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 135
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 216
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 54
+Upload nicht möglich. InsertStatement:
+INSERT INTO EMzuteilung (ModulID, EventID) VALUES ('15880810-20172', 6348), ('15880810', 6348), ('161261150', 6348), ('15880810-20172', 6349), ('15880810', 6349), ('161261150', 6349);
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 297
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 136
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 55
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 217
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 298
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 137
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 56
+Aug. 23, 2018 8:49:33 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:49:33 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 218
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 299
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 138
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-08-107-20152-200,'WF0130','Wahlfach Sinnesorgane und Haut' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-08-107-20152-200 as BIGINT));
+Aug. 23, 2018 8:50:19 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:50:19 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 57
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 219
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 300
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 139
+Aug. 23, 2018 8:51:13 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:51:13 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+Aug. 23, 2018 8:51:28 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:51:28 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 58
+Aug. 23, 2018 8:52:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:52:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 301
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 140
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 220
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 59
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 302
+Aug. 23, 2018 8:53:16 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:53:16 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 141
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 221
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 60
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(7079, 3237, 'Mittwoch', '10:00', '13:00', '', 'wöchentlich', '17.10.2018', '28.11.2018', '', '1015 (1015/ZGK) (Karl-von-Frisch-Strasse 8, Institutsgebäude (KvF 8 I))', '', '', ''), (7080, 3237, 'Donnerstag', '10:00', '13:00', '', 'wöchentlich', '18.10.2018', '29.11.2018', '', '1015 (1015/ZGK) (Karl-von-Frisch-Strasse 8, Institutsgebäude (KvF 8 I))', '', '', ''), (7081, 3237, 'Freitag', '10:00', '13:00', '', 'wöchentlich', '19.10.2018', '30.11.2018', '', '1015 (1015/ZGK) (Karl-von-Frisch-Strasse 8, Institutsgebäude (KvF 8 I))', '', '', '');
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 303
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 142
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 222
+Aug. 23, 2018 8:55:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:55:05 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 61
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 304
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 143
+Aug. 23, 2018 8:56:04 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:56:04 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 223
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 62
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 305
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 144
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 63
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 224
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 306
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 145
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 64
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 225
+Aug. 23, 2018 8:58:23 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:58:23 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 307
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(7547, 3384, 'Mittwoch', '07:45', '16:00', '', 'Einzeltermin', '27.03.2019', '27.03.2019', '27', '+2/0100 (+2/0100) (Biegenstrasse 14, Hörsaalgebäude (HG))', '', '', '');
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 146
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 65
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 226
+Aug. 23, 2018 8:59:42 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 8:59:42 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 308
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 147
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 66
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 227
+Aug. 23, 2018 9:00:44 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:00:44 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 309
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 148
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 67
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 228
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 310
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 149
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 68
+Aug. 23, 2018 9:02:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:02:29 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 229
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 311
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 150
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 69
+Aug. 23, 2018 9:03:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:03:38 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+Aug. 23, 2018 9:03:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:03:40 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 312
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 230
+Upload nicht möglich. InsertStatement:
+INSERT INTO Events (eventID, veranstaltungsID, wochentag, von, bis, akademischezeit,rhythmus, startdatum , enddatum, teilnehmerzahl , raum , durchführender , ausfalltermin , bemerkung ) VALUES(7931, 3608, 'Mittwoch', '12:00', '14:00', '', 'wöchentlich', '17.10.2018', '13.02.2019', '', '102 (+1/1020) (Deutschhausstrasse 3, Institutsgebäude (F | 04))', 'Dr. Schönholz, Christian', '', ''), (7932, 3608, 'Mittwoch', '12:00', '14:00', 'c.t.', 'wöchentlich', '17.10.2018', '13.02.2019', '', '01003 (RS 103) (Landgraf-Philipp-Strasse 4, Altes Landgericht (LP 4))', 'Lange, Gerrit', '', '');
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 151
+Aug. 23, 2018 9:04:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:04:22 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 70
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 313
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 231
+Aug. 23, 2018 9:05:18 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:05:18 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 152
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 71
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 314
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 232
+Aug. 23, 2018 9:06:21 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:06:21 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 153
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 315
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 72
+Aug. 23, 2018 9:06:57 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:06:57 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 233
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 154
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 316
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 73
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 234
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 155
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 317
+Aug. 23, 2018 9:08:51 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:08:51 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 74
+Aug. 23, 2018 9:09:15 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://webtrack.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:09:15 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://webtrack.uni-marburg.de:443
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-10,'LaL-Ex 1','Einführung in die lateinische Sprache I' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-10 as BIGINT));
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-10,'LaL-Ex 1','Einführung in die lateinische Sprache I' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-10 as BIGINT));
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 235
+Upload nicht möglich. InsertStatement:
+INSERT INTO Module(modulID, modulkuerzel, bezeichnung) Select M-25-005-20132-20,'LaL-Ex 2','Einführung in die lateinische Sprache II' WHERE NOT EXISTS (SELECT * FROM Module WHERE modulID = CAST(M-25-005-20132-20 as BIGINT));
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 156
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 318
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 75
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 236
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 157
+crawler.MarvinCrawler@75390459: Went to Search page Nr. 319
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 76
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 237
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 158
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 77
+Aug. 23, 2018 9:12:13 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:12:13 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 238
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 159
+class org.openqa.selenium.TimeoutException on page 319 event 1
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 78
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 239
+crawler.MarvinCrawler@a5bd950: Went to Search page Nr. 160
+Aug. 23, 2018 9:13:59 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:13:59 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 79
+crawler.MarvinCrawler@4d18aa28: Went to Search page Nr. 240
+Aug. 23, 2018 9:14:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://marvin.uni-marburg.de:443: The target server failed to respond
+Aug. 23, 2018 9:14:27 NACHM. org.apache.http.impl.execchain.RetryExec execute
+INFORMATION: Retrying request to {s}->https://marvin.uni-marburg.de:443
+crawler.MarvinCrawler@a5bd950 finished at: 23/08/2018 21:14:29
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@6941827a: Went to Search page Nr. 80
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@4d18aa28 finished at: 23/08/2018 21:15:10
+class org.openqa.selenium.TimeoutException on page 319 event 1
+crawler.MarvinCrawler@6941827a finished at: 23/08/2018 21:15:44
+
+Process finished with exit code 130 (interrupted by signal 2: SIGINT)
+

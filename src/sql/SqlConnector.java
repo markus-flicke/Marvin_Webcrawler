@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SqlConnector {
-    private final static String user = "postgres", password = "something", connectionString = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
+    private final static String user = "postgres", password = "somthing", connectionString = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
     private Connection c;
 
     public Connection connect(){

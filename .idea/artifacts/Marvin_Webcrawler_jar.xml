@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Marvin_Webcrawler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Marvin_Webcrawler_jar</output-path>
+    <root id="archive" name="Marvin_Webcrawler.jar">
+      <element id="module-output" name="Marvin_Webcrawler" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/selenium-java-3.12.0/client-combined-3.12.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/sql/postgresql-42.2.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
