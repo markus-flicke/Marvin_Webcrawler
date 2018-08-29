@@ -4,11 +4,18 @@ import java.util.logging.Level;
 
 public class Controler {
 
-    static final int PARALELL_CRAWLERS = 4;
-    static final int CURRENT_TERM = 76;
+    static int PARALELL_CRAWLERS = 4;
+    static int CURRENT_TERM = 76;
 
     public static void main(String[] args) {
-        int pages = getPages(50);
+        if(args.length > 0) {
+            int tmp = Integer.parseInt(args[0]);
+            if(tmp <= 8) {
+                PARALELL_CRAWLERS = tmp;
+            }
+        }
+        System.out.println(PARALELL_CRAWLERS + " Crawlers starting. . .");
+        int pages = getPages();
         int pagesPerThread = (int)(pages /PARALELL_CRAWLERS);
         if (pages % PARALELL_CRAWLERS != 0) {
             pagesPerThread += 1;
