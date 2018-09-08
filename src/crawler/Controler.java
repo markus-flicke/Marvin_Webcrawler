@@ -1,5 +1,7 @@
 package crawler;
 
+import org.apache.commons.lang3.ThreadUtils;
+
 import java.util.logging.Level;
 
 public class Controler {

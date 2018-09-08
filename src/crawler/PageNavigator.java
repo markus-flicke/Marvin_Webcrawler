@@ -94,59 +94,6 @@ public class PageNavigator extends HtmlUnitDriver{
     }
 
 
-    /*public void goToPage(int pageNumber) {
-        String aPageLinkID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2idx" + pageNumber;
-        String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
-        Wait<PageNavigator> wait = new FluentWait<>(this)
-                .withTimeout(Duration.ofSeconds(20))
-                .pollingEvery(Duration.ofMillis(100))
-                .ignoring(NoSuchElementException.class);
-        boolean done = false;
-        while(!done) {
-            try {
-                this.findElement(By.id(aPageLinkID)).click();
-                while(this.getCurrentPage() != pageNumber){
-                    this.pause(WAIT_TIME);
-                }
-                done = true;
-            } catch(ElementClickInterceptedException e) {   //this exeption is thrown when the click() Methode fails.
-                this.pause(WAIT_TIME);
-            } catch(NoSuchElementException e) {
-                System.out.println("Page: " + this.getCurrentPage());
-                fastForward();
-            }
-        }
-    }
-    private void fastForward() {
-        String aFastForwardButtonID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2fastf";
-
-        WebElement ffButton = wait.until((WebDriver pn) -> pn.findElement(By.id(aFastForwardButtonID)));
-        ffButton.click();
-
-    }*/
-
-    /*private void pause(long milliseconds) {
-        synchronized (this) {
-            try {
-                this.wait(milliseconds); //wait has to be in synchronised block to work
-            } catch (InterruptedException ie) {
-                ie.printStackTrace();
-            }
-        }
-    }*/
-
-    /*private List<WebElement> getEvents() {
-        String buttonEventLinkClass = "linkTable";
-
-        return this.findElements(By.className(buttonEventLinkClass));
-    }
-
-    public WebElement getEvent(int index, int test) {
-        List<WebElement> list = this.getEvents();
-        return list.get(index);
-    }*/
-
-
     public void openEvent(int index) {
         WebElement eventLink = getEvent(index);
         eventLink.click();
