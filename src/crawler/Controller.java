@@ -1,10 +1,8 @@
 package crawler;
 
-import org.apache.commons.lang3.ThreadUtils;
-
 import java.util.logging.Level;
 
-public class Controler {
+public class Controller {
 
     static int PARALELL_CRAWLERS = 8;
     static int CURRENT_TERM = 76;

@@ -1,6 +1,5 @@
 package sql;
 
-import org.apache.commons.net.telnet.EchoOptionHandler;
 import util.EventData;
 
 import java.sql.*;
@@ -9,7 +8,7 @@ import java.util.LinkedList;
 public class SqlWriter {
     private EventData data;
     private Connection connection;
-    public static int Veranstaltungsnummer = 1;
+    private static int Veranstaltungsnummer = 1;
     int veranstaltungsID;
     LinkedList<Integer> eventIDs = new LinkedList<>();
 
@@ -81,8 +80,7 @@ public class SqlWriter {
                 (verantwortlicherIndex == null) ? "NULL" : "'" + data.getBasicData()[1][verantwortlicherIndex] + "'",
                 (organisationseinheitIndex == null) ? "NULL" : "'" + data.getBasicData()[1][organisationseinheitIndex] + "'",
                 this.data.getBasicData()[1][titelIndex]);
-        //Zum testen auskommentiert:
-        //sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",this.data.getBasicData()[1][titelIndex]);
+        sqlQuery += String.format("WHERE NOT EXISTS (SELECT * FROM Veranstaltungen WHERE titel = '%s');",this.data.getBasicData()[1][titelIndex]);
         this.upload(sqlQuery);
     }
 

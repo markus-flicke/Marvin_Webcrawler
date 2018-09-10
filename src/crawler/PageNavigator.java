@@ -10,7 +10,7 @@ import java.util.List;
 import java.time.Duration;
 
 /**
- * @author Jakob Eckstein
+ * @author Jakob Eckstein & Markus Flicke
  *
  */
 public class PageNavigator extends HtmlUnitDriver{
@@ -56,18 +56,6 @@ public class PageNavigator extends HtmlUnitDriver{
         buttonSearch.click();
     }
 
-   /*
-    public void setEntriesPerPage(int entriesPerPage) {//keinen parameter
-        String inputEntriesPerPageID = "genSearchRes:id3df798d58b4bacd9:id3df798d58b4bacd9Navi2NumRowsInput";
-
-        //Clear entries field:
-        WebElement inputEntriesPerPage = this.findElement(By.id(inputEntriesPerPageID));
-        inputEntriesPerPage.clear();
-        //Enter entries and start querry:
-        inputEntriesPerPage.sendKeys("" + entriesPerPage);
-        inputEntriesPerPage.sendKeys( "\n");
-    }*/
-
     /**
      * @param pageNumber Number of searchpage to navigate to.
      * Navigates to the specified searchpage and waits until the Page is loaded.
@@ -97,7 +85,6 @@ public class PageNavigator extends HtmlUnitDriver{
     public void openEvent(int index) {
         WebElement eventLink = getEvent(index);
         eventLink.click();
-        //System.out.println(this.getTitle());
         try {
             wait.until((PageNavigator pn) -> {
                 String title = pn.getTitle();
@@ -107,15 +94,7 @@ public class PageNavigator extends HtmlUnitDriver{
             System.out.println("Aktueller Titel: " + getTitle());
             throw toe;
         }
-        /*while(true) {
-            try {
-                this.findElement(By.id("genSearchRes:buttonsTop:newSearch"));
-                //this.pause(WAIT_TIME);
-            } catch (org.openqa.selenium.NoSuchElementException e) {
-                System.out.println(this.getTitle());
-                break;
-            }
-        }*/
+
     }
     private WebElement getEvent(int index) {
         int eventNumber = (currentPage - 1)* ENTRIES_PER_PAGE + index;
@@ -128,13 +107,10 @@ public class PageNavigator extends HtmlUnitDriver{
      * Navigates from the event page to the searchpage.
      */
     public void eventBack() {
-        //String buttonNewSearchID = "genSearchRes:buttonsTop:newSearch";
         String buttonBackButtonID = "showEvent:backButtonTop";
 
-        //clicks the Back-Button
         WebElement buttonBack = wait.until((PageNavigator pn) -> pn.findElement(By.id(buttonBackButtonID)));
         buttonBack.click();
-        //waits until the NewSearch button is found.
         try {
             wait.until((PageNavigator pn) -> {
                 String title = pn.getTitle();
@@ -160,29 +136,6 @@ public class PageNavigator extends HtmlUnitDriver{
         }
     }
 
-   /* private void waitForElement(String id){
-        long start = System.nanoTime();
-        boolean warnOnce = false;
-        boolean printSourceOnce = false;
-        while((System.nanoTime() - start) < 90_000_000_000L) {
-            try {
-                this.findElement(By.id(id));
-                return;
-            } catch (org.openqa.selenium.NoSuchElementException e) {
-                if((System.nanoTime() - start) > 30_000_000_000L &! warnOnce){
-                    warnOnce = true;
-                    System.out.printf("Wait For Element Warning (30sec): %s\n", id);
-                }
-                if((System.nanoTime() - start) > 60_000_000_000L &! printSourceOnce){
-                    printSourceOnce = true;
-                    System.out.printf("Wait For Element Warning (1min): %s\n", id);
-                    System.out.println(this.getPageSource());
-                }
-                this.pause(WAIT_TIME);
-            }
-        }
-        throw new RuntimeException("Wait For Element Timeout (1min 30sec). Element: " + id + " not found");
-    }*/
 
     public int getMaxPage() {
         return Integer.parseInt(this.getPageInfo().split(" ")[3]);

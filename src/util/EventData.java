@@ -1,7 +1,7 @@
 package util;
 
 /**
- * @author Jakob Eckstein
+ * @author Jakob Eckstein & Markus Flicke
  *
  */
 public class EventData {

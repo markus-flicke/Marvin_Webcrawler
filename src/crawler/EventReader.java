@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Jakob Eckstein
+ * @author Jakob Eckstein & Markus Flicke
  *
  */
 public class EventReader {
@@ -42,8 +42,7 @@ public class EventReader {
         String tableEventsId = "showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:" +
                 "plannedDatesTable_Table";
         String thHeadersClass = "tableHeader";
-//        String tbodyTableBodyId = "showEvent:planelementsOfCurrentTerm:0:termineRauemeFieldset1:plannedDatesTable_:" +
-//                "plannedDatesTable_Table:tbody_element";
+
         WebElement eventsTable;
         try {
             eventsTable = driver.findElement(By.id(tableEventsId));
@@ -157,8 +156,5 @@ public class EventReader {
 
     private String cleanDisallowedSymbols(String in){
         return in.replace("'","");
-    }
-
-    public static void main(String[] args){
     }
 }

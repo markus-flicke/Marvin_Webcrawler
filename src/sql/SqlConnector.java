@@ -8,7 +8,7 @@ public class SqlConnector {
     private final static String user = "postgres", password = "something", connectionString = "jdbc:postgresql://localhost/Vorlesungsverzeichnis";
     private Connection c;
 
-    public Connection connect(){
+    public Connection getConnection(){
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection(connectionString, user, password);

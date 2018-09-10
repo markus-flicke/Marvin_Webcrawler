@@ -69,7 +69,7 @@ public class MarvinCrawler implements Runnable{
         objectCreation.start();
         SqlConnector connector = new SqlConnector();
         objectCreation.stop();
-        Connection connection = connector.connect();
+        Connection connection = connector.getConnection();
 
         //int eventOffset = startEvent;
         for(int pageNr = startPage; pageNr < endPage; pageNr++){ //Exlusive endpage!
@@ -110,7 +110,7 @@ public class MarvinCrawler implements Runnable{
                     upload.stop();
                 }
                 catch(Exception e){
-                    connection = connector.connect();
+                    connection = connector.getConnection();
                     SqlWriter sqlWriter = new SqlWriter(null, connection);
                     sqlWriter.uploadUnhandled(eventReader.getPermalink(), ""+e.getClass()+ " -> " + e.getMessage());
                 }
