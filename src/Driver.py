@@ -4,10 +4,14 @@ from selenium import webdriver
 class Driver:
     CHROME_DRIVERPATH = "../webdriver/chromedriver"
 
-    def __init__(self):
+    def __init__(self, headless = False):
         options = webdriver.ChromeOptions()
-        # can go headless here
-        self.d = webdriver.Chrome(self.CHROME_DRIVERPATH, options=options)
+        if headless:
+            options.add_argument("--headless")
+        try:
+            self.d = webdriver.Chrome(self.CHROME_DRIVERPATH, options=options)
+        except:
+            self.d = webdriver.Chrome(self.CHROME_DRIVERPATH[1:], options=options)
 
     def get(self, url):
         self.d.get(url)
@@ -15,8 +19,14 @@ class Driver:
     def find_element_by_id(self, id):
         return self.d.find_element_by_id(id)
 
+    def find_elements_by_id(self, id):
+        return self.d.find_elements_by_id(id)
+
     def find_element_by_class_name(self, name):
         return self.d.find_element_by_class_name(name)
+
+    def find_elements_by_class_name(self, name):
+        return self.d.find_elements_by_class_name(name)
 
     def find_element(self, by, value = None):
         return self.d.find_element(by, value)
@@ -26,3 +36,6 @@ class Driver:
 
     def execute_script(self, script):
         return self.d.execute_script(script)
+
+    def page_source(self):
+        return self.d.page_source

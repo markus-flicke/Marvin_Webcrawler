@@ -10,8 +10,8 @@ class Navigator(Driver):
     current_page = 1
     max_page = None
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, headless = False):
+        super().__init__(headless)
         self.wait = WebDriverWait(self, 10, 0.1)
 
     def open_search(self):
@@ -47,6 +47,18 @@ class Navigator(Driver):
 
         back_button_id = "form:dialogHeader:backButtonTop"
         self.wait.until(EC.presence_of_element_located((By.ID, back_button_id)))
+
+    def open_termine_tab(self):
+        id = 'detailViewData:tabContainer:tabs:parallelGroupsTab'
+        self.wait.until(EC.presence_of_element_located((By.ID, id)))
+        webel = self.find_element_by_id(id)
+        webel.click()
+
+    def open_module_tab(self):
+        id = 'detailViewData:tabContainer:tabs:modulesCourseOfStudiesTab'
+        self.wait.until(EC.presence_of_element_located((By.ID, id)))
+        webel = self.find_element_by_id(id)
+        webel.click()
 
     def go_to_page(self, page_nr):
         js = "var event = new Event('onclick');jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:" \

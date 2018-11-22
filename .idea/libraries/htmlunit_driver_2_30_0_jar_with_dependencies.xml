@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/lib/htmlunitdriver/htmlunit-driver-2.30.0-jar-with-dependencies.jar!/" />
     </SOURCES>
