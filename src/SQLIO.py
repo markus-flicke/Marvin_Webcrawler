@@ -6,9 +6,16 @@ class SQLIO:
         self.cur = self.conn.cursor()
 
     def insert(self, table, values, headers=False):
+        """
+
+        :param table: SQL table to insert into
+        :param values: values in SQL query string format. i.e. String(x) -> 'x'
+        :param headers: table attributes to insert into. If None -> insert into all attributes
+        :return:
+        """
         if headers:
-            return self.cur.execute("Insert into {} ({}) Select {}".format(table, ','.join(headers), ",".join(values)))
-        return self.cur.execute("Insert into {} values({})".format(table, ",".join(values)))
+            return self.execute("Insert into {} ({}) Select {}".format(table, ','.join(headers), ",".join(values)))
+        return self.execute("Insert into {} values({})".format(table, ",".join(values)))
 
     def select(self, table, attribute = False, where = False):
         if attribute:
@@ -17,7 +24,7 @@ class SQLIO:
             query = "Select * from {}".format(table)
         if where:
             query += ' where {}'.format(where)
-        self.cur.execute(query)
+        self.execute(query)
         return self.cur.fetchall()
 
     def commit(self):
@@ -29,5 +36,12 @@ class SQLIO:
             file.close()
 
         for command in commands:
-            self.cur.execute(command)
+            self.execute(command)
         self.commit()
+
+    def execute(self, command):
+        try:
+            return self.cur.execute(command)
+        except:
+            print(command)
+            raise

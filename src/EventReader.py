@@ -1,4 +1,5 @@
 import pandas as pd
+warnings = False
 
 class EventReader():
     def __init__(self, driver):
@@ -9,19 +10,22 @@ class EventReader():
         try:
             res['grunddaten'] = self.read_grunddaten()
         except:
-            print("Error: No Grunddaten")
+            if warnings:
+                print("Error: No Grunddaten")
 
         try:
             self.driver.open_termine_tab()
             res['termine'] = self.read_termine()
         except:
-            print("Error: No Termine")
+            if warnings:
+                print("Error: No Termine")
 
         try:
             self.driver.open_module_tab()
             res['module'] = self.read_module()
         except:
-            print("Error: No Module")
+            if warnings:
+                print("Error: No Module")
         return res
 
     def read_grunddaten(self):
@@ -29,7 +33,9 @@ class EventReader():
         headers = list(map(lambda e: e.text, headers_webelements))
         values_webelements = self.driver.find_elements_by_class_name("answer")
         values = list(map(lambda e: e.text, values_webelements))
-        return dict(zip(headers, values))
+        res = dict(zip(headers, values))
+        assert res
+        return res
 
     def read_termine(self):
         basics = self.read_grunddaten()

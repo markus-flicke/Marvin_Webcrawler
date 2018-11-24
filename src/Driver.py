@@ -39,3 +39,6 @@ class Driver:
 
     def page_source(self):
         return self.d.page_source
+
+    def quit(self):
+        self.quit()

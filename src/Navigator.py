@@ -13,6 +13,7 @@ class Navigator(Driver):
     def __init__(self, headless = False):
         super().__init__(headless)
         self.wait = WebDriverWait(self, 10, 0.1)
+        self.wait_super_short = WebDriverWait(self, 0.5, 0.1)
 
     def open_search(self):
         self.get(self.SEARCH_URL)
@@ -21,8 +22,11 @@ class Navigator(Driver):
         self.find_element_by_id(button_search_id).click()
 
     def current_page_nr(self):
-        self.wait.until(EC.presence_of_element_located((By.CLASS_NAME,"dataScrollerPageText")))
-        s = self.find_element_by_class_name("dataScrollerPageText").text
+        # self.wait.until(EC.presence_of_element_located((By.CLASS_NAME,"dataScrollerPageText")))
+        try:
+            s = self.find_element_by_class_name("dataScrollerPageText").text
+        except:
+            return self.current_page
         self.current_page = int(s.split(' ')[1])
         return self.current_page
 
@@ -50,17 +54,18 @@ class Navigator(Driver):
 
     def open_termine_tab(self):
         id = 'detailViewData:tabContainer:tabs:parallelGroupsTab'
-        self.wait.until(EC.presence_of_element_located((By.ID, id)))
+        self.wait_super_short.until(EC.presence_of_element_located((By.ID, id)))
         webel = self.find_element_by_id(id)
         webel.click()
 
     def open_module_tab(self):
         id = 'detailViewData:tabContainer:tabs:modulesCourseOfStudiesTab'
-        self.wait.until(EC.presence_of_element_located((By.ID, id)))
+        self.wait_super_short.until(EC.presence_of_element_located((By.ID, id)))
         webel = self.find_element_by_id(id)
         webel.click()
 
     def go_to_page(self, page_nr):
+        assert page_nr > 0, 'search page must be > 0'
         js = "var event = new Event('onclick');jsf.util.chain(document.getElementById('genSearchRes:id3df798d58b4bacd9:" \
              "id3df798d58b4bacd9Navi2idx"+str(self.current_page)+"'),event,'jsf.ajax.request(\\'genSearchRes:id3df798d58b4bacd9:id3d" \
              "f798d58b4bacd9Navi2idx"+str(self.current_page)+"\\',event,{execute:\\'genSearchRes:id3df798d58b4bacd9 genSearchRes \\'" \

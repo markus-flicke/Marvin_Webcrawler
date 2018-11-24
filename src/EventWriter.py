@@ -9,6 +9,8 @@ class EventWriter:
         :param event: Dict with some or none of grunddaten, termine and module
         :return:
         """
+        if not event:
+            return
         self.sql_io = SQLIO()
         self.write_module(event)
         self.write_veranstaltungen(event)
@@ -23,25 +25,44 @@ class EventWriter:
             return False
         for i in range(event.get('module').shape[0]):
             row = event.get('module').loc[i]
-            self.sql_io.insert('module', ["'"+row['Modulnummer']+"'", "'"+row['Modulname (Kurztext)']+"'", "'"+row['Modulname']+"'"])
+            try:
+                self.sql_io.insert('module', ["'"+row['Modulnummer']+"'", "'"+row['Modulname (Kurztext)']+"'", "'"+row['Modulname']+"'"])
+            except Exception as e:
+                print(e)
 
     @classmethod
     def write_veranstaltungen(self, event):
         grunddaten = event.get('grunddaten')
-        termindaten = event.get('termine')[0]
+        if not grunddaten.get('Titel'):
+            raise Exception('No Title')
+        termindaten = event.get('termine')[0] if event.get('termine') else {}
+        verantwortlicher = "'"+termindaten.get('Verantwortliche/-r')+"'" if termindaten.get('Verantwortliche/-r') else 'NULL'
+        organisationseinheit = "'"+grunddaten.get('Organisationseinheit')+"'" if grunddaten.get('Organisationseinheit') else 'NULL'
+        titel = "'"+grunddaten.get('Titel')+"'" if grunddaten.get('Titel') else 'NULL'
         self.sql_io.insert('veranstaltungen',
-                      ["'"+termindaten.get('Verantwortliche/-r')+"'", "'"+grunddaten.get('Organisationseinheit')+"'",
-                       "'"+grunddaten.get('Titel')+"'"],
+                      [verantwortlicher, organisationseinheit,titel],
                       headers=['verantwortlicher', 'organisationseinheit', 'titel'])
 
     @classmethod
     def write_termin(self, event):
-        df = event.get('termine')[1]
+        if event.get('termine'):
+            df = event.get('termine')[1]
+        else:
+            return
+        upload_headers = set(['Titel','Verantwortliche/-r','Durchführende/-r','Wochentag','Von','Bis','Raum','Startdatum','Enddatum','Langtext','Nummer','Organisationseinheit','Veranstaltungsart','Angebotshäufigkeit','Semesterwochenstunden','Rhythmus','Ausfalltermin','Bemerkung'])
+        df_headers = set(df.columns)
+        for header in upload_headers - df_headers:
+            df[header] = None
+        
         grunddaten = event.get('grunddaten')
         termindaten = event.get('termine')[0]
         sql_io = SQLIO()
-        veranstaltungsid = \
-        sql_io.select('veranstaltungen', 'veranstaltungsID', "titel = '{}';".format(grunddaten.get('Titel')))[0][0]
+        try:
+            veranstaltungsid = \
+            sql_io.select('veranstaltungen', 'veranstaltungsID', "titel = '{}';".format(grunddaten.get('Titel')))[0][0]
+        except:
+            print('wahrscheinlich nicht in Datenbank: {}'.format(grunddaten.get('Titel')))
+            raise
 
         for header in grunddaten:
             df[header] = grunddaten[header]
