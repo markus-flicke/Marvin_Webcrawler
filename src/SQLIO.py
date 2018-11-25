@@ -1,8 +1,11 @@
 import psycopg2
+from psycopg2.extensions import ISOLATION_LEVEL_REPEATABLE_READ, ISOLATION_LEVEL_SERIALIZABLE
+
 
 class SQLIO:
     def __init__(self):
         self.conn = psycopg2.connect("host=localhost dbname=Vorlesungsverzeichnis user=postgres password=something")
+        # self.conn.set_isolation_level(ISOLATION_LEVEL_SERIALIZABLE)
         self.cur = self.conn.cursor()
 
     def insert(self, table, values, headers=False):

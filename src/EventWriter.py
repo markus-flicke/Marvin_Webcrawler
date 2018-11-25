@@ -2,6 +2,7 @@ from src.SQLIO import SQLIO
 import pandas as pd
 
 class EventWriter:
+
     @classmethod
     def write(self, event):
         """
@@ -11,37 +12,58 @@ class EventWriter:
         """
         if not event:
             return
-        self.sql_io = SQLIO()
         self.write_module(event)
         self.write_veranstaltungen(event)
-        self.sql_io.commit()
-        self.sql_io = SQLIO()
         self.write_termin(event)
-        self.sql_io.commit()
+        self.write_vm_zuteilung(event)
+
+    @classmethod
+    def write_vm_zuteilung(self, event):
+        sql_io = SQLIO()
+        try:
+            veranstaltungsid = \
+            sql_io.select('veranstaltungen', 'veranstaltungsID', "titel = '{}';".format(event.get('grunddaten').get('Titel')))[0][0]
+        except:
+            print('veranstaltungsid not found')
+            raise
+        sql_io.commit()
+        sql_io = SQLIO()
+        if type(None) == type(event.get('module')):
+            return False
+        for i in range(event.get('module').shape[0]):
+            modulid = event.get('module').loc[i]['Modulnummer']
+            sql_io.insert('VMZuteilung', ["'" + modulid + "'", str(veranstaltungsid)])
+        sql_io.commit()
 
     @classmethod
     def write_module(self, event):
+        sql_io = SQLIO()
         if type(None) == type(event.get('module')):
             return False
         for i in range(event.get('module').shape[0]):
             row = event.get('module').loc[i]
             try:
-                self.sql_io.insert('module', ["'"+row['Modulnummer']+"'", "'"+row['Modulname (Kurztext)']+"'", "'"+row['Modulname']+"'"])
+                sql_io.insert('module', ["'"+row['Modulnummer']+"'", "'"+row['Modulname (Kurztext)']+"'", "'"+row['Modulname']+"'"])
             except Exception as e:
                 print(e)
+                sql_io.commit()
+                sql_io = SQLIO()
+        sql_io.commit()
 
     @classmethod
     def write_veranstaltungen(self, event):
+        sql_io = SQLIO()
         grunddaten = event.get('grunddaten')
         if not grunddaten.get('Titel'):
             raise Exception('No Title')
         termindaten = event.get('termine')[0] if event.get('termine') else {}
         verantwortlicher = "'"+termindaten.get('Verantwortliche/-r')+"'" if termindaten.get('Verantwortliche/-r') else 'NULL'
         organisationseinheit = "'"+grunddaten.get('Organisationseinheit')+"'" if grunddaten.get('Organisationseinheit') else 'NULL'
-        titel = "'"+grunddaten.get('Titel')+"'" if grunddaten.get('Titel') else 'NULL'
-        self.sql_io.insert('veranstaltungen',
-                      [verantwortlicher, organisationseinheit,titel],
+        titel = "'"+grunddaten.get('Titel')+"'"
+        sql_io.insert('veranstaltungen',
+                      [verantwortlicher, organisationseinheit, titel],
                       headers=['verantwortlicher', 'organisationseinheit', 'titel'])
+        sql_io.commit()
 
     @classmethod
     def write_termin(self, event):
@@ -61,8 +83,11 @@ class EventWriter:
             veranstaltungsid = \
             sql_io.select('veranstaltungen', 'veranstaltungsID', "titel = '{}';".format(grunddaten.get('Titel')))[0][0]
         except:
-            print('wahrscheinlich nicht in Datenbank: {}'.format(grunddaten.get('Titel')))
+            print('Nicht in Datenbank: {}\n{}'.format(grunddaten.get('Titel'), sql_io.select('veranstaltungen', 'veranstaltungsID', "titel = '{}';".format(grunddaten.get('Titel')))))
+            print()
             raise
+        finally:
+            sql_io.commit()
 
         for header in grunddaten:
             df[header] = grunddaten[header]
